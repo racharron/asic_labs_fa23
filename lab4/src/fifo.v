@@ -37,7 +37,7 @@ wire deq_fire;
 assign enq_fire = enq_val & enq_rdy;
 assign deq_fire = deq_val & deq_rdy;
 
-assign empty = rptr != wptr || !full;
+assign empty = (rptr == wptr) && !full;
 
 assign enq_rdy = !full;
 assign deq_val = !empty;
