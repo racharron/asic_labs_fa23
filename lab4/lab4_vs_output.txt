@@ -1,0 +1,1457 @@
+hammer-vlsi -e /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/inst-env.yml -p /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/sky130.yml -p /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/sim-rtl.yml --obj_dir /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build sim
+[<global>] Loading hammer-vlsi libraries and reading settings
+[<global>] Loading technology 'hammer.technology.sky130'
+[<global>] Key technology.sky130.sky130_nda has a type str is not yet implemented
+[<global>] Key technology.sky130.openram_lib has a type str is not yet implemented
+[<global>] Key technology.sky130.dffram_lib has a type Optional[str] is not yet implemented
+[<global>] Key technology.sky130.pdk_home has a type Optional[str] is not yet implemented
+[<global>] Key technology.sky130.lvs_deck_sources has a type Optional[list[str]] is not yet implemented
+[<global>] Key technology.sky130.io_file has a type str is not yet implemented
+[tech] The install path: /path/to/skywater-src-nda does not exist, looked at key technology.sky130.sky130_nda
+[<global>] Key technology.sky130.sram22_sky130_macros is not associated with a type
+[tech] Modifying CDL netlist: /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl -> /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.cdl
+[tech] Modifying Verilog netlist: /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v -> /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v
+[tech] Modifying Verilog netlist: /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v -> /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v
+[tech] Modifying Technology LEF: /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef -> /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd__nom.tlef
+[tech] Modifying IO LEF: /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef -> /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_ef_io.lef
+Loaded Sky130 Tech
+[<global>] Starting simulation with tool 'vcs'
+[sim] Running sub-step 'write_gl_files'
+[sim] Running sub-step 'run_vcs'
+[<global>] Key sim.vcs.vcs_bin is not associated with a type
+[<global>] Key sim.vcs.fgp is not associated with a type
+Key sim.vcs.vcs_home is not associated with a type
+Key sim.vcs.verdi_home is not associated with a type
+Executing subprocess: /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/bin/vcs -full64 -lca -debug_access+all -timescale=1ns/10ps -CC -I$(VCS_HOME)/include -notice -line +lint=all,noVCDE +v2k -sverilog -debug /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v +define+CLOCK_PERIOD=5.00 +notimingcheck +delay_mode_zero -top gcd_coprocessor_testbench -o /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv
+
+Warning-[DBGACC_DBG] Multiple debug options being used
+  The debug switches '-debug_access' and '-debug*' are being used together.
+  For better performance, consider using only '-debug_access'.
+
+
+Error-[VERDI_VCS_MM] Possible VERDI_HOME and VCS_HOME mismatch
+  The Verdi tab and pli.a cannot be added to the 'vcs' compile command because
+  the file '/pli.a' could not be found.
+  Please check to make sure VERDI_HOME and VCS_HOME point to installations
+  that are either both 32-bits or both 64-bits.
+
+                         Chronologic VCS (TM)
+         Version P-2019.06_Full64 -- Mon Oct  9 20:01:53 2023
+               Copyright (c) 1991-2019 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more
+  information regarding list of LCA features please refer to Chapter "LCA
+  features" in the VCS Release Notes
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option 'debug=4' will be deprecated in a future release.  Please use
+  '-debug_acc+pp+f+fn+dmptf -debug_region+cell+encrypt' instead.
+
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor.v'
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_datapath.v'
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v'
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v'
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v'
+
+Lint-[NS] Null statement
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 79
+  Null statement is used in following verilog source.
+  Source info:     @(negedge clk);
+
+
+Lint-[NS] Null statement
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 89
+  Null statement is used in following verilog source.
+  Source info:       @(negedge clk);
+
+
+Lint-[NS] Null statement
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 91
+  Null statement is used in following verilog source.
+  Source info:       @(negedge clk);
+
+
+Lint-[NS] Null statement
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 94
+  Null statement is used in following verilog source.
+  Source info:     @(posedge done);
+
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v'
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 412
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  410
+  0    ?    r    0    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  412
+  0    ?    p    0    : 0: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 413
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  411
+  ?    0    r    1    : ?: 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  413
+  ?    0    p    1    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 497
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  495
+  0    ?    r    0    ?    1    0    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  497
+  0    ?    p    0    ?    1    0    : 0: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 498
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  496
+  ?    0    r    1    ?    1    0    : ?: 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  498
+  ?    0    p    1    ?    1    0    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 721
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  716
+  ?    ?    1    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  721
+  0    x    ?    : 0: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 799
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  794
+  ?    ?    1    ?    1    0    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  799
+  0    x    ?    ?    1    0    : 0: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 876
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  870
+  ?    ?    1    : ?: 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  876
+  1    x    ?    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 954
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  948
+  ?    ?    1    ?    1    0    : ?: 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  954
+  1    x    ?    ?    1    0    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1320
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1317
+  0    1    0    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1320
+  0    1    ?    : ?: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1320
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1319
+  ?    ?    1    : ?: 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1320
+  0    1    ?    : ?: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1480
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1478
+  0    0    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1480
+  0    ?    0    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1481
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1479
+  1    1    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1481
+  1    ?    0    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1482
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1478
+  0    0    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1482
+  ?    0    1    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1483
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1479
+  1    1    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1483
+  ?    1    1    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1546
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1542
+  0    ?    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1546
+  0    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1546
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1544
+  ?    0    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1546
+  0    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1547
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1543
+  1    ?    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1547
+  1    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1547
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1545
+  ?    1    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1547
+  1    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1620
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1612
+  0    ?    ?    ?    0    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1620
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1614
+  ?    0    ?    ?    1    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1620
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1616
+  ?    ?    0    ?    0    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1620
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1618
+  ?    ?    ?    0    1    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1621
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1613
+  1    ?    ?    ?    0    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1621
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1615
+  ?    1    ?    ?    1    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1621
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1617
+  ?    ?    1    ?    0    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1621
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1619
+  ?    ?    ?    1    1    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1622
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1612
+  0    ?    ?    ?    0    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1622
+  0    0    ?    ?    ?    0    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1622
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1614
+  ?    0    ?    ?    1    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1622
+  0    0    ?    ?    ?    0    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1622
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1622
+  0    0    ?    ?    ?    0    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1623
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1613
+  1    ?    ?    ?    0    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1623
+  1    1    ?    ?    ?    0    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1623
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1615
+  ?    1    ?    ?    1    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1623
+  1    1    ?    ?    ?    0    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1623
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1623
+  1    1    ?    ?    ?    0    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1624
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1616
+  ?    ?    0    ?    0    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1624
+  ?    ?    0    0    ?    1    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1624
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1618
+  ?    ?    ?    0    1    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1624
+  ?    ?    0    0    ?    1    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1624
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1624
+  ?    ?    0    0    ?    1    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1625
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1617
+  ?    ?    1    ?    0    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1625
+  ?    ?    1    1    ?    1    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1625
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1619
+  ?    ?    ?    1    1    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1625
+  ?    ?    1    1    ?    1    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1625
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1625
+  ?    ?    1    1    ?    1    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1626
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1612
+  0    ?    ?    ?    0    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1626
+  0    ?    0    ?    0    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1626
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1616
+  ?    ?    0    ?    0    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1626
+  0    ?    0    ?    0    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1626
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1626
+  0    ?    0    ?    0    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1626
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1622
+  0    0    ?    ?    ?    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1626
+  0    ?    0    ?    0    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1626
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1624
+  ?    ?    0    0    ?    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1626
+  0    ?    0    ?    0    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1613
+  1    ?    ?    ?    0    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1627
+  1    ?    1    ?    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1617
+  ?    ?    1    ?    0    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1627
+  1    ?    1    ?    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1627
+  1    ?    1    ?    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1623
+  1    1    ?    ?    ?    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1627
+  1    ?    1    ?    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1625
+  ?    ?    1    1    ?    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1627
+  1    ?    1    ?    0    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1628
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1614
+  ?    0    ?    ?    1    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1628
+  ?    0    ?    0    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1628
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1618
+  ?    ?    ?    0    1    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1628
+  ?    0    ?    0    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1628
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1620
+  0    0    0    0    ?    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1628
+  ?    0    ?    0    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1628
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1622
+  0    0    ?    ?    ?    0    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1628
+  ?    0    ?    0    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1628
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1624
+  ?    ?    0    0    ?    1    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1628
+  ?    0    ?    0    1    ?    : 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1629
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1615
+  ?    1    ?    ?    1    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1629
+  ?    1    ?    1    1    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1629
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1619
+  ?    ?    ?    1    1    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1629
+  ?    1    ?    1    1    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1629
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1621
+  1    1    1    1    ?    ?    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1629
+  ?    1    ?    1    1    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1629
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1623
+  1    1    ?    ?    ?    0    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1629
+  ?    1    ?    1    1    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1629
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1625
+  ?    ?    1    1    ?    1    : 1;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1629
+  ?    1    ?    1    1    ?    : 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v, 1829
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1822
+  0    1    0    ?    : 0;
+  "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/primitives.v",
+  1829
+  ?    ?    0    1    : 0;
+
+Parsing design file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v'
+
+Warning-[IPDW] Identifier previously declared
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v, 97239
+  Second declaration for identifier 'CLK_delayed' ignored
+  Identifier 'CLK_delayed' previously declared as wire.
+  [/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v,
+  97217]
+
+
+Warning-[IPDW] Identifier previously declared
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v, 97240
+  Second declaration for identifier 'SCE_delayed' ignored
+  Identifier 'SCE_delayed' previously declared as wire.
+  [/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v,
+  97218]
+
+
+Warning-[IPDW] Identifier previously declared
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v, 97241
+  Second declaration for identifier 'GATE_delayed' ignored
+  Identifier 'GATE_delayed' previously declared as wire.
+  [/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v,
+  97219]
+
+
+Warning-[IPDW] Identifier previously declared
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v, 97242
+  Second declaration for identifier 'SCE_gate_delayed' ignored
+  Identifier 'SCE_gate_delayed' previously declared as wire.
+  [/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v,
+  97220]
+
+
+Warning-[IPDW] Identifier previously declared
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v, 97243
+  Second declaration for identifier 'notifier' ignored
+  Identifier 'notifier' previously declared as reg.
+  [/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/tech-sky130-cache/sky130_fd_sc_hd.v,
+  97221]
+
+Parsing design file '/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v'
+Parsing design file '/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v'
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2818
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2819
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2820
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2821
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2822
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 2823
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NS] Null statement
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 3158
+  Null statement is used in following verilog source.
+  Source info:     #1;
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5912
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5913
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5914
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5915
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5916
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 5917
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NS] Null statement
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 6210
+  Null statement is used in following verilog source.
+  Source info:     #1;
+
+
+Lint-[NS] Null statement
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 8009
+  Null statement is used in following verilog source.
+  Source info:     #1;
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9704
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9705
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9706
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9707
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9708
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NCEID] Non-Constant Expression In Delay
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9709
+  Following delay expression must be a constant.
+  Source info: slow_delay
+
+
+Lint-[NS] Null statement
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 9846
+  Null statement is used in following verilog source.
+  Source info:     #1;
+
+
+Lint-[NS] Null statement
+/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v, 12065
+  Null statement is used in following verilog source.
+  Source info:     #1;
+
+Top Level Modules:
+       gcd_coprocessor_testbench
+TimeScale is 1 ns / 10 ps
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_datapath.v, 63
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: A_reg <= 0;
+  Expression: A_reg
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_datapath.v, 64
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: B_reg <= 0;
+  Expression: B_reg
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 38
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: A_en = 0;
+  Expression: A_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 39
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: B_en = 0;
+  Expression: B_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 40
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: result_val = 0;
+  Expression: result_val
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 41
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: operands_rdy = 0;
+  Expression: operands_rdy
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 42
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: B_mux_sel = 0;
+  Expression: B_mux_sel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 43
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: A_mux_sel = 0;
+  Expression: A_mux_sel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 49
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: operands_rdy = 1;
+  Expression: operands_rdy
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 52
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: A_en = 1;
+  Expression: A_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 53
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: B_en = 1;
+  Expression: B_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 64
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: B_mux_sel = 1;
+  Expression: B_mux_sel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 65
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: A_mux_sel = 1;
+  Expression: A_mux_sel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 66
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: A_en = 1;
+  Expression: A_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 67
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: B_en = 1;
+  Expression: B_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 71
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: A_mux_sel = 2;
+  Expression: A_mux_sel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 72
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: A_en = 1;
+  Expression: A_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_control.v, 86
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: result_val = 1;
+  Expression: result_val
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 48
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wptr <= 0;
+  Expression: wptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 49
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: rptr <= 0;
+  Expression: rptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 50
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 0;
+  Expression: full
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 54
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wptr <= (wptr + 1);
+  Expression: wptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 57
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: rptr <= (rptr + 1);
+  Expression: rptr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 59
+fifo, "((wptr + 1) == rptr)"
+  A left 32-bit expression is compared to a right 2-bit expression.
+  Comparing '(wptr + 1)' of type logic [31:0]
+  with 'rptr' of type reg [(LOGDEPTH - 1):0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 60
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 1;
+  Expression: full
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 63
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 0;
+  Expression: full
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 69
+fifo
+  Disable iff is used in assertion 'FIFO_write_when_full: assert
+  property(@(posedge clk) disable iff (reset) (full |=> ($past(wptr) ==
+  wptr))) else begin
+  $$sva_internal_error(3, 3);
+  $error("FIFO: writing when full");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 76
+fifo
+  Disable iff is used in assertion 'FIFO_read_when_empty: assert
+  property(@(posedge clk) disable iff (reset) (empty |=> ($past(rptr) ==
+  rptr))) else begin
+  $$sva_internal_error(3, 3);
+  $error("FIFO: reading when empty");
+  end'
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 23
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: clk = 0;
+  Expression: clk
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 27
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: done = 0;
+  Expression: done
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 99
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: test_idx = 0;
+  Expression: test_idx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 119
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: cycle_count = 0;
+  Expression: cycle_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 70
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 71
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: operands_val = 0;
+  Expression: operands_val
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 74
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: result_rdy = 1;
+  Expression: result_rdy
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 77
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 1;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 78
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 84
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 86
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: operands_val = 1;
+  Expression: operands_val
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 90
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: operands_val = 0;
+  Expression: operands_val
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 108
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: test_idx = (test_idx + 1);
+  Expression: test_idx
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 109
+gcd_coprocessor_testbench, "(test_idx >= num_tests)"
+  A left 4-bit expression is compared to a right 32-bit expression.
+  Comparing 'test_idx' of type reg [3:0]
+  with 'num_tests' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v, 110
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: done = 1;
+  Expression: done
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 48
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wptr <= 0;
+  Expression: wptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 49
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: rptr <= 0;
+  Expression: rptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 50
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 0;
+  Expression: full
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 54
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wptr <= (wptr + 1);
+  Expression: wptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 57
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: rptr <= (rptr + 1);
+  Expression: rptr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 59
+fifo, "((wptr + 1) == rptr)"
+  A left 32-bit expression is compared to a right 2-bit expression.
+  Comparing '(wptr + 1)' of type logic [31:0]
+  with 'rptr' of type reg [(LOGDEPTH - 1):0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 60
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 1;
+  Expression: full
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 63
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: full <= 0;
+  Expression: full
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 69
+fifo
+  Disable iff is used in assertion 'FIFO_write_when_full: assert
+  property(@(posedge clk) disable iff (reset) (full |=> ($past(wptr) ==
+  wptr))) else begin
+  $$sva_internal_error(3, 3);
+  $error("FIFO: writing when full");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v, 76
+fifo
+  Disable iff is used in assertion 'FIFO_read_when_empty: assert
+  property(@(posedge clk) disable iff (reset) (empty |=> ($past(rptr) ==
+  rptr))) else begin
+  $$sva_internal_error(3, 3);
+  $error("FIFO: reading when empty");
+  end'
+
+Starting vcs inline pass...
+1 module and 0 UDP read.
+Generating code for _VCSgd_reYIK
+Generating code for _VCSgd_udZrb
+recompiling module gcd_coprocessor_testbench
+make[1]: Entering directory '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/csrc'
+make[1]: Leaving directory '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/csrc'
+make[1]: Entering directory '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/csrc'
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv ]; then chmod -x /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv; fi
+g++  -o /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv    -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib -L/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _538711_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive -lvcsucli -Wl,-no-whole-archive          /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv up to date
+make[1]: Leaving directory '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/csrc'
+/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/bin/vcs: line 30656: 538859 Segmentation fault      (core dumped) ${TOOL_HOME}/bin/cfs_ident_exec -f ${XML_INPUT_EXE} -o "${fsearchDir}/idents_tapi.xml" -o_SrcFile "${dirSrcFiles}/src_files_c" ${all_dyn_libs} > tapi_xml_writer.log
+CPU time: 1.135 seconds to compile + .652 seconds to elab + .571 seconds to link
+[sim] Running sub-step 'run_simulation'
+[<global>] Key sim.vcs.vcs_bin is not associated with a type
+[<global>] Key sim.vcs.fgp is not associated with a type
+Key sim.vcs.vcs_home is not associated with a type
+Key sim.vcs.verdi_home is not associated with a type
+Executing subprocess: /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/build/sim-rundir/simv
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2019
+Contains Synopsys proprietary information.
+Compiler version P-2019.06_Full64; Runtime version P-2019.06_Full64;  Oct  9 20:02 2023
+VCD+ Writer P-2019.06_Full64 Copyright (c) 1991-2019 by Synopsys Inc.
+ [ passed ] Test (  0 ), [     7 ==     7 ] (decimal)
+ [ passed ] Test (  1 ), [     4 ==     4 ] (decimal)
+ [ passed ] Test (  2 ), [     5 ==     5 ] (decimal)
+ [ passed ] Test (  3 ), [     3 ==     3 ] (decimal)
+ [ passed ] Test (  4 ), [     9 ==     9 ] (decimal)
+ [ passed ] Test (  5 ), [     1 ==     1 ] (decimal)
+ [ passed ] Test (  6 ), [    24 ==    24 ] (decimal)
+$finish called from file "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/gcd_coprocessor_testbench.v", line 96.
+$finish at simulation time               326000
+"/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab4/src/fifo.v", 76: gcd_coprocessor_testbench.dut.op_q.FIFO_read_when_empty: started at 3220000ps not finished
+           V C S   S i m u l a t i o n   R e p o r t
+Time: 3260000 ps
+CPU Time:      0.710 seconds;       Data structure size:   0.0Mb
+Mon Oct  9 20:02:01 2023
+Action sim config output written to output.json
+
