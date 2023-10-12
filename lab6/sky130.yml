@@ -24,7 +24,7 @@ vlsi.inputs.mmmc_corners: [
 # SRAM Compiler compiler options
 vlsi.core.sram_generator_tool: "hammer.technology.sky130.sram_compiler"
 # Specify this since we are not using macrocompiler
-vlsi.inputs.sram_parameters: "/home/ff/eecs151/staff/hammer-dev/hammer/technology/sky130/sram-cache.json" 
+vlsi.inputs.sram_parameters: "/home/ff/eecs151/fa23/hammer/hammer/technology/sky130/sram-cache.json"
 vlsi.inputs.sram_parameters_meta: ["transclude", "json2list"]
 
 # Tool options. Replace with your tool plugin of choice.
