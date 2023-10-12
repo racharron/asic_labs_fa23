@@ -26,6 +26,7 @@ module dot_product #(
   input c_ready
 );
 
+// Feel free to change these.
 localparam STATE_READ = 2'd0;
 localparam STATE_CALC_LOAD_A = 2'd1;
 localparam STATE_CALC_LOAD_B = 2'd2;
