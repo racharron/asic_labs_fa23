@@ -78,7 +78,7 @@ sim-gl-syn: $(HAMMER_D_MK) $(INPUT_SIM_GL_SYN_DB)
 
 .PHONY: sim-gl-par
 sim-gl-par: $(HAMMER_D_MK) $(INPUT_SIM_GL_PAR_DB)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_GL_PAR_CONF) -p $(INPUT_SIM_GL_PAR_DB) --obj_dir $(OBJ_DIR) sim
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_GL_PAR_CONF) -p $(SRAM_CONF) -p $(INPUT_SIM_GL_PAR_DB) --obj_dir $(OBJ_DIR) sim
 
 #########################################################################################
 # Standalone Power Estimation
