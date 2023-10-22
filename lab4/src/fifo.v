@@ -29,6 +29,8 @@ reg full;
 
 // Define any additional regs or wires you need (if any) here
 wire empty;
+wire [LOGDEPTH-1:0] next;
+wire behind = next == rptr;
 
 // use "fire" to indicate when a valid transaction has been made
 wire enq_fire;
@@ -37,6 +39,7 @@ wire deq_fire;
 assign enq_fire = enq_val & enq_rdy;
 assign deq_fire = deq_val & deq_rdy;
 
+assign next = wptr + 1;
 assign empty = (rptr == wptr) && !full;
 
 assign enq_rdy = !full;
@@ -56,7 +59,7 @@ always @(posedge clk) begin
         if (deq_fire) begin
             rptr <= rptr + 1;
         end
-        if (enq_fire && !deq_fire && (wptr + 1) == rptr) begin
+        if (enq_fire && !deq_fire && behind) begin
             full <= 1;
         end
         if (!enq_fire && deq_fire) begin
