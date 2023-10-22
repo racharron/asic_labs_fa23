@@ -1,4 +1,10 @@
 {
+    "gcd_coprocessor_testbench": [
+        "gcd_coprocessor_testbench",
+        "udZrb",
+        "module",
+        3
+    ],
     "std": [
         "std",
         "reYIK",
@@ -10,12 +16,6 @@
         "gdGNr",
         "module",
         2
-    ],
-    "gcd_coprocessor_testbench": [
-        "gcd_coprocessor_testbench",
-        "udZrb",
-        "module",
-        3
     ],
     "...MASTER...": [
         "SIM",
