@@ -3,7 +3,7 @@
 //-------------------------------------------------------------------------
 //
 
-module gcd_coprocessor #( parameter W = 32, parameter P = 4 ) (
+module gcd_coprocessor #( parameter W = 32 ) (
   input clk,
   input reset,
 
@@ -19,50 +19,74 @@ module gcd_coprocessor #( parameter W = 32, parameter P = 4 ) (
 );
 
 // You should be able to build this with mostly structural verilog!
-wire execute [P-1:0];
-wire accepting [P-1:0];
-wire done [P-1:0];
-wire accepted [P-1:0];
 
-wire [W-1:0] results [P-1:0];
-wire [W-1:0] dispatch_A;
-wire [W-1:0] dispatch_B;
+// Define wires
+wire operands_availible, operands_requested;
+wire [W-1:0] op_A;
+wire [W-1:0] op_B;
+wire result_availible, result_requested;
+wire [W-1:0] res;
+wire B_mux_sel, A_en, B_en;
+wire [1:0] A_mux_sel;
+wire B_zero;
+wire A_lt_B;
 
-gcd_unit#(W) units[P-1:0](
-  .clk(clk),
-  .reset(reset),
+// Instantiate gcd_datapath
+gcd_datapath#(W) datapath( 
 
-  .operands_val(execute),
-  .operands_bits_A(dispatch_A),
-  .operands_bits_B(dispatch_B),
-  .operands_rdy(accepting),
+	//data inputs/outputs
+	.operands_bits_A(op_A),
+	.operands_bits_B(op_B),
+	.result_bits_data(res),
 
-  .result_val(done),
-  .result_bits_data(results),
-  .result_rdy(accepted)
+	//global inputs
+	.clk(clk), .reset(reset),
+
+	//control signal inputs and outputs
+	.B_mux_sel(B_mux_sel),
+  .A_en(A_en),
+  .B_en(B_en),
+	.A_mux_sel(A_mux_sel),
+	.B_zero(B_zero),
+	.A_lt_B(A_lt_B)
 );
-
-gcd_arbiter#(W, P) arbiter(
+// Instantiate gcd_control
+gcd_control control
+( 
+	.clk(clk), .reset(reset),
+  .operands_val(operands_availible),
+  .result_rdy(result_requested),
+	.B_zero(B_zero), .A_lt_B(A_lt_B),
+	.result_val(result_availible),
+  .operands_rdy(operands_requested),
+	.A_mux_sel(A_mux_sel),
+	.B_mux_sel(B_mux_sel), .A_en(A_en), .B_en(B_en)
+);
+// Instantiate request FIFO
+fifo#(2*W, 2) op_q(
   .clk(clk),
   .reset(reset),
-  
-  .operands_val(operands_val),
-  .operands_bits_A(operands_bits_A),
-  .operands_bits_B(operands_bits_B),
-  .operands_rdy(operands_rdy),
 
-  .request_val(execute),
-  .request_operands_bits_A(dispatch_A),
-  .request_operands_bits_B(dispatch_B),
-  .request_rdy(accepting),
+  .enq_val(operands_val),
+  .enq_data({operands_bits_A, operands_bits_B}),
+  .enq_rdy(operands_rdy),
 
-  .result_val(result_val),
-  .result_bits_data(result_bits),
-  .result_rdy(result_rdy),
+  .deq_val(operands_availible),
+  .deq_data({op_A, op_B}),
+  .deq_rdy(operands_requested)
+);
+// Instantiate response FIFO
+fifo#(W, 2) res_q(
+  .clk(clk),
+  .reset(reset),
 
-  .response_val(done),
-  .response_result_bits_data(results),
-  .response_rdy(accepted)
+  .enq_val(result_availible),
+  .enq_data(res),
+  .enq_rdy(result_requested),
+
+  .deq_val(result_val),
+  .deq_data(result_bits),
+  .deq_rdy(result_rdy)
 );
 
 endmodule

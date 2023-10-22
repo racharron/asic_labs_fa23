@@ -2443,21 +2443,16 @@ static inline U asm_bsf (U in)
 #ifdef __cplusplus
 extern "C" {
 #endif
-void  hs_0_M_15_21__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_15_0__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_15_1__simv_daidir (UB  * pcode, scalar  val, U  I681, scalar  * I1312, U  did);
-void  hs_0_M_15_2__simv_daidir (UB  * pcode);
-void  hs_0_M_15_11__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_16_21__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_16_0__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_16_1__simv_daidir (UB  * pcode, scalar  val, U  I681, scalar  * I1312, U  did);
-void  hs_0_M_16_2__simv_daidir (UB  * pcode);
-void  hs_0_M_16_11__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_17_21__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_17_0__simv_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_17_1__simv_daidir (UB  * pcode, scalar  val, U  I681, scalar  * I1312, U  did);
-void  hs_0_M_17_2__simv_daidir (UB  * pcode);
-void  hs_0_M_17_11__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_8_21__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_8_0__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_8_1__simv_daidir (UB  * pcode, scalar  val, U  I681, scalar  * I1312, U  did);
+void  hs_0_M_8_2__simv_daidir (UB  * pcode);
+void  hs_0_M_8_11__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_9_21__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_9_0__simv_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_9_1__simv_daidir (UB  * pcode, scalar  val, U  I681, scalar  * I1312, U  did);
+void  hs_0_M_9_2__simv_daidir (UB  * pcode);
+void  hs_0_M_9_11__simv_daidir (UB  * pcode, scalar  val);
 void  hsG_0__0 (struct dummyq_struct * I1297, EBLK  * I1292, U  I689);
 #ifdef __cplusplus
 }
