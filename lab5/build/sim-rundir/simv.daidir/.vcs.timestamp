@@ -54,7 +54,7 @@
 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/bin/vcs1
 gcd_coprocessor_testbench
-111
+112
 which_declare=declare -f
 XDG_SESSION_ID=729
 XDG_RUNTIME_DIR=/run/user/90468
@@ -119,6 +119,7 @@ MGLS_LICENSE_FILE=1717@bwrcflex-1.eecs.berkeley.edu:1717@bwrcflex-2.eecs.berkele
 MFLAGS=
 MASTERDIR=/home/ff/eecs151
 MASTER=eecs151
+MAKE_TERMOUT=/dev/pts/4
 MAKE_TERMERR=/dev/pts/4
 MAKELEVEL=1
 MAKEFLAGS=
@@ -170,21 +171,21 @@ ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 13
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
-1697934348 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/tech-sky130-cache/sky130_fd_sc_hd.v
-1697934348 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/tech-sky130-cache/primitives.v
-1697934124 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor_testbench.v
+1697958685 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/tech-sky130-cache/sky130_fd_sc_hd.v
+1697958685 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/tech-sky130-cache/primitives.v
+1697936547 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor_testbench.v
 1696896948 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/EECS151.v
 1697934016 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/fifo.v
-1697502581 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v
+1697938266 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v
 1697502581 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v
 1697503566 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v
 1697934100 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_arbiter.v
-1697516572 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor.v
+1697936432 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor.v
 1559359020 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
 4
 1559360489 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvirsim.so
 1559360051 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so
 1559360008 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so
 1559360050 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
-1697934354 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/sim-rundir/simv.daidir
+1697958691 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/sim-rundir/simv.daidir
 -1 partitionlib
