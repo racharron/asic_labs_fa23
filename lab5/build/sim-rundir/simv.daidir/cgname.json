@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "gcd_unit": [
+        "gcd_unit",
+        "gdGNr",
+        "module",
+        2
+    ],
+    "gcd_coprocessor_testbench": [
+        "gcd_coprocessor_testbench",
+        "udZrb",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

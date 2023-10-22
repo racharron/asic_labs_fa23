@@ -56,7 +56,7 @@ module gcd_coprocessor_testbench;
 
   integer i = 0;
 
-  gcd_coprocessor #(16) dut (
+  gcd_coprocessor #(.W(16), .P(2)) dut (
     .clk(clk),
     .reset(reset),
     .operands_val(operands_val),
@@ -76,6 +76,7 @@ module gcd_coprocessor_testbench;
   // Apply stimulus
   initial begin
     $vcdpluson;
+    $vcdplusmemon;
     // Initial values
     reset = 0;
     operands_val = 0;
@@ -136,7 +137,7 @@ module gcd_coprocessor_testbench;
   // If something goes wrong, kill the simulation...
   always @(posedge clk) begin
     cycle_count = cycle_count + 1;
-    if (cycle_count >= 100000) begin
+    if (cycle_count >= 20000) begin
       $display("TIMEOUT");
       $finish;
     end
