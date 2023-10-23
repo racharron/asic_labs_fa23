@@ -47,7 +47,7 @@ sram22_64x32m4w8 sram (
 );
 
 reg [ADDR_WIDTH:0] a_len, b_len;
-reg processing, b_stored;
+reg processing, b_stored, initializing;
 wire a_collected, b_collected;
 reg [WIDTH-1:0] b_cache;
 reg [WIDTH-1:0] accumulator;
@@ -63,20 +63,20 @@ assign c_data = accumulator;
 always_comb begin
   if (processing) begin
     if (b_stored) begin
-      addr <= {0, a_len[WIDTH-1:0]};
+      addr <= {1'b1, a_len[ADDR_WIDTH-1:0]};
     end else begin
-      addr <= {1, a_len[WIDTH-1:0]};
+      addr <= {1'b0, a_len[ADDR_WIDTH-1:0]};
     end
   end else begin
     if (b_stored) begin
       din <= b_cache;
-      addr <= {1, b_len[WIDTH-1:0]};
+      addr <= {1'b1, b_len[ADDR_WIDTH-1:0]};
     end else if (a_fire) begin 
       din <= a_data;
-      addr <= {0, a_len[WIDTH-1:0]};
+      addr <= {1'b0, a_len[ADDR_WIDTH-1:0]};
     end else if (b_fire) begin
       din <= b_data;
-      addr <= {1, b_len[WIDTH-1:0]};
+      addr <= {1'b1, b_len[ADDR_WIDTH-1:0]};
     end
   end
 end
@@ -85,39 +85,48 @@ always_ff @( posedge clk ) begin
   if (rst) begin
     a_len <= 0;
     b_len <= 0;
-    processing = 0;
-    b_stored = 0;
-    c_valid = 0;
+    processing <= 0;
+    initializing <= 0;
+    b_stored <= 0;
+    c_valid <= 0;
   end else begin
     if (processing) begin
       if (c_valid) begin
         if (c_fire) begin
           a_len <= 0;
           b_len <= 0;
-          processing = 0;
-          b_stored = 0;
+          processing <= 0;
+          initializing <= 0;
+          b_stored <= 0;
           c_valid <= 0;
         end
       end else begin
-        if (b_stored) begin
-          accumulator <= accumulator + dout * b_cache;
-          a_len = a_len + 1;
-          b_stored <= 0;
-          if (a_len == b_len) begin
-            c_valid <= 1;
+        if (initializing) begin 
+          if (!b_stored) begin
+            initializing <= 0;
           end
         end else begin
-          b_stored <= 1;
+          if (b_stored) begin
+            accumulator <= accumulator + dout * b_cache;
+            if (a_len == b_len) begin
+              c_valid <= 1;
+            end
+          end
+        end
+        b_stored <= !b_stored;
+        if (!b_stored) begin
+          a_len <= a_len + 1;
           b_cache <= dout;
         end
       end
     end else begin 
       if (a_collected & b_collected) begin
         processing <= 1;
+        initializing <= 1;
         accumulator <= 0;
-        b_stored <= 0;
-        a_len = 0;
-        b_len = len;
+        b_stored <= 1;
+        a_len <= 0;
+        b_len <= len;
       end
       if (b_stored) begin
         b_stored <= 0;
