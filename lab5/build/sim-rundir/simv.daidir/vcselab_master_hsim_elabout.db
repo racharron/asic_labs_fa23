@@ -159,8 +159,8 @@ fHsimAmsTunnelingDiag              	0
 fHsimScUpwardXmrNoSplit            	0
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
-fHsimVcsInterfaceAlias             	0
-fHsimSVTypesIntf                   	0
+fHsimVcsInterfaceAlias             	1
+fHsimSVTypesIntf                   	1
 fUnifiedAssertCtrlDiag             	0
 fHsimEnable2StateScal              	0
 fHsimDisable2StateScalIbn          	0

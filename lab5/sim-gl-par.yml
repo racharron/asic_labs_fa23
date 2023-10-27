@@ -1,7 +1,14 @@
 # Post-Synthesis Gate-Level Simulation Variables
 sim.inputs:
   input_files:
-    - "src/gcd_coprocessor_testbench.v"
+  - "src/gcd_coprocessor.v"
+  - "src/gcd_arbiter.v"
+  - "src/gcd_unit.v"
+  - "src/gcd_datapath.v"
+  - "src/gcd_control.v"
+  - "src/fifo.v"
+  - "src/EECS151.v"
+  - "src/gcd_coprocessor_testbench.v"
   input_files_meta: append
   level: "par"
   timing_annotated: true
@@ -15,6 +22,7 @@ sim.inputs:
     - "+v2k"
     - "-debug"
     - "+neg_tchk"
+    - "-sverilog"
   top_module: "gcd_coprocessor"
   tb_name: "gcd_coprocessor_testbench"
   defines: 

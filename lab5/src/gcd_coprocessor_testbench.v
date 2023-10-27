@@ -56,7 +56,7 @@ module gcd_coprocessor_testbench;
 
   integer i = 0;
 
-  gcd_coprocessor #(.W(16), .P(2)) dut (
+  gcd_coprocessor #(.W(16), .P(5)) dut (
     .clk(clk),
     .reset(reset),
     .operands_val(operands_val),

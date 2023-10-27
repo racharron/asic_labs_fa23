@@ -1,4 +1,4 @@
-module gcd_arbiter #(parameter W = 32, parameter N = 4) (
+module gcd_arbiter #(parameter W = 32, parameter N = ) (
   input clk,
   input reset,
 
