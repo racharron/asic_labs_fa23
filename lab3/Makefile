@@ -33,6 +33,7 @@ TECH_CONF           ?= $(vlsi_dir)/sky130.yml
 
 DESIGN_CONF     	?= $(vlsi_dir)/design.yml
 SIM_RTL_CONF    	?= $(vlsi_dir)/sim-rtl.yml
+DIV_CONF    	?= $(vlsi_dir)/div.yml
 SIM_GL_SYN_CONF 	?= $(vlsi_dir)/sim-gl-syn.yml
 SIM_GL_PAR_CONF 	?= $(vlsi_dir)/sim-gl-par.yml
 
@@ -66,7 +67,13 @@ HAMMER_D_MK = $(OBJ_DIR)/hammer.d
 .PHONY: buildfile
 buildfile: $(HAMMER_D_MK)
 
-$(HAMMER_D_MK): $(SRAM_CONF)
+#########################################################################################
+# RTL Sim
+#########################################################################################
+
+.PHONY: sim-rtl
+sim-rtl: $(HAMMER_D_MK)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_RTL_CONF) --obj_dir $(OBJ_DIR) sim
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SRAM_CONF) -p $(DESIGN_CONF) --obj_dir $(OBJ_DIR) build
 
 MAKE = make
@@ -78,6 +85,14 @@ MAKE = make
 .PHONY: sim-rtl
 sim-rtl: $(HAMMER_D_MK)
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_RTL_CONF) --obj_dir $(OBJ_DIR) sim
+
+#########################################################################################
+# Divider RTL Sim
+#########################################################################################
+
+.PHONY: div
+div: $(HAMMER_D_MK)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DIV_CONF) --obj_dir $(OBJ_DIR) sim
 
 #########################################################################################
 # Post-Synthesis Gate Level Sim

@@ -10,7 +10,7 @@ module divider #(
 
   input [WIDTH-1:0] dividend,
   input [WIDTH-1:0] divisor,
-  output [WIDTH-1:0] quotient,
+  output reg [WIDTH-1:0] quotient,
   output [WIDTH-1:0] remainder
 );
 
@@ -18,8 +18,35 @@ module divider #(
   // Check the algorithm described in the slides (URL in the spec)
   // Pay attention to the block diagram(s)
 
-  assign quotient  = 0;
-  assign remainder = 0;
-  assign done = 0;
+  reg [2*WIDTH-1:0] long_remainder;
+  wire [2*WIDTH-1:0] shifted_remainder;
+  wire [WIDTH-1:0] left_half;
+  wire [WIDTH-1:0] subtracted;
+  wire sub_negative;
+  reg[$clog2(WIDTH):0] iteration;
+
+  assign remainder = left_half;
+  assign done = iteration == WIDTH;
+
+  assign shifted_remainder = {long_remainder[2*WIDTH-2:0], 1'b0};
+  assign left_half = shifted_remainder[2*WIDTH-1:WIDTH];
+  assign subtracted = left_half - divisor;
+  assign sub_negative = left_half < divisor;
+
+  always @(posedge clk ) begin
+    if (start) begin
+      long_remainder <= {{WIDTH{1'b0}}, dividend};
+      iteration <= 0;
+      quotient <= 0;
+    end else if (!done) begin
+      iteration <= iteration + 1;
+      quotient <= {quotient[WIDTH-2:0], !sub_negative};
+      if (sub_negative) begin
+        long_remainder <= shifted_remainder;
+      end else begin
+        long_remainder <= {subtracted, long_remainder[WIDTH-1:0]};
+      end
+    end
+  end
 
 endmodule
