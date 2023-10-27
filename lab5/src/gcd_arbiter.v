@@ -26,7 +26,7 @@ module gcd_arbiter #(parameter W = 32, parameter N = 4) (
 //  Used to indicate the length of a unit identifier
 localparam U = $clog2(N);
 
-genvar i;
+genvar i, j;
 
 // Keep track of which GCD unit you will enqueue to next
 // reg available [N-1:0] = 0;
@@ -40,6 +40,10 @@ reg can_dequeue;
 reg [U-1:0] queue_input, queue_output;
 wire blocked [N-1:0];
 wire [N-1:0] request_rdy_bus;
+// wire [N-1:0] blocked_bus;
+wire [N-1:0] active;
+wire [U-1:0] ids [N];
+wire [N-1:0] active_ids [U];
 
 // Keep track of which GCD unit you will dequeue from next
 fifo#(U, U) queue (
@@ -67,8 +71,19 @@ endgenerate
 generate
   for (i = 0; i < N; i = i + 1) begin
     assign request_rdy_bus[i] = request_rdy[i];
+    // assign blocked_bus[i] = blocked[i];
     assign request_val[i] = can_enqueue & !blocked[i] & operands_val;
     assign response_rdy[i] = (queue_output == i) & result_fire;
+    assign active[i] = !blocked[i] & request_rdy[i] & operands_val;
+    assign ids[i] = i;
+    for (j = 0; j < U; j = j + 1) begin
+      assign active_ids[j][i] = active[i] & ids[i][j];
+    end
+  end
+endgenerate
+generate
+  for (i = 0; i < U; i = i + 1) begin
+    assign queue_input[i] = |active_ids[i];
   end
 endgenerate
 
@@ -84,27 +99,51 @@ assign result_fire = can_dequeue & response_val[queue_output] & result_rdy;
 
 assign result_bits_data = response_result_bits_data[queue_output];
 
+assign enqueue = |active;
+
 assign dequeue = result_fire;
+
+// assign enqueue = operands_val & |(!blocked_bus & request_rdy_bus);
 
 // Sequential logic goes here
 // Be sure to implement reset! Look at fifo.v for an example
-
-
+/*
 generate
   for (i = 0; i < N; i = i + 1) begin
     always @(posedge clk) begin
-      if (!blocked[i] & request_rdy[i] & operands_val) begin
+      if (active[i]) begin
         queue_input <= i;
         enqueue <= 1;
       end
     end
   end
 endgenerate
+
+integer n;
+
 always @(posedge clk) begin
-  if (!blocked[N-1] | !operands_val) begin
-    enqueue <= 0;
+  if (reset) begin
+    // queue_input <= 0;
+    // enqueue = 0;
+  end else begin
+    // enqueue <= operands_val & |(!blocked_bus & request_rdy_bus);
+    / *
+    for (n = 0; (n < N) & !flag; n = n + 1) begin
+      if (!blocked[n] & request_rdy[n] & operands_val) begin
+        queue_input <= n;
+        enqueue <= 1;
+      end
+    end
+    * /
+    if (!|active) begin
+      // enqueue <= 0;
+      // queue_input <= 0;
+    end
+    / *if (!blocked[N-1] | !operands_val) begin
+      enqueue <= 0;
+    end* /
   end
 end
-
+*/
 
 endmodule
