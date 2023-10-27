@@ -1,0 +1,18 @@
+The file 'vcdplus.vpd' was opened successfully.
+The file '/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/sim-rundir/vcdplus.vpd' was opened successfully.
+Warning: [AD-SDF] Sdf detected
+  The design has '$sdf_annotate', only partial active driver analysis will be 
+  done. 
+  Some drivers will not be analyzed completely and will be marked as possibly 
+  active.
+ibraries/syn/generic.sdb'
+32 drivers (32 possibly active statements) found for signal: dot_product_tb.dut.b_cache[31:0]
+ibraries/syn/vcs.sdb'
+ibraries/syn/vcs.sdb'
+ibraries/syn/vcs.sdb'
+ibraries/syn/generic.sdb'
+dve> 
+dve> 
+dve> 
+dve> 
+dve> 

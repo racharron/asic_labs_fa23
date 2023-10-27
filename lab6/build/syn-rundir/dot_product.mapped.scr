@@ -1,0 +1,1362 @@
+######################################################################
+
+# Created by Genus(TM) Synthesis Solution 19.15-s090_1 on Mon Oct 23 18:46:51 PDT 2023
+
+# This file contains the RC script for design:dot_product
+
+######################################################################
+
+set_db -quiet design_mode_process 170.0
+set_db -quiet phys_assume_met_fill 0.0
+set_db -quiet map_placed_for_hum false
+set_db -quiet phys_use_invs_extraction true
+set_db -quiet phys_route_time_out 120.0
+set_db -quiet capacitance_per_unit_length_mmmc {}
+set_db -quiet resistance_per_unit_length_mmmc {}
+set_db -quiet lp_insert_clock_gating true
+set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 6 0.0 5.0} {to_generic 3 9 2 7} {first_condense 2 11 3 11} {PBS_Generic_Opt-Post 6 12 6.034962999999999 11.034963} {{PBS_Generic-Postgen HBO Optimizations} 0 12 0.0 11.034963} {PBS_TechMap-Start 0 12 0.0 11.034963} {{PBS_TechMap-Premap HBO Optimizations} 0 12 0.0 11.034963} {second_condense 1 13 1 14} {reify 5 18 9 24} {global_incr_map 1 20 1 25} {{PBS_Techmap-Global Mapping} 8 20 7.4352800000000006 18.470243} {{PBS_TechMap-Datapath Postmap Operations} 0 20 0.9951040000000013 19.465347} {{PBS_TechMap-Postmap HBO Optimizations} 0 20 -0.006700999999999624 19.458646} {{PBS_TechMap-Postmap Clock Gating} 0 20 0.0 19.458646} {{PBS_TechMap-Postmap Cleanup} 0 20 -0.004952000000002954 19.453694} {PBS_Techmap-Post_MBCI 0 20 0.0 19.453694}}
+set_db -quiet hdl_error_on_blackbox true
+set_db -quiet tinfo_tstamp_file .rs_eecs151-aeq.tstamp
+set_db -quiet metric_enable true
+set_db -quiet max_cpus_per_server 4
+set_db -quiet lp_clock_gating_prefix CLKGATE
+set_db -quiet lp_insert_clock_gating_incremental true
+set_db -quiet lp_clock_gating_register_aware true
+set_db -quiet use_area_from_lef true
+set_db -quiet flow_metrics_snapshot_uuid d64db840-ba34-45de-9311-094741d3e1fe
+set_db -quiet read_qrc_tech_file_rc_corner true
+set_db -quiet auto_ungroup none
+set_db -quiet use_tiehilo_for_const duplicate
+if {[vfind design:dot_product -mode ss_100C_1v60.setup_view] eq ""} {
+ create_mode -name ss_100C_1v60.setup_view -design design:dot_product 
+}
+set_db -quiet phys_use_segment_parasitics true
+set_db -quiet probabilistic_extraction true
+set_db -quiet ple_correlation_factors {1.9000 2.0000}
+set_db -quiet maximum_interval_of_vias inf
+set_db -quiet layer_aware_buffer true
+set_db -quiet ple_mode global
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkbufkapwr_1 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkbufkapwr_16 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkbufkapwr_2 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkbufkapwr_4 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkbufkapwr_8 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkinvkapwr_1 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkinvkapwr_16 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkinvkapwr_2 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkinvkapwr_4 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_clkinvkapwr_8 .is_always_on true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_inputiso0n_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_inputiso0p_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_inputiso1n_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_inputiso1p_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_inputisolatch_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrc_1 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrc_16 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrc_2 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrc_4 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrc_8 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_isobufsrckapwr_16 .is_isolation_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 .level_shifter_direction bidir
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 .level_shifter_direction bidir
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 .level_shifter_direction bidir
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 .level_shifter_direction up
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 .level_shifter_direction up
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 .level_shifter_direction up
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .is_level_shifter true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .min_input_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .max_input_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .min_output_voltage 1.2000000476837158
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .max_output_voltage 2.0999999046325684
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .level_shifter_valid_location any
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 .level_shifter_direction up
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__probe_p_8 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__probec_p_8 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfbbn_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfbbn_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfbbp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrbp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrbp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrtn_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrtp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrtp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfrtp_4 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfsbp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfsbp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfstp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfstp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfstp_4 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfxbp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfxbp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfxtp_1 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfxtp_2 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__sdfxtp_4 .avoid true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__gpiov2_pad_wrapped_ss_ss_100C_1v60_3v00/sky130_ef_io__gpiov2_pad_wrapped .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped3_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vccd_lvc_clamped3_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vccd_lvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vdda_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vdda_hvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vddio_hvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vssa_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vssa_hvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped3_pad_ss_100C_1v60_3v00/sky130_ef_io__vssd_lvc_clamped3_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00/sky130_ef_io__vssd_lvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/sky130_ef_io__vssio_hvc_clamped_pad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_gpiov2_ss_ss_100C_1v60_3v00/sky130_fd_io__top_gpiov2 .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_hvc_wpad_ss_100C_1v60_3v00_3v00/sky130_fd_io__top_ground_hvc_wpad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_lvc_wpad_ss_100C_1v60_3v00/sky130_fd_io__top_ground_lvc_wpad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_power_hvc_wpad_ss_100C_1v60_3v00_3v00/sky130_fd_io__top_power_hvc_wpad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_power_lvc_wpad_ss_100C_1v60_3v00_3v00/sky130_fd_io__top_power_lvc_wpad .is_macro_cell true
+set_db -quiet lib_cell:ss_100C_1v60.setup_set/sky130_fd_io__top_xres4v2_ss_ss_100C_1v60_3v00/sky130_fd_io__top_xres4v2 .is_macro_cell true
+set_db -quiet library_domain:ss_100C_1v60.setup_cond .wireload_selection none
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/ss_100C_1v60 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_sc_hd__ss_100C_1v60/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__gpiov2_pad_wrapped_ss_ss_100C_1v60_3v00/ss_ss_1p60v_x_3p00v_100C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__gpiov2_pad_wrapped_ss_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped3_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped3_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vccd_lvc_clamped_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vdda_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vdda_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vddio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssa_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssa_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped3_pad_ss_100C_1v60_3v00/max_io_ind .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped3_pad_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00/max_io_ind .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssd_lvc_clamped_pad_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_ef_io__vssio_hvc_clamped_pad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_gpiov2_ss_ss_100C_1v60_3v00/ss_ss_1p60v_x_3p00v_100C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_gpiov2_ss_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_hvc_wpad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_hvc_wpad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_lvc_wpad_ss_100C_1v60_3v00/max_io_ind .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_ground_lvc_wpad_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_power_hvc_wpad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_power_hvc_wpad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_power_lvc_wpad_ss_100C_1v60_3v00_3v00/ss_1.60_3.00_3.00_100 .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_power_lvc_wpad_ss_100C_1v60_3v00_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_xres4v2_ss_ss_100C_1v60_3v00/ss_ss_1p60v_x_3p00v_100C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sky130_fd_io__top_xres4v2_ss_ss_100C_1v60_3v00/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_1024x32m8w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_1024x32m8w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x32m4w32/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x32m4w32/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_1024x32m8w32/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_1024x32m8w32/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x32m4w32/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x32m4w32/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_2048x32m8w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_2048x32m8w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x32m4w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x32m4w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_4096x32m8w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_4096x32m8w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x4m4w2/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x4m4w2/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_256x32m4w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_256x32m4w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_4096x8m8w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_4096x8m8w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x32m4w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x32m4w8/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x24m4w24/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_64x24m4w24/_nominal_ .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x64m4w8/PVT_1P8V_25C .tree_type balanced_tree
+set_db -quiet operating_condition:ss_100C_1v60.setup_set/sram22_512x64m4w8/_nominal_ .tree_type balanced_tree
+# BEGIN MSV SECTION
+# END MSV SECTION
+define_clock -name clk -mode mode:dot_product/ss_100C_1v60.setup_view -domain domain_1 -period 20000.0 -divide_period 1 -rise 0 -divide_rise 1 -fall 1 -divide_fall 2 -remove -design design:dot_product port:dot_product/clk
+set_db -quiet clock:dot_product/ss_100C_1v60.setup_view/clk .clock_setup_uncertainty {100.0 100.0}
+set_db -quiet clock:dot_product/ss_100C_1v60.setup_view/clk .clock_hold_uncertainty {100.0 100.0}
+define_cost_group -design design:dot_product -name cg_enable_group_clk
+define_cost_group -design design:dot_product -name clk
+external_delay -accumulate -input {0.0 no_value 0.0 no_value} -clock clock:dot_product/ss_100C_1v60.setup_view/clk -name create_clock_delay_domain_1_clk_R_0 port:dot_product/clk
+set_db -quiet external_delay:dot_product/ss_100C_1v60.setup_view/create_clock_delay_domain_1_clk_R_0 .clock_network_latency_included true
+external_delay -accumulate -input {no_value 0.0 no_value 0.0} -clock clock:dot_product/ss_100C_1v60.setup_view/clk -edge_fall -name create_clock_delay_domain_1_clk_F_0 port:dot_product/clk
+set_db -quiet external_delay:dot_product/ss_100C_1v60.setup_view/create_clock_delay_domain_1_clk_F_0 .clock_network_latency_included true
+path_group -paths [specify_paths -mode mode:dot_product/ss_100C_1v60.setup_view -to clock:dot_product/ss_100C_1v60.setup_view/clk]  -name clk -group cost_group:dot_product/clk -user_priority -1047552
+path_disable -paths [specify_paths -lenient -mode mode:dot_product/ss_100C_1v60.setup_view -to clock:dot_product/ss_100C_1v60.setup_view/clk]  -name set_clock_groups_exception_clock_constraints_fr_line_10 -user_priority -885760
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .sdc_filename_linenumber {{/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/syn-rundir/clock_constraints_fragment.sdc 10}}
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .skip_in_write_sdc true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .asynchronous true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .scg_one_group true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .scg_id 1
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .scg_name clock_groups_clk_to_others
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10 .unused true
+path_disable -paths [specify_paths -lenient -mode mode:dot_product/ss_100C_1v60.setup_view -from clock:dot_product/ss_100C_1v60.setup_view/clk]  -name set_clock_groups_exception_clock_constraints_fr_line_10_1 -user_priority -886784
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .sdc_filename_linenumber {{/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/syn-rundir/clock_constraints_fragment.sdc 10}}
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .skip_in_write_sdc true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .asynchronous true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .scg_one_group true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .from_corresponds_to_group_option true
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .scg_id 1
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .scg_name clock_groups_clk_to_others
+set_db -quiet exception:dot_product/ss_100C_1v60.setup_view/set_clock_groups_exception_clock_constraints_fr_line_10_1 .unused true
+path_group -paths [specify_paths -mode mode:dot_product/ss_100C_1v60.setup_view -through {hpin:dot_product/CLKGATE_RC_CG_HIER_INST0/enable hpin:dot_product/CLKGATE_RC_CG_HIER_INST1/enable hpin:dot_product/CLKGATE_RC_CG_HIER_INST2/enable hpin:dot_product/CLKGATE_RC_CG_HIER_INST3/enable hpin:dot_product/CLKGATE_RC_CG_HIER_INST4/enable}]  -name cg_enable_group_clk -group cost_group:dot_product/cg_enable_group_clk
+# BEGIN DFT SECTION
+set_db -quiet dft_scan_style muxed_scan
+set_db -quiet dft_scanbit_waveform_analysis false
+# END DFT SECTION
+set_db -quiet design:dot_product .seq_reason_deleted_internal {}
+set_db -quiet design:dot_product .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 110129} {cell_count 3572} {utilization  0.00} {runtime 3 9 2 7} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 122274} {cell_count 5089} {utilization  0.00} {runtime 2 11 3 11} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 122256} {cell_count 5086} {utilization  0.00} {runtime 1 13 1 14} }{reify {wns 966} {tns 0} {vep 0} {area 91602} {cell_count 1542} {utilization  0.00} {runtime 5 19 9 24} }{global_incr_map {wns 407} {tns 0} {vep 0} {area 91147} {cell_count 1507} {utilization  0.00} {runtime 1 20 1 25} }}
+set_db -quiet design:dot_product .seq_mbci_coverage 0.0
+set_db -quiet design:dot_product .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/src/dot_product.v} {} {}}}
+set_db -quiet design:dot_product .hdl_user_name dot_product
+set_db -quiet design:dot_product .verification_directory fv/dot_product
+set_db -quiet design:dot_product .lp_clock_gating_min_flops 3
+set_db -quiet design:dot_product .lp_clock_gating_max_flops inf
+set_db -quiet port:dot_product/clk .original_name clk
+set_db -quiet port:dot_product/rst .original_name rst
+set_db -quiet {port:dot_product/len[5]} .original_name {len[5]}
+set_db -quiet {port:dot_product/len[4]} .original_name {len[4]}
+set_db -quiet {port:dot_product/len[3]} .original_name {len[3]}
+set_db -quiet {port:dot_product/len[2]} .original_name {len[2]}
+set_db -quiet {port:dot_product/len[1]} .original_name {len[1]}
+set_db -quiet {port:dot_product/len[0]} .original_name {len[0]}
+set_db -quiet {port:dot_product/a_data[31]} .original_name {a_data[31]}
+set_db -quiet {port:dot_product/a_data[30]} .original_name {a_data[30]}
+set_db -quiet {port:dot_product/a_data[29]} .original_name {a_data[29]}
+set_db -quiet {port:dot_product/a_data[28]} .original_name {a_data[28]}
+set_db -quiet {port:dot_product/a_data[27]} .original_name {a_data[27]}
+set_db -quiet {port:dot_product/a_data[26]} .original_name {a_data[26]}
+set_db -quiet {port:dot_product/a_data[25]} .original_name {a_data[25]}
+set_db -quiet {port:dot_product/a_data[24]} .original_name {a_data[24]}
+set_db -quiet {port:dot_product/a_data[23]} .original_name {a_data[23]}
+set_db -quiet {port:dot_product/a_data[22]} .original_name {a_data[22]}
+set_db -quiet {port:dot_product/a_data[21]} .original_name {a_data[21]}
+set_db -quiet {port:dot_product/a_data[20]} .original_name {a_data[20]}
+set_db -quiet {port:dot_product/a_data[19]} .original_name {a_data[19]}
+set_db -quiet {port:dot_product/a_data[18]} .original_name {a_data[18]}
+set_db -quiet {port:dot_product/a_data[17]} .original_name {a_data[17]}
+set_db -quiet {port:dot_product/a_data[16]} .original_name {a_data[16]}
+set_db -quiet {port:dot_product/a_data[15]} .original_name {a_data[15]}
+set_db -quiet {port:dot_product/a_data[14]} .original_name {a_data[14]}
+set_db -quiet {port:dot_product/a_data[13]} .original_name {a_data[13]}
+set_db -quiet {port:dot_product/a_data[12]} .original_name {a_data[12]}
+set_db -quiet {port:dot_product/a_data[11]} .original_name {a_data[11]}
+set_db -quiet {port:dot_product/a_data[10]} .original_name {a_data[10]}
+set_db -quiet {port:dot_product/a_data[9]} .original_name {a_data[9]}
+set_db -quiet {port:dot_product/a_data[8]} .original_name {a_data[8]}
+set_db -quiet {port:dot_product/a_data[7]} .original_name {a_data[7]}
+set_db -quiet {port:dot_product/a_data[6]} .original_name {a_data[6]}
+set_db -quiet {port:dot_product/a_data[5]} .original_name {a_data[5]}
+set_db -quiet {port:dot_product/a_data[4]} .original_name {a_data[4]}
+set_db -quiet {port:dot_product/a_data[3]} .original_name {a_data[3]}
+set_db -quiet {port:dot_product/a_data[2]} .original_name {a_data[2]}
+set_db -quiet {port:dot_product/a_data[1]} .original_name {a_data[1]}
+set_db -quiet {port:dot_product/a_data[0]} .original_name {a_data[0]}
+set_db -quiet port:dot_product/a_valid .original_name a_valid
+set_db -quiet {port:dot_product/b_data[31]} .original_name {b_data[31]}
+set_db -quiet {port:dot_product/b_data[30]} .original_name {b_data[30]}
+set_db -quiet {port:dot_product/b_data[29]} .original_name {b_data[29]}
+set_db -quiet {port:dot_product/b_data[28]} .original_name {b_data[28]}
+set_db -quiet {port:dot_product/b_data[27]} .original_name {b_data[27]}
+set_db -quiet {port:dot_product/b_data[26]} .original_name {b_data[26]}
+set_db -quiet {port:dot_product/b_data[25]} .original_name {b_data[25]}
+set_db -quiet {port:dot_product/b_data[24]} .original_name {b_data[24]}
+set_db -quiet {port:dot_product/b_data[23]} .original_name {b_data[23]}
+set_db -quiet {port:dot_product/b_data[22]} .original_name {b_data[22]}
+set_db -quiet {port:dot_product/b_data[21]} .original_name {b_data[21]}
+set_db -quiet {port:dot_product/b_data[20]} .original_name {b_data[20]}
+set_db -quiet {port:dot_product/b_data[19]} .original_name {b_data[19]}
+set_db -quiet {port:dot_product/b_data[18]} .original_name {b_data[18]}
+set_db -quiet {port:dot_product/b_data[17]} .original_name {b_data[17]}
+set_db -quiet {port:dot_product/b_data[16]} .original_name {b_data[16]}
+set_db -quiet {port:dot_product/b_data[15]} .original_name {b_data[15]}
+set_db -quiet {port:dot_product/b_data[14]} .original_name {b_data[14]}
+set_db -quiet {port:dot_product/b_data[13]} .original_name {b_data[13]}
+set_db -quiet {port:dot_product/b_data[12]} .original_name {b_data[12]}
+set_db -quiet {port:dot_product/b_data[11]} .original_name {b_data[11]}
+set_db -quiet {port:dot_product/b_data[10]} .original_name {b_data[10]}
+set_db -quiet {port:dot_product/b_data[9]} .original_name {b_data[9]}
+set_db -quiet {port:dot_product/b_data[8]} .original_name {b_data[8]}
+set_db -quiet {port:dot_product/b_data[7]} .original_name {b_data[7]}
+set_db -quiet {port:dot_product/b_data[6]} .original_name {b_data[6]}
+set_db -quiet {port:dot_product/b_data[5]} .original_name {b_data[5]}
+set_db -quiet {port:dot_product/b_data[4]} .original_name {b_data[4]}
+set_db -quiet {port:dot_product/b_data[3]} .original_name {b_data[3]}
+set_db -quiet {port:dot_product/b_data[2]} .original_name {b_data[2]}
+set_db -quiet {port:dot_product/b_data[1]} .original_name {b_data[1]}
+set_db -quiet {port:dot_product/b_data[0]} .original_name {b_data[0]}
+set_db -quiet port:dot_product/b_valid .original_name b_valid
+set_db -quiet port:dot_product/c_ready .original_name c_ready
+set_db -quiet port:dot_product/a_ready .external_pin_cap_min 1000.0
+set_db -quiet port:dot_product/a_ready .external_capacitance_max {1000.0 1000.0}
+set_db -quiet port:dot_product/a_ready .external_capacitance_min 1000.0
+set_db -quiet port:dot_product/a_ready .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/a_ready .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/a_ready .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/a_ready .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/a_ready .original_name a_ready
+set_db -quiet port:dot_product/a_ready .external_pin_cap {1000.0 1000.0}
+set_db -quiet port:dot_product/b_ready .external_pin_cap_min 1000.0
+set_db -quiet port:dot_product/b_ready .external_capacitance_max {1000.0 1000.0}
+set_db -quiet port:dot_product/b_ready .external_capacitance_min 1000.0
+set_db -quiet port:dot_product/b_ready .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/b_ready .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/b_ready .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/b_ready .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/b_ready .original_name b_ready
+set_db -quiet port:dot_product/b_ready .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[31]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[31]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[31]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[31]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[31]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[31]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[31]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[31]} .original_name {c_data[31]}
+set_db -quiet {port:dot_product/c_data[31]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[30]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[30]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[30]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[30]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[30]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[30]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[30]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[30]} .original_name {c_data[30]}
+set_db -quiet {port:dot_product/c_data[30]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[29]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[29]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[29]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[29]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[29]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[29]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[29]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[29]} .original_name {c_data[29]}
+set_db -quiet {port:dot_product/c_data[29]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[28]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[28]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[28]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[28]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[28]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[28]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[28]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[28]} .original_name {c_data[28]}
+set_db -quiet {port:dot_product/c_data[28]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[27]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[27]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[27]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[27]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[27]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[27]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[27]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[27]} .original_name {c_data[27]}
+set_db -quiet {port:dot_product/c_data[27]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[26]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[26]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[26]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[26]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[26]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[26]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[26]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[26]} .original_name {c_data[26]}
+set_db -quiet {port:dot_product/c_data[26]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[25]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[25]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[25]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[25]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[25]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[25]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[25]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[25]} .original_name {c_data[25]}
+set_db -quiet {port:dot_product/c_data[25]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[24]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[24]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[24]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[24]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[24]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[24]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[24]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[24]} .original_name {c_data[24]}
+set_db -quiet {port:dot_product/c_data[24]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[23]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[23]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[23]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[23]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[23]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[23]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[23]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[23]} .original_name {c_data[23]}
+set_db -quiet {port:dot_product/c_data[23]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[22]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[22]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[22]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[22]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[22]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[22]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[22]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[22]} .original_name {c_data[22]}
+set_db -quiet {port:dot_product/c_data[22]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[21]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[21]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[21]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[21]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[21]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[21]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[21]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[21]} .original_name {c_data[21]}
+set_db -quiet {port:dot_product/c_data[21]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[20]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[20]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[20]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[20]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[20]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[20]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[20]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[20]} .original_name {c_data[20]}
+set_db -quiet {port:dot_product/c_data[20]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[19]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[19]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[19]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[19]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[19]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[19]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[19]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[19]} .original_name {c_data[19]}
+set_db -quiet {port:dot_product/c_data[19]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[18]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[18]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[18]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[18]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[18]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[18]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[18]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[18]} .original_name {c_data[18]}
+set_db -quiet {port:dot_product/c_data[18]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[17]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[17]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[17]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[17]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[17]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[17]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[17]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[17]} .original_name {c_data[17]}
+set_db -quiet {port:dot_product/c_data[17]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[16]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[16]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[16]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[16]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[16]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[16]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[16]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[16]} .original_name {c_data[16]}
+set_db -quiet {port:dot_product/c_data[16]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[15]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[15]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[15]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[15]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[15]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[15]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[15]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[15]} .original_name {c_data[15]}
+set_db -quiet {port:dot_product/c_data[15]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[14]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[14]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[14]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[14]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[14]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[14]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[14]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[14]} .original_name {c_data[14]}
+set_db -quiet {port:dot_product/c_data[14]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[13]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[13]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[13]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[13]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[13]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[13]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[13]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[13]} .original_name {c_data[13]}
+set_db -quiet {port:dot_product/c_data[13]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[12]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[12]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[12]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[12]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[12]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[12]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[12]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[12]} .original_name {c_data[12]}
+set_db -quiet {port:dot_product/c_data[12]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[11]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[11]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[11]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[11]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[11]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[11]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[11]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[11]} .original_name {c_data[11]}
+set_db -quiet {port:dot_product/c_data[11]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[10]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[10]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[10]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[10]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[10]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[10]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[10]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[10]} .original_name {c_data[10]}
+set_db -quiet {port:dot_product/c_data[10]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[9]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[9]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[9]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[9]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[9]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[9]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[9]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[9]} .original_name {c_data[9]}
+set_db -quiet {port:dot_product/c_data[9]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[8]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[8]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[8]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[8]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[8]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[8]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[8]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[8]} .original_name {c_data[8]}
+set_db -quiet {port:dot_product/c_data[8]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[7]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[7]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[7]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[7]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[7]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[7]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[7]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[7]} .original_name {c_data[7]}
+set_db -quiet {port:dot_product/c_data[7]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[6]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[6]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[6]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[6]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[6]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[6]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[6]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[6]} .original_name {c_data[6]}
+set_db -quiet {port:dot_product/c_data[6]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[5]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[5]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[5]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[5]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[5]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[5]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[5]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[5]} .original_name {c_data[5]}
+set_db -quiet {port:dot_product/c_data[5]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[4]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[4]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[4]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[4]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[4]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[4]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[4]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[4]} .original_name {c_data[4]}
+set_db -quiet {port:dot_product/c_data[4]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[3]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[3]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[3]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[3]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[3]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[3]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[3]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[3]} .original_name {c_data[3]}
+set_db -quiet {port:dot_product/c_data[3]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[2]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[2]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[2]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[2]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[2]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[2]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[2]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[2]} .original_name {c_data[2]}
+set_db -quiet {port:dot_product/c_data[2]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[1]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[1]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[1]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[1]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[1]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[1]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[1]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[1]} .original_name {c_data[1]}
+set_db -quiet {port:dot_product/c_data[1]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[0]} .external_pin_cap_min 1000.0
+set_db -quiet {port:dot_product/c_data[0]} .external_capacitance_max {1000.0 1000.0}
+set_db -quiet {port:dot_product/c_data[0]} .external_capacitance_min 1000.0
+set_db -quiet {port:dot_product/c_data[0]} .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[0]} .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet {port:dot_product/c_data[0]} .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[0]} .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet {port:dot_product/c_data[0]} .original_name {c_data[0]}
+set_db -quiet {port:dot_product/c_data[0]} .external_pin_cap {1000.0 1000.0}
+set_db -quiet port:dot_product/c_valid .external_pin_cap_min 1000.0
+set_db -quiet port:dot_product/c_valid .external_capacitance_max {1000.0 1000.0}
+set_db -quiet port:dot_product/c_valid .external_capacitance_min 1000.0
+set_db -quiet port:dot_product/c_valid .external_pin_cap_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/c_valid .external_capacitance_min_by_mode {{mode:dot_product/ss_100C_1v60.setup_view 1000.0}}
+set_db -quiet port:dot_product/c_valid .external_pin_cap_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/c_valid .external_capacitance_max_by_mode {{mode:dot_product/ss_100C_1v60.setup_view {1000.0 1000.0}}}
+set_db -quiet port:dot_product/c_valid .original_name c_valid
+set_db -quiet port:dot_product/c_valid .external_pin_cap {1000.0 1000.0}
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD .logical_hier false
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD .lp_clock_gating_min_flops 3
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD .lp_clock_gating_max_flops inf
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD .boundary_opto strict_no
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST0/RC_CGIC_INST .gint_phase_inversion false
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST0/RC_CGIC_INST .is_genus_clock_gate true
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_1 .logical_hier false
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_1 .lp_clock_gating_min_flops 3
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_1 .lp_clock_gating_max_flops inf
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_1 .boundary_opto strict_no
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST1/RC_CGIC_INST .gint_phase_inversion false
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST1/RC_CGIC_INST .is_genus_clock_gate true
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_2 .logical_hier false
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_2 .lp_clock_gating_min_flops 3
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_2 .lp_clock_gating_max_flops inf
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_2 .boundary_opto strict_no
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST2/RC_CGIC_INST .gint_phase_inversion false
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST2/RC_CGIC_INST .is_genus_clock_gate true
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_3 .logical_hier false
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_3 .lp_clock_gating_min_flops 3
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_3 .lp_clock_gating_max_flops inf
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_3 .boundary_opto strict_no
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST3/RC_CGIC_INST .gint_phase_inversion false
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST3/RC_CGIC_INST .is_genus_clock_gate true
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_4 .logical_hier false
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_4 .lp_clock_gating_min_flops 3
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_4 .lp_clock_gating_max_flops inf
+set_db -quiet module:dot_product/CLKGATE_RC_CG_MOD_4 .boundary_opto strict_no
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST4/RC_CGIC_INST .gint_phase_inversion false
+set_db -quiet inst:dot_product/CLKGATE_RC_CG_HIER_INST4/RC_CGIC_INST .is_genus_clock_gate true
+set_db -quiet inst:dot_product/sram .original_name sram
+set_db -quiet inst:dot_product/sram .single_bit_orig_name sram
+set_db -quiet inst:dot_product/sram .gint_phase_inversion false
+set_db -quiet {pin:dot_product/sram/dout[31]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[30]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[29]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[28]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[27]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[26]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[25]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[24]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[23]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[22]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[21]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[20]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[19]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[18]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[17]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[16]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[15]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[14]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[13]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[12]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[11]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[10]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[9]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[8]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[7]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[6]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[5]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[4]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[3]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[2]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[1]} .original_name sram/dout
+set_db -quiet {pin:dot_product/sram/dout[0]} .original_name sram/dout
+set_db -quiet {inst:dot_product/addr_reg[0]} .original_name {{addr[0]}}
+set_db -quiet {inst:dot_product/addr_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[0]} .single_bit_orig_name {addr[0]}
+set_db -quiet {inst:dot_product/addr_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[0]/Q} .original_name {addr[0]/q}
+set_db -quiet {inst:dot_product/addr_reg[1]} .original_name {{addr[1]}}
+set_db -quiet {inst:dot_product/addr_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[1]} .single_bit_orig_name {addr[1]}
+set_db -quiet {inst:dot_product/addr_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[1]/Q} .original_name {addr[1]/q}
+set_db -quiet {inst:dot_product/addr_reg[2]} .original_name {{addr[2]}}
+set_db -quiet {inst:dot_product/addr_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[2]} .single_bit_orig_name {addr[2]}
+set_db -quiet {inst:dot_product/addr_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[2]/Q} .original_name {addr[2]/q}
+set_db -quiet {inst:dot_product/addr_reg[3]} .original_name {{addr[3]}}
+set_db -quiet {inst:dot_product/addr_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[3]} .single_bit_orig_name {addr[3]}
+set_db -quiet {inst:dot_product/addr_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[3]/Q} .original_name {addr[3]/q}
+set_db -quiet {inst:dot_product/addr_reg[4]} .original_name {{addr[4]}}
+set_db -quiet {inst:dot_product/addr_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[4]} .single_bit_orig_name {addr[4]}
+set_db -quiet {inst:dot_product/addr_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[4]/Q} .original_name {addr[4]/q}
+set_db -quiet {inst:dot_product/addr_reg[5]} .original_name {{addr[5]}}
+set_db -quiet {inst:dot_product/addr_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/addr_reg[5]} .single_bit_orig_name {addr[5]}
+set_db -quiet {inst:dot_product/addr_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/addr_reg[5]/Q} .original_name {addr[5]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[0]} .original_name {{b_cache[0]}}
+set_db -quiet {inst:dot_product/b_cache_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[0]} .single_bit_orig_name {b_cache[0]}
+set_db -quiet {inst:dot_product/b_cache_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[0]/Q} .original_name {b_cache[0]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[1]} .original_name {{b_cache[1]}}
+set_db -quiet {inst:dot_product/b_cache_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[1]} .single_bit_orig_name {b_cache[1]}
+set_db -quiet {inst:dot_product/b_cache_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[1]/Q} .original_name {b_cache[1]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[2]} .original_name {{b_cache[2]}}
+set_db -quiet {inst:dot_product/b_cache_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[2]} .single_bit_orig_name {b_cache[2]}
+set_db -quiet {inst:dot_product/b_cache_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[2]/Q} .original_name {b_cache[2]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[3]} .original_name {{b_cache[3]}}
+set_db -quiet {inst:dot_product/b_cache_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[3]} .single_bit_orig_name {b_cache[3]}
+set_db -quiet {inst:dot_product/b_cache_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[3]/Q} .original_name {b_cache[3]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[4]} .original_name {{b_cache[4]}}
+set_db -quiet {inst:dot_product/b_cache_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[4]} .single_bit_orig_name {b_cache[4]}
+set_db -quiet {inst:dot_product/b_cache_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[4]/Q} .original_name {b_cache[4]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[5]} .original_name {{b_cache[5]}}
+set_db -quiet {inst:dot_product/b_cache_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[5]} .single_bit_orig_name {b_cache[5]}
+set_db -quiet {inst:dot_product/b_cache_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[5]/Q} .original_name {b_cache[5]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[6]} .original_name {{b_cache[6]}}
+set_db -quiet {inst:dot_product/b_cache_reg[6]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[6]} .single_bit_orig_name {b_cache[6]}
+set_db -quiet {inst:dot_product/b_cache_reg[6]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[6]/Q} .original_name {b_cache[6]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[7]} .original_name {{b_cache[7]}}
+set_db -quiet {inst:dot_product/b_cache_reg[7]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[7]} .single_bit_orig_name {b_cache[7]}
+set_db -quiet {inst:dot_product/b_cache_reg[7]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[7]/Q} .original_name {b_cache[7]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[8]} .original_name {{b_cache[8]}}
+set_db -quiet {inst:dot_product/b_cache_reg[8]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[8]} .single_bit_orig_name {b_cache[8]}
+set_db -quiet {inst:dot_product/b_cache_reg[8]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[8]/Q} .original_name {b_cache[8]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[9]} .original_name {{b_cache[9]}}
+set_db -quiet {inst:dot_product/b_cache_reg[9]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[9]} .single_bit_orig_name {b_cache[9]}
+set_db -quiet {inst:dot_product/b_cache_reg[9]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[9]/Q} .original_name {b_cache[9]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[10]} .original_name {{b_cache[10]}}
+set_db -quiet {inst:dot_product/b_cache_reg[10]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[10]} .single_bit_orig_name {b_cache[10]}
+set_db -quiet {inst:dot_product/b_cache_reg[10]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[10]/Q} .original_name {b_cache[10]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[11]} .original_name {{b_cache[11]}}
+set_db -quiet {inst:dot_product/b_cache_reg[11]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[11]} .single_bit_orig_name {b_cache[11]}
+set_db -quiet {inst:dot_product/b_cache_reg[11]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[11]/Q} .original_name {b_cache[11]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[12]} .original_name {{b_cache[12]}}
+set_db -quiet {inst:dot_product/b_cache_reg[12]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[12]} .single_bit_orig_name {b_cache[12]}
+set_db -quiet {inst:dot_product/b_cache_reg[12]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[12]/Q} .original_name {b_cache[12]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[13]} .original_name {{b_cache[13]}}
+set_db -quiet {inst:dot_product/b_cache_reg[13]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[13]} .single_bit_orig_name {b_cache[13]}
+set_db -quiet {inst:dot_product/b_cache_reg[13]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[13]/Q} .original_name {b_cache[13]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[14]} .original_name {{b_cache[14]}}
+set_db -quiet {inst:dot_product/b_cache_reg[14]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[14]} .single_bit_orig_name {b_cache[14]}
+set_db -quiet {inst:dot_product/b_cache_reg[14]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[14]/Q} .original_name {b_cache[14]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[15]} .original_name {{b_cache[15]}}
+set_db -quiet {inst:dot_product/b_cache_reg[15]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[15]} .single_bit_orig_name {b_cache[15]}
+set_db -quiet {inst:dot_product/b_cache_reg[15]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[15]/Q} .original_name {b_cache[15]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[16]} .original_name {{b_cache[16]}}
+set_db -quiet {inst:dot_product/b_cache_reg[16]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[16]} .single_bit_orig_name {b_cache[16]}
+set_db -quiet {inst:dot_product/b_cache_reg[16]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[16]/Q} .original_name {b_cache[16]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[17]} .original_name {{b_cache[17]}}
+set_db -quiet {inst:dot_product/b_cache_reg[17]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[17]} .single_bit_orig_name {b_cache[17]}
+set_db -quiet {inst:dot_product/b_cache_reg[17]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[17]/Q} .original_name {b_cache[17]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[18]} .original_name {{b_cache[18]}}
+set_db -quiet {inst:dot_product/b_cache_reg[18]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[18]} .single_bit_orig_name {b_cache[18]}
+set_db -quiet {inst:dot_product/b_cache_reg[18]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[18]/Q} .original_name {b_cache[18]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[19]} .original_name {{b_cache[19]}}
+set_db -quiet {inst:dot_product/b_cache_reg[19]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[19]} .single_bit_orig_name {b_cache[19]}
+set_db -quiet {inst:dot_product/b_cache_reg[19]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[19]/Q} .original_name {b_cache[19]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[20]} .original_name {{b_cache[20]}}
+set_db -quiet {inst:dot_product/b_cache_reg[20]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[20]} .single_bit_orig_name {b_cache[20]}
+set_db -quiet {inst:dot_product/b_cache_reg[20]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[20]/Q} .original_name {b_cache[20]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[21]} .original_name {{b_cache[21]}}
+set_db -quiet {inst:dot_product/b_cache_reg[21]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[21]} .single_bit_orig_name {b_cache[21]}
+set_db -quiet {inst:dot_product/b_cache_reg[21]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[21]/Q} .original_name {b_cache[21]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[22]} .original_name {{b_cache[22]}}
+set_db -quiet {inst:dot_product/b_cache_reg[22]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[22]} .single_bit_orig_name {b_cache[22]}
+set_db -quiet {inst:dot_product/b_cache_reg[22]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[22]/Q} .original_name {b_cache[22]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[23]} .original_name {{b_cache[23]}}
+set_db -quiet {inst:dot_product/b_cache_reg[23]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[23]} .single_bit_orig_name {b_cache[23]}
+set_db -quiet {inst:dot_product/b_cache_reg[23]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[23]/Q} .original_name {b_cache[23]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[24]} .original_name {{b_cache[24]}}
+set_db -quiet {inst:dot_product/b_cache_reg[24]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[24]} .single_bit_orig_name {b_cache[24]}
+set_db -quiet {inst:dot_product/b_cache_reg[24]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[24]/Q} .original_name {b_cache[24]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[25]} .original_name {{b_cache[25]}}
+set_db -quiet {inst:dot_product/b_cache_reg[25]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[25]} .single_bit_orig_name {b_cache[25]}
+set_db -quiet {inst:dot_product/b_cache_reg[25]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[25]/Q} .original_name {b_cache[25]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[26]} .original_name {{b_cache[26]}}
+set_db -quiet {inst:dot_product/b_cache_reg[26]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[26]} .single_bit_orig_name {b_cache[26]}
+set_db -quiet {inst:dot_product/b_cache_reg[26]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[26]/Q} .original_name {b_cache[26]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[27]} .original_name {{b_cache[27]}}
+set_db -quiet {inst:dot_product/b_cache_reg[27]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[27]} .single_bit_orig_name {b_cache[27]}
+set_db -quiet {inst:dot_product/b_cache_reg[27]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[27]/Q} .original_name {b_cache[27]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[28]} .original_name {{b_cache[28]}}
+set_db -quiet {inst:dot_product/b_cache_reg[28]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[28]} .single_bit_orig_name {b_cache[28]}
+set_db -quiet {inst:dot_product/b_cache_reg[28]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[28]/Q} .original_name {b_cache[28]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[29]} .original_name {{b_cache[29]}}
+set_db -quiet {inst:dot_product/b_cache_reg[29]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[29]} .single_bit_orig_name {b_cache[29]}
+set_db -quiet {inst:dot_product/b_cache_reg[29]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[29]/Q} .original_name {b_cache[29]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[30]} .original_name {{b_cache[30]}}
+set_db -quiet {inst:dot_product/b_cache_reg[30]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[30]} .single_bit_orig_name {b_cache[30]}
+set_db -quiet {inst:dot_product/b_cache_reg[30]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[30]/Q} .original_name {b_cache[30]/q}
+set_db -quiet {inst:dot_product/b_cache_reg[31]} .original_name {{b_cache[31]}}
+set_db -quiet {inst:dot_product/b_cache_reg[31]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_cache_reg[31]} .single_bit_orig_name {b_cache[31]}
+set_db -quiet {inst:dot_product/b_cache_reg[31]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_cache_reg[31]/Q} .original_name {b_cache[31]/q}
+set_db -quiet {inst:dot_product/din_reg[0]} .original_name {{din[0]}}
+set_db -quiet {inst:dot_product/din_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[0]} .single_bit_orig_name {din[0]}
+set_db -quiet {inst:dot_product/din_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[0]/Q} .original_name {din[0]/q}
+set_db -quiet {inst:dot_product/din_reg[1]} .original_name {{din[1]}}
+set_db -quiet {inst:dot_product/din_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[1]} .single_bit_orig_name {din[1]}
+set_db -quiet {inst:dot_product/din_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[1]/Q} .original_name {din[1]/q}
+set_db -quiet {inst:dot_product/din_reg[2]} .original_name {{din[2]}}
+set_db -quiet {inst:dot_product/din_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[2]} .single_bit_orig_name {din[2]}
+set_db -quiet {inst:dot_product/din_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[2]/Q} .original_name {din[2]/q}
+set_db -quiet {inst:dot_product/din_reg[3]} .original_name {{din[3]}}
+set_db -quiet {inst:dot_product/din_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[3]} .single_bit_orig_name {din[3]}
+set_db -quiet {inst:dot_product/din_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[3]/Q} .original_name {din[3]/q}
+set_db -quiet {inst:dot_product/din_reg[4]} .original_name {{din[4]}}
+set_db -quiet {inst:dot_product/din_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[4]} .single_bit_orig_name {din[4]}
+set_db -quiet {inst:dot_product/din_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[4]/Q} .original_name {din[4]/q}
+set_db -quiet {inst:dot_product/din_reg[5]} .original_name {{din[5]}}
+set_db -quiet {inst:dot_product/din_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[5]} .single_bit_orig_name {din[5]}
+set_db -quiet {inst:dot_product/din_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[5]/Q} .original_name {din[5]/q}
+set_db -quiet {inst:dot_product/din_reg[6]} .original_name {{din[6]}}
+set_db -quiet {inst:dot_product/din_reg[6]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[6]} .single_bit_orig_name {din[6]}
+set_db -quiet {inst:dot_product/din_reg[6]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[6]/Q} .original_name {din[6]/q}
+set_db -quiet {inst:dot_product/din_reg[7]} .original_name {{din[7]}}
+set_db -quiet {inst:dot_product/din_reg[7]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[7]} .single_bit_orig_name {din[7]}
+set_db -quiet {inst:dot_product/din_reg[7]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[7]/Q} .original_name {din[7]/q}
+set_db -quiet {inst:dot_product/din_reg[8]} .original_name {{din[8]}}
+set_db -quiet {inst:dot_product/din_reg[8]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[8]} .single_bit_orig_name {din[8]}
+set_db -quiet {inst:dot_product/din_reg[8]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[8]/Q} .original_name {din[8]/q}
+set_db -quiet {inst:dot_product/din_reg[9]} .original_name {{din[9]}}
+set_db -quiet {inst:dot_product/din_reg[9]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[9]} .single_bit_orig_name {din[9]}
+set_db -quiet {inst:dot_product/din_reg[9]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[9]/Q} .original_name {din[9]/q}
+set_db -quiet {inst:dot_product/din_reg[10]} .original_name {{din[10]}}
+set_db -quiet {inst:dot_product/din_reg[10]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[10]} .single_bit_orig_name {din[10]}
+set_db -quiet {inst:dot_product/din_reg[10]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[10]/Q} .original_name {din[10]/q}
+set_db -quiet {inst:dot_product/din_reg[11]} .original_name {{din[11]}}
+set_db -quiet {inst:dot_product/din_reg[11]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[11]} .single_bit_orig_name {din[11]}
+set_db -quiet {inst:dot_product/din_reg[11]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[11]/Q} .original_name {din[11]/q}
+set_db -quiet {inst:dot_product/din_reg[12]} .original_name {{din[12]}}
+set_db -quiet {inst:dot_product/din_reg[12]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[12]} .single_bit_orig_name {din[12]}
+set_db -quiet {inst:dot_product/din_reg[12]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[12]/Q} .original_name {din[12]/q}
+set_db -quiet {inst:dot_product/din_reg[13]} .original_name {{din[13]}}
+set_db -quiet {inst:dot_product/din_reg[13]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[13]} .single_bit_orig_name {din[13]}
+set_db -quiet {inst:dot_product/din_reg[13]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[13]/Q} .original_name {din[13]/q}
+set_db -quiet {inst:dot_product/din_reg[14]} .original_name {{din[14]}}
+set_db -quiet {inst:dot_product/din_reg[14]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[14]} .single_bit_orig_name {din[14]}
+set_db -quiet {inst:dot_product/din_reg[14]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[14]/Q} .original_name {din[14]/q}
+set_db -quiet {inst:dot_product/din_reg[15]} .original_name {{din[15]}}
+set_db -quiet {inst:dot_product/din_reg[15]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[15]} .single_bit_orig_name {din[15]}
+set_db -quiet {inst:dot_product/din_reg[15]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[15]/Q} .original_name {din[15]/q}
+set_db -quiet {inst:dot_product/din_reg[16]} .original_name {{din[16]}}
+set_db -quiet {inst:dot_product/din_reg[16]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[16]} .single_bit_orig_name {din[16]}
+set_db -quiet {inst:dot_product/din_reg[16]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[16]/Q} .original_name {din[16]/q}
+set_db -quiet {inst:dot_product/din_reg[17]} .original_name {{din[17]}}
+set_db -quiet {inst:dot_product/din_reg[17]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[17]} .single_bit_orig_name {din[17]}
+set_db -quiet {inst:dot_product/din_reg[17]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[17]/Q} .original_name {din[17]/q}
+set_db -quiet {inst:dot_product/din_reg[18]} .original_name {{din[18]}}
+set_db -quiet {inst:dot_product/din_reg[18]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[18]} .single_bit_orig_name {din[18]}
+set_db -quiet {inst:dot_product/din_reg[18]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[18]/Q} .original_name {din[18]/q}
+set_db -quiet {inst:dot_product/din_reg[19]} .original_name {{din[19]}}
+set_db -quiet {inst:dot_product/din_reg[19]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[19]} .single_bit_orig_name {din[19]}
+set_db -quiet {inst:dot_product/din_reg[19]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[19]/Q} .original_name {din[19]/q}
+set_db -quiet {inst:dot_product/din_reg[20]} .original_name {{din[20]}}
+set_db -quiet {inst:dot_product/din_reg[20]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[20]} .single_bit_orig_name {din[20]}
+set_db -quiet {inst:dot_product/din_reg[20]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[20]/Q} .original_name {din[20]/q}
+set_db -quiet {inst:dot_product/din_reg[21]} .original_name {{din[21]}}
+set_db -quiet {inst:dot_product/din_reg[21]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[21]} .single_bit_orig_name {din[21]}
+set_db -quiet {inst:dot_product/din_reg[21]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[21]/Q} .original_name {din[21]/q}
+set_db -quiet {inst:dot_product/din_reg[22]} .original_name {{din[22]}}
+set_db -quiet {inst:dot_product/din_reg[22]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[22]} .single_bit_orig_name {din[22]}
+set_db -quiet {inst:dot_product/din_reg[22]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[22]/Q} .original_name {din[22]/q}
+set_db -quiet {inst:dot_product/din_reg[23]} .original_name {{din[23]}}
+set_db -quiet {inst:dot_product/din_reg[23]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[23]} .single_bit_orig_name {din[23]}
+set_db -quiet {inst:dot_product/din_reg[23]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[23]/Q} .original_name {din[23]/q}
+set_db -quiet {inst:dot_product/din_reg[24]} .original_name {{din[24]}}
+set_db -quiet {inst:dot_product/din_reg[24]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[24]} .single_bit_orig_name {din[24]}
+set_db -quiet {inst:dot_product/din_reg[24]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[24]/Q} .original_name {din[24]/q}
+set_db -quiet {inst:dot_product/din_reg[25]} .original_name {{din[25]}}
+set_db -quiet {inst:dot_product/din_reg[25]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[25]} .single_bit_orig_name {din[25]}
+set_db -quiet {inst:dot_product/din_reg[25]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[25]/Q} .original_name {din[25]/q}
+set_db -quiet {inst:dot_product/din_reg[26]} .original_name {{din[26]}}
+set_db -quiet {inst:dot_product/din_reg[26]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[26]} .single_bit_orig_name {din[26]}
+set_db -quiet {inst:dot_product/din_reg[26]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[26]/Q} .original_name {din[26]/q}
+set_db -quiet {inst:dot_product/din_reg[27]} .original_name {{din[27]}}
+set_db -quiet {inst:dot_product/din_reg[27]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[27]} .single_bit_orig_name {din[27]}
+set_db -quiet {inst:dot_product/din_reg[27]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[27]/Q} .original_name {din[27]/q}
+set_db -quiet {inst:dot_product/din_reg[28]} .original_name {{din[28]}}
+set_db -quiet {inst:dot_product/din_reg[28]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[28]} .single_bit_orig_name {din[28]}
+set_db -quiet {inst:dot_product/din_reg[28]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[28]/Q} .original_name {din[28]/q}
+set_db -quiet {inst:dot_product/din_reg[29]} .original_name {{din[29]}}
+set_db -quiet {inst:dot_product/din_reg[29]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[29]} .single_bit_orig_name {din[29]}
+set_db -quiet {inst:dot_product/din_reg[29]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[29]/Q} .original_name {din[29]/q}
+set_db -quiet {inst:dot_product/din_reg[30]} .original_name {{din[30]}}
+set_db -quiet {inst:dot_product/din_reg[30]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[30]} .single_bit_orig_name {din[30]}
+set_db -quiet {inst:dot_product/din_reg[30]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[30]/Q} .original_name {din[30]/q}
+set_db -quiet {inst:dot_product/din_reg[31]} .original_name {{din[31]}}
+set_db -quiet {inst:dot_product/din_reg[31]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/din_reg[31]} .single_bit_orig_name {din[31]}
+set_db -quiet {inst:dot_product/din_reg[31]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/din_reg[31]/Q} .original_name {din[31]/q}
+set_db -quiet {inst:dot_product/a_len_reg[0]} .original_name {{a_len[0]}}
+set_db -quiet {inst:dot_product/a_len_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[0]} .single_bit_orig_name {a_len[0]}
+set_db -quiet {inst:dot_product/a_len_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[0]/Q} .original_name {a_len[0]/q}
+set_db -quiet {inst:dot_product/a_len_reg[1]} .original_name {{a_len[1]}}
+set_db -quiet {inst:dot_product/a_len_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[1]} .single_bit_orig_name {a_len[1]}
+set_db -quiet {inst:dot_product/a_len_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[1]/Q} .original_name {a_len[1]/q}
+set_db -quiet {inst:dot_product/a_len_reg[2]} .original_name {{a_len[2]}}
+set_db -quiet {inst:dot_product/a_len_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[2]} .single_bit_orig_name {a_len[2]}
+set_db -quiet {inst:dot_product/a_len_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[2]/Q} .original_name {a_len[2]/q}
+set_db -quiet {inst:dot_product/a_len_reg[3]} .original_name {{a_len[3]}}
+set_db -quiet {inst:dot_product/a_len_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[3]} .single_bit_orig_name {a_len[3]}
+set_db -quiet {inst:dot_product/a_len_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[3]/Q} .original_name {a_len[3]/q}
+set_db -quiet {inst:dot_product/a_len_reg[4]} .original_name {{a_len[4]}}
+set_db -quiet {inst:dot_product/a_len_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[4]} .single_bit_orig_name {a_len[4]}
+set_db -quiet {inst:dot_product/a_len_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[4]/Q} .original_name {a_len[4]/q}
+set_db -quiet {inst:dot_product/a_len_reg[5]} .original_name {{a_len[5]}}
+set_db -quiet {inst:dot_product/a_len_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/a_len_reg[5]} .single_bit_orig_name {a_len[5]}
+set_db -quiet {inst:dot_product/a_len_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/a_len_reg[5]/Q} .original_name {a_len[5]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[0]} .original_name {{accumulator[0]}}
+set_db -quiet {inst:dot_product/accumulator_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[0]} .single_bit_orig_name {accumulator[0]}
+set_db -quiet {inst:dot_product/accumulator_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[0]/Q} .original_name {accumulator[0]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[1]} .original_name {{accumulator[1]}}
+set_db -quiet {inst:dot_product/accumulator_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[1]} .single_bit_orig_name {accumulator[1]}
+set_db -quiet {inst:dot_product/accumulator_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[1]/Q} .original_name {accumulator[1]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[2]} .original_name {{accumulator[2]}}
+set_db -quiet {inst:dot_product/accumulator_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[2]} .single_bit_orig_name {accumulator[2]}
+set_db -quiet {inst:dot_product/accumulator_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[2]/Q} .original_name {accumulator[2]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[3]} .original_name {{accumulator[3]}}
+set_db -quiet {inst:dot_product/accumulator_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[3]} .single_bit_orig_name {accumulator[3]}
+set_db -quiet {inst:dot_product/accumulator_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[3]/Q} .original_name {accumulator[3]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[4]} .original_name {{accumulator[4]}}
+set_db -quiet {inst:dot_product/accumulator_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[4]} .single_bit_orig_name {accumulator[4]}
+set_db -quiet {inst:dot_product/accumulator_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[4]/Q} .original_name {accumulator[4]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[5]} .original_name {{accumulator[5]}}
+set_db -quiet {inst:dot_product/accumulator_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[5]} .single_bit_orig_name {accumulator[5]}
+set_db -quiet {inst:dot_product/accumulator_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[5]/Q} .original_name {accumulator[5]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[6]} .original_name {{accumulator[6]}}
+set_db -quiet {inst:dot_product/accumulator_reg[6]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[6]} .single_bit_orig_name {accumulator[6]}
+set_db -quiet {inst:dot_product/accumulator_reg[6]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[6]/Q} .original_name {accumulator[6]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[7]} .original_name {{accumulator[7]}}
+set_db -quiet {inst:dot_product/accumulator_reg[7]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[7]} .single_bit_orig_name {accumulator[7]}
+set_db -quiet {inst:dot_product/accumulator_reg[7]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[7]/Q} .original_name {accumulator[7]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[8]} .original_name {{accumulator[8]}}
+set_db -quiet {inst:dot_product/accumulator_reg[8]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[8]} .single_bit_orig_name {accumulator[8]}
+set_db -quiet {inst:dot_product/accumulator_reg[8]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[8]/Q} .original_name {accumulator[8]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[9]} .original_name {{accumulator[9]}}
+set_db -quiet {inst:dot_product/accumulator_reg[9]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[9]} .single_bit_orig_name {accumulator[9]}
+set_db -quiet {inst:dot_product/accumulator_reg[9]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[9]/Q} .original_name {accumulator[9]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[10]} .original_name {{accumulator[10]}}
+set_db -quiet {inst:dot_product/accumulator_reg[10]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[10]} .single_bit_orig_name {accumulator[10]}
+set_db -quiet {inst:dot_product/accumulator_reg[10]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[10]/Q} .original_name {accumulator[10]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[11]} .original_name {{accumulator[11]}}
+set_db -quiet {inst:dot_product/accumulator_reg[11]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[11]} .single_bit_orig_name {accumulator[11]}
+set_db -quiet {inst:dot_product/accumulator_reg[11]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[11]/Q} .original_name {accumulator[11]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[12]} .original_name {{accumulator[12]}}
+set_db -quiet {inst:dot_product/accumulator_reg[12]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[12]} .single_bit_orig_name {accumulator[12]}
+set_db -quiet {inst:dot_product/accumulator_reg[12]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[12]/Q} .original_name {accumulator[12]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[13]} .original_name {{accumulator[13]}}
+set_db -quiet {inst:dot_product/accumulator_reg[13]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[13]} .single_bit_orig_name {accumulator[13]}
+set_db -quiet {inst:dot_product/accumulator_reg[13]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[13]/Q} .original_name {accumulator[13]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[14]} .original_name {{accumulator[14]}}
+set_db -quiet {inst:dot_product/accumulator_reg[14]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[14]} .single_bit_orig_name {accumulator[14]}
+set_db -quiet {inst:dot_product/accumulator_reg[14]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[14]/Q} .original_name {accumulator[14]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[15]} .original_name {{accumulator[15]}}
+set_db -quiet {inst:dot_product/accumulator_reg[15]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[15]} .single_bit_orig_name {accumulator[15]}
+set_db -quiet {inst:dot_product/accumulator_reg[15]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[15]/Q} .original_name {accumulator[15]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[16]} .original_name {{accumulator[16]}}
+set_db -quiet {inst:dot_product/accumulator_reg[16]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[16]} .single_bit_orig_name {accumulator[16]}
+set_db -quiet {inst:dot_product/accumulator_reg[16]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[16]/Q} .original_name {accumulator[16]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[17]} .original_name {{accumulator[17]}}
+set_db -quiet {inst:dot_product/accumulator_reg[17]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[17]} .single_bit_orig_name {accumulator[17]}
+set_db -quiet {inst:dot_product/accumulator_reg[17]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[17]/Q} .original_name {accumulator[17]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[18]} .original_name {{accumulator[18]}}
+set_db -quiet {inst:dot_product/accumulator_reg[18]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[18]} .single_bit_orig_name {accumulator[18]}
+set_db -quiet {inst:dot_product/accumulator_reg[18]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[18]/Q} .original_name {accumulator[18]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[19]} .original_name {{accumulator[19]}}
+set_db -quiet {inst:dot_product/accumulator_reg[19]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[19]} .single_bit_orig_name {accumulator[19]}
+set_db -quiet {inst:dot_product/accumulator_reg[19]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[19]/Q} .original_name {accumulator[19]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[20]} .original_name {{accumulator[20]}}
+set_db -quiet {inst:dot_product/accumulator_reg[20]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[20]} .single_bit_orig_name {accumulator[20]}
+set_db -quiet {inst:dot_product/accumulator_reg[20]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[20]/Q} .original_name {accumulator[20]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[21]} .original_name {{accumulator[21]}}
+set_db -quiet {inst:dot_product/accumulator_reg[21]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[21]} .single_bit_orig_name {accumulator[21]}
+set_db -quiet {inst:dot_product/accumulator_reg[21]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[21]/Q} .original_name {accumulator[21]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[22]} .original_name {{accumulator[22]}}
+set_db -quiet {inst:dot_product/accumulator_reg[22]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[22]} .single_bit_orig_name {accumulator[22]}
+set_db -quiet {inst:dot_product/accumulator_reg[22]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[22]/Q} .original_name {accumulator[22]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[23]} .original_name {{accumulator[23]}}
+set_db -quiet {inst:dot_product/accumulator_reg[23]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[23]} .single_bit_orig_name {accumulator[23]}
+set_db -quiet {inst:dot_product/accumulator_reg[23]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[23]/Q} .original_name {accumulator[23]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[24]} .original_name {{accumulator[24]}}
+set_db -quiet {inst:dot_product/accumulator_reg[24]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[24]} .single_bit_orig_name {accumulator[24]}
+set_db -quiet {inst:dot_product/accumulator_reg[24]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[24]/Q} .original_name {accumulator[24]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[25]} .original_name {{accumulator[25]}}
+set_db -quiet {inst:dot_product/accumulator_reg[25]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[25]} .single_bit_orig_name {accumulator[25]}
+set_db -quiet {inst:dot_product/accumulator_reg[25]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[25]/Q} .original_name {accumulator[25]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[26]} .original_name {{accumulator[26]}}
+set_db -quiet {inst:dot_product/accumulator_reg[26]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[26]} .single_bit_orig_name {accumulator[26]}
+set_db -quiet {inst:dot_product/accumulator_reg[26]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[26]/Q} .original_name {accumulator[26]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[27]} .original_name {{accumulator[27]}}
+set_db -quiet {inst:dot_product/accumulator_reg[27]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[27]} .single_bit_orig_name {accumulator[27]}
+set_db -quiet {inst:dot_product/accumulator_reg[27]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[27]/Q} .original_name {accumulator[27]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[28]} .original_name {{accumulator[28]}}
+set_db -quiet {inst:dot_product/accumulator_reg[28]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[28]} .single_bit_orig_name {accumulator[28]}
+set_db -quiet {inst:dot_product/accumulator_reg[28]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[28]/Q} .original_name {accumulator[28]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[29]} .original_name {{accumulator[29]}}
+set_db -quiet {inst:dot_product/accumulator_reg[29]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[29]} .single_bit_orig_name {accumulator[29]}
+set_db -quiet {inst:dot_product/accumulator_reg[29]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[29]/Q} .original_name {accumulator[29]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[30]} .original_name {{accumulator[30]}}
+set_db -quiet {inst:dot_product/accumulator_reg[30]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[30]} .single_bit_orig_name {accumulator[30]}
+set_db -quiet {inst:dot_product/accumulator_reg[30]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[30]/Q} .original_name {accumulator[30]/q}
+set_db -quiet {inst:dot_product/accumulator_reg[31]} .original_name {{accumulator[31]}}
+set_db -quiet {inst:dot_product/accumulator_reg[31]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/accumulator_reg[31]} .single_bit_orig_name {accumulator[31]}
+set_db -quiet {inst:dot_product/accumulator_reg[31]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/accumulator_reg[31]/Q} .original_name {accumulator[31]/q}
+set_db -quiet {inst:dot_product/b_len_reg[0]} .original_name {{b_len[0]}}
+set_db -quiet {inst:dot_product/b_len_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[0]} .single_bit_orig_name {b_len[0]}
+set_db -quiet {inst:dot_product/b_len_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[0]/Q} .original_name {b_len[0]/q}
+set_db -quiet {inst:dot_product/b_len_reg[1]} .original_name {{b_len[1]}}
+set_db -quiet {inst:dot_product/b_len_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[1]} .single_bit_orig_name {b_len[1]}
+set_db -quiet {inst:dot_product/b_len_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[1]/Q} .original_name {b_len[1]/q}
+set_db -quiet {inst:dot_product/b_len_reg[2]} .original_name {{b_len[2]}}
+set_db -quiet {inst:dot_product/b_len_reg[2]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[2]} .single_bit_orig_name {b_len[2]}
+set_db -quiet {inst:dot_product/b_len_reg[2]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[2]/Q} .original_name {b_len[2]/q}
+set_db -quiet {inst:dot_product/b_len_reg[3]} .original_name {{b_len[3]}}
+set_db -quiet {inst:dot_product/b_len_reg[3]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[3]} .single_bit_orig_name {b_len[3]}
+set_db -quiet {inst:dot_product/b_len_reg[3]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[3]/Q} .original_name {b_len[3]/q}
+set_db -quiet {inst:dot_product/b_len_reg[4]} .original_name {{b_len[4]}}
+set_db -quiet {inst:dot_product/b_len_reg[4]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[4]} .single_bit_orig_name {b_len[4]}
+set_db -quiet {inst:dot_product/b_len_reg[4]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[4]/Q} .original_name {b_len[4]/q}
+set_db -quiet {inst:dot_product/b_len_reg[5]} .original_name {{b_len[5]}}
+set_db -quiet {inst:dot_product/b_len_reg[5]} .orig_hdl_instantiated false
+set_db -quiet {inst:dot_product/b_len_reg[5]} .single_bit_orig_name {b_len[5]}
+set_db -quiet {inst:dot_product/b_len_reg[5]} .gint_phase_inversion false
+set_db -quiet {pin:dot_product/b_len_reg[5]/Q} .original_name {b_len[5]/q}
+set_db -quiet inst:dot_product/b_stored_reg .original_name b_stored
+set_db -quiet inst:dot_product/b_stored_reg .orig_hdl_instantiated false
+set_db -quiet inst:dot_product/b_stored_reg .single_bit_orig_name b_stored
+set_db -quiet inst:dot_product/b_stored_reg .gint_phase_inversion false
+set_db -quiet pin:dot_product/b_stored_reg/Q .original_name b_stored/q
+set_db -quiet inst:dot_product/c_valid_reg .original_name c_valid
+set_db -quiet inst:dot_product/c_valid_reg .orig_hdl_instantiated false
+set_db -quiet inst:dot_product/c_valid_reg .single_bit_orig_name c_valid
+set_db -quiet inst:dot_product/c_valid_reg .gint_phase_inversion false
+set_db -quiet pin:dot_product/c_valid_reg/Q .original_name c_valid/q
+set_db -quiet inst:dot_product/initializing_reg .original_name initializing
+set_db -quiet inst:dot_product/initializing_reg .orig_hdl_instantiated false
+set_db -quiet inst:dot_product/initializing_reg .single_bit_orig_name initializing
+set_db -quiet inst:dot_product/initializing_reg .gint_phase_inversion false
+set_db -quiet pin:dot_product/initializing_reg/Q .original_name initializing/q
+set_db -quiet inst:dot_product/processing_reg .original_name processing
+set_db -quiet inst:dot_product/processing_reg .orig_hdl_instantiated false
+set_db -quiet inst:dot_product/processing_reg .single_bit_orig_name processing
+set_db -quiet inst:dot_product/processing_reg .gint_phase_inversion false
+set_db -quiet pin:dot_product/processing_reg/Q .original_name processing/q
+# BEGIN PMBIST SECTION
+# END PMBIST SECTION
+# BEGIN PHYSICAL ANNOTATION SECTION
+# END PHYSICAL ANNOTATION SECTION
+set_db -quiet source_verbose true
+#############################################################
+#####   FLOW WRITE   ########################################
+##
+## Written by Genus(TM) Synthesis Solution version 19.15-s090_1
+## flowkit v19.10-s018_1
+## Written on 18:46:51 23-Oct 2023
+#############################################################
+#####   Flow Definitions   ##################################
+
+#############################################################
+#####   Step Definitions   ##################################
+
+
+#############################################################
+#####   Attribute Definitions   #############################
+
+if {[is_attribute flow_edit_end_steps -obj_type root]} {set_db flow_edit_end_steps {}}
+if {[is_attribute flow_edit_start_steps -obj_type root]} {set_db flow_edit_start_steps {}}
+if {[is_attribute flow_footer_tcl -obj_type root]} {set_db flow_footer_tcl {}}
+if {[is_attribute flow_header_tcl -obj_type root]} {set_db flow_header_tcl {}}
+if {[is_attribute flow_metadata -obj_type root]} {set_db flow_metadata {}}
+if {[is_attribute flow_setup_config -obj_type root]} {set_db flow_setup_config {HUDDLE {!!map {}}}}
+if {[is_attribute flow_step_begin_tcl -obj_type root]} {set_db flow_step_begin_tcl {}}
+if {[is_attribute flow_step_check_tcl -obj_type root]} {set_db flow_step_check_tcl {}}
+if {[is_attribute flow_step_end_tcl -obj_type root]} {set_db flow_step_end_tcl {}}
+if {[is_attribute flow_step_order -obj_type root]} {set_db flow_step_order {}}
+if {[is_attribute flow_summary_tcl -obj_type root]} {set_db flow_summary_tcl {}}
+if {[is_attribute flow_template_feature_definition -obj_type root]} {set_db flow_template_feature_definition {}}
+if {[is_attribute flow_template_type -obj_type root]} {set_db flow_template_type {}}
+if {[is_attribute flow_template_version -obj_type root]} {set_db flow_template_version {}}
+if {[is_attribute flow_user_templates -obj_type root]} {set_db flow_user_templates {}}
+
+
+#############################################################
+#####   Flow History   ######################################
+
+if {[is_attribute flow_branch -obj_type root]} {set_db flow_branch {}}
+if {[is_attribute flow_caller_data -obj_type root]} {set_db flow_caller_data {}}
+if {[is_attribute flow_current -obj_type root]} {set_db flow_current {}}
+if {[is_attribute flow_hier_path -obj_type root]} {set_db flow_hier_path {}}
+if {[is_attribute flow_db_directory -obj_type root]} {set_db flow_db_directory dbs}
+if {[is_attribute flow_exit_when_done -obj_type root]} {set_db flow_exit_when_done false}
+if {[is_attribute flow_history -obj_type root]} {set_db flow_history {}}
+if {[is_attribute flow_log_directory -obj_type root]} {set_db flow_log_directory logs}
+if {[is_attribute flow_mail_on_error -obj_type root]} {set_db flow_mail_on_error false}
+if {[is_attribute flow_mail_to -obj_type root]} {set_db flow_mail_to {}}
+if {[is_attribute flow_metrics_file -obj_type root]} {set_db flow_metrics_file {}}
+if {[is_attribute flow_metrics_snapshot_parent_uuid -obj_type root]} {set_db flow_metrics_snapshot_parent_uuid {}}
+if {[is_attribute flow_metrics_snapshot_uuid -obj_type root]} {set_db flow_metrics_snapshot_uuid d64db840-ba34-45de-9311-094741d3e1fe}
+if {[is_attribute flow_overwrite_db -obj_type root]} {set_db flow_overwrite_db false}
+if {[is_attribute flow_report_directory -obj_type root]} {set_db flow_report_directory reports}
+if {[is_attribute flow_run_tag -obj_type root]} {set_db flow_run_tag {}}
+if {[is_attribute flow_schedule -obj_type root]} {set_db flow_schedule {}}
+if {[is_attribute flow_script -obj_type root]} {set_db flow_script {}}
+if {[is_attribute flow_starting_db -obj_type root]} {set_db flow_starting_db {}}
+if {[is_attribute flow_status_file -obj_type root]} {set_db flow_status_file {}}
+if {[is_attribute flow_step_canonical_current -obj_type root]} {set_db flow_step_canonical_current {}}
+if {[is_attribute flow_step_current -obj_type root]} {set_db flow_step_current {}}
+if {[is_attribute flow_step_last -obj_type root]} {set_db flow_step_last {}}
+if {[is_attribute flow_step_last_msg -obj_type root]} {set_db flow_step_last_msg {}}
+if {[is_attribute flow_step_last_status -obj_type root]} {set_db flow_step_last_status not_run}
+if {[is_attribute flow_step_next -obj_type root]} {set_db flow_step_next {}}
+if {[is_attribute flow_working_directory -obj_type root]} {set_db flow_working_directory .}
+
+#############################################################
+#####   User Defined Attributes   ###########################
+
