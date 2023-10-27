@@ -111,22 +111,6 @@ add mapped point result_bits[0] result_bits[0]
 
 
 //Sequential Pins
-add mapped point arbiter/queue/full/q arbiter/queue/full_reg/Q 
-add mapped point arbiter/queue/buffer[0][1]/q arbiter/queue/buffer_reg[0][1]/Q 
-add mapped point arbiter/queue/buffer[1][0]/q arbiter/queue/buffer_reg[1][0]/Q 
-add mapped point arbiter/queue/buffer[1][1]/q arbiter/queue/buffer_reg[1][1]/Q 
-add mapped point arbiter/queue/buffer[0][0]/q arbiter/queue/buffer_reg[0][0]/Q 
-add mapped point arbiter/queue/buffer[3][0]/q arbiter/queue/buffer_reg[3][0]/Q 
-add mapped point arbiter/queue/buffer[2][0]/q arbiter/queue/buffer_reg[2][0]/Q 
-add mapped point arbiter/queue/buffer[2][1]/q arbiter/queue/buffer_reg[2][1]/Q 
-add mapped point arbiter/queue/buffer[3][1]/q arbiter/queue/buffer_reg[3][1]/Q 
-add mapped point arbiter/queue/rptr[1]/q arbiter/queue/rptr_reg[1]/Q 
-add mapped point arbiter/queue/wptr[1]/q arbiter/queue/wptr_reg[1]/Q 
-add mapped point arbiter/queue/rptr[0]/q arbiter/queue/rptr_reg[0]/Q 
-add mapped point arbiter/queue/wptr[0]/q arbiter/queue/wptr_reg[0]/Q 
-add mapped point arbiter/queue_input[0]/q arbiter/queue_input_reg[0]/Q 
-add mapped point arbiter/enqueue/q arbiter/enqueue_reg/Q 
-add mapped point arbiter/queue_input[1]/q arbiter/queue_input_reg[1]/Q 
 add mapped point units[0]/ctrl/state[0]/q units[0]/ctrl/state_reg[0]/Q 
 add mapped point units[0]/ctrl/state[1]/q units[0]/ctrl/state_reg[1]/Q 
 add mapped point units[0]/dpath/A_reg[0]/q units[0]/dpath/A_reg_reg[0]/Q 
@@ -399,3 +383,4 @@ add mapped point units[3]/dpath/B_reg[31]/q units[3]/dpath/B_reg_reg[31]/Q
 
 
 //Empty Modules as Blackboxes
+add mapped point arbiter arbiter
