@@ -116,12 +116,14 @@
     "power.submit.command": "local",
     "power.submit.settings": [],
     "power.voltus.version": "181",
-    "sim.inputs.all_regs": "",
+    "sim.inputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/find_regs_paths.json",
     "sim.inputs.benchmarks": [],
     "sim.inputs.compiler_cc_opts": [],
     "sim.inputs.compiler_ld_opts": [],
     "sim.inputs.defines": [
-        "CLOCK_PERIOD=5.00"
+        "CLOCK_PERIOD=20.00",
+        "FUNCTIONAL",
+        "UNIT_DELAY=#1"
     ],
     "sim.inputs.execute_sim": true,
     "sim.inputs.execution_flags": [],
@@ -129,23 +131,17 @@
     "sim.inputs.execution_flags_prepend": [],
     "sim.inputs.gl_register_force_value": 0,
     "sim.inputs.input_files": [
-        "src/gcd_coprocessor.v",
-        "src/gcd_arbiter.v",
-        "src/gcd_unit.v",
-        "src/gcd_datapath.v",
-        "src/gcd_control.v",
-        "src/fifo.v",
-        "src/EECS151.v",
-        "src/gcd_coprocessor_testbench.v"
+        "src/gcd_coprocessor_testbench.v",
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/gcd_coprocessor.mapped.v"
     ],
-    "sim.inputs.level": "rtl",
+    "sim.inputs.level": "syn",
     "sim.inputs.options": [
         "-notice",
         "-line",
-        "+lint=all,noVCDE",
+        "+lint=all",
         "+v2k",
         "-debug",
-        "-sverilog"
+        "+neg_tchk"
     ],
     "sim.inputs.parallel_runs": 1,
     "sim.inputs.saif.end_time": "1ns",
@@ -153,12 +149,12 @@
     "sim.inputs.saif.mode": "none",
     "sim.inputs.saif.start_time": "0ns",
     "sim.inputs.saif.start_trigger_raw": "",
-    "sim.inputs.sdf_file": null,
-    "sim.inputs.seq_cells": "",
+    "sim.inputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/gcd_coprocessor.mapped.sdf",
+    "sim.inputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/find_regs_cells.json",
     "sim.inputs.tb_dut": "dut",
     "sim.inputs.tb_name": "gcd_coprocessor_testbench",
     "sim.inputs.timescale": "1ns/10ps",
-    "sim.inputs.timing_annotated": false,
+    "sim.inputs.timing_annotated": true,
     "sim.inputs.top_module": "gcd_coprocessor",
     "sim.submit.command": "local",
     "sim.submit.settings": [],
@@ -175,9 +171,24 @@
     "synopsys.synopsys_home": "/home/ff/eecs151/hammer-tools/synopsys",
     "synthesis.clock_gating_mode": "auto",
     "synthesis.genus.version": "191",
-    "synthesis.inputs.input_files": [],
+    "synthesis.inputs.input_files": [
+        "src/gcd_coprocessor.v",
+        "src/gcd_arbiter.v",
+        "src/gcd_unit.v",
+        "src/gcd_datapath.v",
+        "src/gcd_control.v",
+        "src/EECS151.v",
+        "src/fifo.v"
+    ],
     "synthesis.inputs.retime_modules": [],
-    "synthesis.inputs.top_module": null,
+    "synthesis.inputs.top_module": "gcd_coprocessor",
+    "synthesis.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/find_regs_paths.json",
+    "synthesis.outputs.output_files": [
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/gcd_coprocessor.mapped.v"
+    ],
+    "synthesis.outputs.sdc": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/gcd_coprocessor.mapped.sdc",
+    "synthesis.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/gcd_coprocessor.mapped.sdf",
+    "synthesis.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/build/syn-rundir/find_regs_cells.json",
     "synthesis.submit.command": "local",
     "synthesis.submit.settings": [],
     "synthesis.yosys.latch_map_file": "/home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v",
