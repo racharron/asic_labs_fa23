@@ -8,6 +8,7 @@ module alu_testbench;
   reg [31:0] b;
   reg [3:0] op;
   reg [31:0] c;
+  reg [31:0] expected;
 
   reg signed [31:0] as, bs;
 
@@ -77,11 +78,14 @@ module alu_testbench;
       @(negedge clk);
       a = $random;
       b = $random;
+      expected = a & b;
       @(posedge clk)
-      if (c == a & b) begin
+      if (c == expected) begin
         $display(" [ passed ] Anding Test ( %d ), [ %b & %b == %b ] (decimal)",i,a,b,c);
       end else begin
         $display(" [ failed ] Anding Test ( %d ), [ %b & %b == %b ] (decimal)",i,a,b,c);
+        $display("expected: %b", expected);
+        $display("received: %b", c);
         error_count = error_count + 1;
       end
     end
@@ -102,7 +106,6 @@ module alu_testbench;
     for (i = 0; i < num_tests; i = i + 1) begin
       @(negedge clk);
       a = $random;
-        error_count = error_count + 1;
       b = $random;
       @(posedge clk)
       if (c == a ^ b) begin
@@ -155,12 +158,16 @@ module alu_testbench;
         for (i = 0; i < shift_count; i = i + 1) begin
           @(negedge clk);
           a = $random;
-          b = ($random << 5) + i;
+          b = ($random << 5) + shift;
+          expected = a << shift;
           @(posedge clk)
-          if (c == a << shift) begin
+          if (c == expected) begin
             $display(" [ passed ] SLL Test ( %d ), [ %d << %d == %d ] (decimal)",i,a,b,c);
           end else begin
             $display(" [ failed ] SLL Test ( %d ), [ %d << %d == %d ] (decimal)",i,a,b,c);
+            $display("amount: %d", b[4:0]);
+            $display("expected: %d", expected);
+            $display("received: %d", c);
             error_count = error_count + 1;
           end
         end
@@ -175,12 +182,13 @@ module alu_testbench;
         for (i = 0; i < shift_count; i = i + 1) begin
           @(negedge clk);
           a = $random;
-          b = ($random << 5) + i;
+          b = ($random << 5) + shift;
+          expected = a >> shift;
           @(posedge clk)
-          if (c == a >> shift) begin
-            $display(" [ passed ] SLL Test ( %d ), [ %d >> %d == %d ] (decimal)",i,a,b,c);
+          if (c == expected) begin
+            $display(" [ passed ] SRA Test ( %d ), [ %d >> %d == %d ] (decimal)",i,a,b,c);
           end else begin
-            $display(" [ failed ] SLL Test ( %d ), [ %d >> %d == %d ] (decimal)",i,a,b,c);
+            $display(" [ failed ] SRA Test ( %d ), [ %d >> %d == %d ] (decimal)",i,a,b,c);
             error_count = error_count + 1;
           end
         end
@@ -195,12 +203,12 @@ module alu_testbench;
         for (i = 0; i < shift_count; i = i + 1) begin
           @(negedge clk);
           a = $random;
-          b = ($random << 5) + i;
+          b = ($random << 5) + shift;
           @(posedge clk)
           if (c == a >>> shift) begin
-            $display(" [ passed ] SLL Test ( %d ), [ %d >>> %d == %d ] (decimal)",i,a,b,c);
+            $display(" [ passed ] SRL Test ( %d ), [ %d >>> %d == %d ] (decimal)",i,a,b,c);
           end else begin
-            $display(" [ failed ] SLL Test ( %d ), [ %d >>> %d == %d ] (decimal)",i,a,b,c);
+            $display(" [ failed ] SRL Test ( %d ), [ %d >>> %d == %d ] (decimal)",i,a,b,c);
             error_count = error_count + 1;
           end
         end
