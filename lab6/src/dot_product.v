@@ -60,28 +60,28 @@ assign a_ready = !processing & !a_collected;
 assign b_ready = !processing & !b_stored & !b_collected;
 assign c_data = accumulator;
 
-always_comb begin
+always @* begin
   if (processing) begin
     if (b_stored) begin
-      addr <= {1'b1, a_len[ADDR_WIDTH-1:0]};
+      addr = {1'b1, a_len[ADDR_WIDTH-1:0]};
     end else begin
-      addr <= {1'b0, a_len[ADDR_WIDTH-1:0]};
+      addr = {1'b0, a_len[ADDR_WIDTH-1:0]};
     end
   end else begin
     if (b_stored) begin
-      din <= b_cache;
-      addr <= {1'b1, b_len[ADDR_WIDTH-1:0]};
+      din = b_cache;
+      addr = {1'b1, b_len[ADDR_WIDTH-1:0]};
     end else if (a_fire) begin 
-      din <= a_data;
-      addr <= {1'b0, a_len[ADDR_WIDTH-1:0]};
+      din = a_data;
+      addr = {1'b0, a_len[ADDR_WIDTH-1:0]};
     end else if (b_fire) begin
-      din <= b_data;
-      addr <= {1'b1, b_len[ADDR_WIDTH-1:0]};
+      din = b_data;
+      addr = {1'b1, b_len[ADDR_WIDTH-1:0]};
     end
   end
 end
 
-always_ff @( posedge clk ) begin
+always @( posedge clk ) begin
   if (rst) begin
     a_len <= 0;
     b_len <= 0;

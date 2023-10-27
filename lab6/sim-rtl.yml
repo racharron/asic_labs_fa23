@@ -16,4 +16,4 @@ sim.inputs:
   top_module: "dot_product"
   tb_name: "dot_product_tb"
   defines: 
-    - "CLOCK_PERIOD=5.00"
+    - "CLOCK_PERIOD=20.00"
