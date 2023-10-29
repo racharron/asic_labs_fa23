@@ -10,3 +10,13 @@ chmod g+x runalways.sh
 
 Q 4.3
 chmod ug+w,o-w runalways.sh
+
+Q 5.1
+foo.txt: output_name
+    > foo.txt
+
+Q 5.2
+By updating one of output_name's dependencies, or by deleting one of its dependencies.
+
+Q 6.1
+
