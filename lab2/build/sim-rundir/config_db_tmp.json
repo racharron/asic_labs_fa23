@@ -131,10 +131,7 @@
     "sim.inputs.execution_flags_prepend": [],
     "sim.inputs.gl_register_force_value": 0,
     "sim.inputs.input_files": [
-        "src/fir.v",
-        "src/EECS151.v",
-        "src/addertree.v",
-        "src/fir_tb.v"
+        "src/Q1a_tb.v"
     ],
     "sim.inputs.level": "rtl",
     "sim.inputs.options": [
@@ -154,10 +151,10 @@
     "sim.inputs.sdf_file": null,
     "sim.inputs.seq_cells": "",
     "sim.inputs.tb_dut": "dut",
-    "sim.inputs.tb_name": "fir_tb",
+    "sim.inputs.tb_name": "dut_tb",
     "sim.inputs.timescale": "1ns/10ps",
     "sim.inputs.timing_annotated": false,
-    "sim.inputs.top_module": "fir",
+    "sim.inputs.top_module": "dut",
     "sim.submit.command": "local",
     "sim.submit.settings": [],
     "sim.vcs.fgp": false,

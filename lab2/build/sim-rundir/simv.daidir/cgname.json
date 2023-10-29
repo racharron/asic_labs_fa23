@@ -5,9 +5,9 @@
         "module",
         1
     ],
-    "fir_tb": [
-        "fir_tb",
-        "aMFWh",
+    "dut_tb": [
+        "dut_tb",
+        "ud4N8",
         "module",
         2
     ],

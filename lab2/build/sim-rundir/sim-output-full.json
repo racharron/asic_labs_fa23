@@ -396,10 +396,7 @@
         "CLOCK_PERIOD=1.00"
     ],
     "sim.inputs.input_files": [
-        "src/fir.v",
-        "src/EECS151.v",
-        "src/addertree.v",
-        "src/fir_tb.v"
+        "src/Q1a_tb.v"
     ],
     "sim.inputs.timescale": "1ns/10ps",
     "sim.inputs.options": [
@@ -410,12 +407,12 @@
         "-debug",
         "-sverilog"
     ],
-    "sim.inputs.top_module": "fir",
-    "sim.inputs.tb_name": "fir_tb",
+    "sim.inputs.top_module": "dut",
+    "sim.inputs.tb_name": "dut_tb",
     "sim.outputs.waveforms": [],
     "sim.outputs.saifs": [],
-    "sim.outputs.output_top_module": "fir",
-    "sim.outputs.output_tb_name": "fir_tb",
+    "sim.outputs.output_top_module": "dut",
+    "sim.outputs.output_tb_name": "dut_tb",
     "sim.outputs.output_tb_dut": "dut",
     "sim.outputs.output_level": "rtl"
 }
