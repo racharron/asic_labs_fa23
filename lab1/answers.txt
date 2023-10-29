@@ -1,0 +1,12 @@
+Q 3.1
+sed 's/x\([0-9]\+\)x/<\1>/g' force_regs.ucli
+sed -r 's/x([0-9]+)x/<\1>/g' force_regs.ucli
+
+Q 4.1
+chmod u+x,go-x, runalways.sh
+
+Q 4.2
+chmod g+x runalways.sh
+
+Q 4.3
+chmod ug+w,o-w runalways.sh
