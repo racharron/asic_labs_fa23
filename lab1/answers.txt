@@ -19,4 +19,7 @@ Q 5.2
 By updating one of output_name's dependencies, or by deleting one of its dependencies.
 
 Q 6.1
+git diff Makefile
 
+Q 6.2
+git diff HEAD Makefile
