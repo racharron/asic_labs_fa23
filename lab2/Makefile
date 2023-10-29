@@ -18,6 +18,7 @@ TECH_CONF           ?= $(vlsi_dir)/sky130.yml
 
 DESIGN_CONF     	?= $(vlsi_dir)/design.yml
 SIM_RTL_CONF    	?= $(vlsi_dir)/sim-rtl.yml
+SIM_RTL_Q1A_CONF    ?= $(vlsi_dir)/sim-rtl-q1a.yml
 SIM_GL_SYN_CONF 	?= $(vlsi_dir)/sim-gl-syn.yml
 SIM_GL_PAR_CONF 	?= $(vlsi_dir)/sim-gl-par.yml
 
@@ -63,6 +64,14 @@ MAKE = make
 .PHONY: sim-rtl
 sim-rtl: $(HAMMER_D_MK)
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_RTL_CONF) --obj_dir $(OBJ_DIR) sim
+
+#########################################################################################
+# Q1A RTL Sim
+#########################################################################################
+
+.PHONY: sim-rtl-q1a
+sim-rtl-q1a: $(HAMMER_D_MK)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_RTL_Q1A_CONF) --obj_dir $(OBJ_DIR) sim
 
 #########################################################################################
 # Post-Synthesis Gate Level Sim

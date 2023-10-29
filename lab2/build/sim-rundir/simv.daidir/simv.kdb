@@ -7,7 +7,7 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=fir_tb 
+TOP=dut_tb 
 OPTION=-ssz -ssv -ssy 
 ELAB_OPTION=-ssz -ssv -ssy 
 
