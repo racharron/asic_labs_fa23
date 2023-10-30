@@ -13,3 +13,7 @@ The lowest clock period for which the testbench reports correct outputs is 17ns.
 Q 6a
 The setup view indicates less power draw than the hold view.  This could be due to the V_DD voltage being lower.
 It turns out that expected ratio of V_h^2 to V_s^2 is very close to the ratio of the total energy draws.
+
+Q 6b
+The static power reports are conservative, overestimating the power draw.  
+The estimated switching activity factor is 0.2 * (3.101/3.857 + 2.078/2.591) / 2 = 0.16
