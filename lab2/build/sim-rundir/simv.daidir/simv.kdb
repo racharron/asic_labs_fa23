@@ -7,9 +7,10 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=dut_tb 
+TOP=fir_tb 
 OPTION=-ssz -ssv -ssy 
 ELAB_OPTION=-ssz -ssv -ssy 
+SDF=max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.sdf max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.sdf 
 
 [Value]
 WREALX=ffff534e50535f58

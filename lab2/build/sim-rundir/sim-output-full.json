@@ -392,27 +392,48 @@
     "vlsi.core.power_tool": "hammer.power.voltus",
     "power.voltus.version": "181",
     "vlsi.core.build_system": "make",
-    "sim.inputs.defines": [
-        "CLOCK_PERIOD=1.00"
-    ],
     "sim.inputs.input_files": [
-        "src/Q1a_tb.v"
+        "src/post-syn/fir.mapped.v",
+        "src/fir_tb.v",
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.v"
     ],
+    "sim.inputs.level": "syn",
+    "sim.inputs.timing_annotated": true,
+    "sim.inputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.sdf",
+    "sim.inputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/find_regs_paths.json",
+    "sim.inputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/find_regs_cells.json",
     "sim.inputs.timescale": "1ns/10ps",
     "sim.inputs.options": [
         "-notice",
         "-line",
-        "+lint=all,noVCDE",
+        "+lint=all",
         "+v2k",
         "-debug",
         "-sverilog"
     ],
-    "sim.inputs.top_module": "dut",
-    "sim.inputs.tb_name": "dut_tb",
+    "sim.inputs.top_module": "fir",
+    "sim.inputs.tb_name": "fir_tb",
+    "sim.inputs.defines": [
+        "CLOCK_PERIOD=20.00",
+        "UNIT_DELAY=#1"
+    ],
+    "synthesis.outputs.output_files": [
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.v"
+    ],
+    "synthesis.inputs.input_files": [
+        "src/fir.v",
+        "src/EECS151.v",
+        "src/addertree.v"
+    ],
+    "synthesis.inputs.top_module": "fir",
+    "synthesis.outputs.sdc": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.sdc",
+    "synthesis.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/find_regs_cells.json",
+    "synthesis.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/find_regs_paths.json",
+    "synthesis.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.sdf",
     "sim.outputs.waveforms": [],
     "sim.outputs.saifs": [],
-    "sim.outputs.output_top_module": "dut",
-    "sim.outputs.output_tb_name": "dut_tb",
+    "sim.outputs.output_top_module": "fir",
+    "sim.outputs.output_tb_name": "fir_tb",
     "sim.outputs.output_tb_dut": "dut",
-    "sim.outputs.output_level": "rtl"
+    "sim.outputs.output_level": "syn"
 }
