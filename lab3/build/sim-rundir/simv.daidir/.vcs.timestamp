@@ -168,16 +168,16 @@ ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 1588716460 /home/ff/eecs151/verilog_lib/EECS151.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
-1698636461 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
-1698636461 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
+1698639482 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
+1698639482 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
 1696896948 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/EECS151.v
-1698636458 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider_testbench.v
-1698636366 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider.v
+1698639480 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider_testbench.v
+1698638623 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider.v
 1559359020 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
 4
 1559360489 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvirsim.so
 1559360051 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so
 1559360008 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so
 1559360050 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
-1698636468 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
+1698639489 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
 -1 partitionlib

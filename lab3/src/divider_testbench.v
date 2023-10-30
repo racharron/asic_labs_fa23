@@ -8,7 +8,7 @@ module divider_testbench;
   always #(`CLOCK_PERIOD/2) clk = ~clk;
 
   reg start;
-  reg [WIDTH-1:0] dividend, divisor;
+  wire [WIDTH-1:0] dividend, divisor;
   wire [WIDTH-1:0] quotient, remainder;
   wire done;
 
@@ -22,12 +22,51 @@ module divider_testbench;
     .remainder(remainder)
   );
 
+  reg [WIDTH:0] n, d, q, r;
+
+  integer errc;
+
+  assign dividend = n[WIDTH-1:0];
+  assign divisor = d[WIDTH-1:0];
+  assign quotient = q[WIDTH-1:0];
+  assign remainder = d[WIDTH-1:0];
+
+  /*
   always @(posedge clk) begin
     $display("At time %d: start %d, done %d, dividend %d, divisor %d, quotient %d, remainder %d",
       $time, start, done, dividend, divisor, quotient, remainder);
   end
+  */
+  always @(posedge (clk & done)) begin
+    if ((n / d != q) | (n % d != r)) begin
+      $display("ERROR: %d / %d != %d rem %d", n, d, q, r);
+      errc = errc + 1;
+    end
+  end
 
-  // TODO: Add more tests
+  initial begin
+    $vcdpluson;
+    errc = 0;
+    start = 1'b0;
+    @(posedge clk);
+
+    for (n = 0; n < 2**WIDTH; n = n + 1) begin
+      for (d = 1; d < 2**WIDTH; d = d + 1) begin
+        @(negedge clk);
+        start = 1'b1;
+        @(negedge clk)
+        start = 1'b0;
+        @(posedge clk);
+        while (!done) @(posedge clk);
+      end
+    end
+
+    $display("ERROR COUNT: %d", errc);
+    $vcdplusoff;
+    $finish();
+  end
+
+  /*
   initial begin
     $vcdpluson;
     #0;
@@ -38,8 +77,8 @@ module divider_testbench;
     repeat (9) @(posedge clk);
     @(negedge clk);
     start = 1;
-    dividend = 7;
-    divisor = 3;
+    dividend = 15;
+    divisor = 1;
 
     @(negedge clk); start = 0; // 'start' is HIGH for one cycle
     @(posedge clk);
@@ -51,5 +90,6 @@ module divider_testbench;
     $vcdplusoff;
     $finish();
   end
+  */
 
 endmodule
