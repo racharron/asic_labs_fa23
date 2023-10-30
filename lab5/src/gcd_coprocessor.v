@@ -3,7 +3,7 @@
 //-------------------------------------------------------------------------
 //
 
-module gcd_coprocessor #( parameter W = 32, parameter P = 4 ) (
+module gcd_coprocessor #( parameter W = 32, parameter P = 2 ) (
   input clk,
   input reset,
 
