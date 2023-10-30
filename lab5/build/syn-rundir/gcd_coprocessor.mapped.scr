@@ -1,6 +1,6 @@
 ######################################################################
 
-# Created by Genus(TM) Synthesis Solution 19.15-s090_1 on Thu Oct 26 19:43:27 PDT 2023
+# Created by Genus(TM) Synthesis Solution 19.15-s090_1 on Mon Oct 30 09:40:10 PDT 2023
 
 # This file contains the RC script for design:gcd_coprocessor
 
@@ -14,7 +14,7 @@ set_db -quiet phys_route_time_out 120.0
 set_db -quiet capacitance_per_unit_length_mmmc {}
 set_db -quiet resistance_per_unit_length_mmmc {}
 set_db -quiet lp_insert_clock_gating true
-set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 7 0.0 5.0} {to_generic 1 8 1 6} {first_condense 1 10 2 9} {PBS_Generic_Opt-Post 3 10 3.4331449999999997 8.433145} {{PBS_Generic-Postgen HBO Optimizations} 0 10 0.0 8.433145} {PBS_TechMap-Start 0 11 0.0 9.433145} {{PBS_TechMap-Premap HBO Optimizations} 0 11 0.0 9.433145} {second_condense 1 12 1 11} {reify 2 14 4 15} {global_incr_map 1 15 0 16} {{PBS_Techmap-Global Mapping} 4 15 4.255188 13.688333} {{PBS_TechMap-Datapath Postmap Operations} 1 16 0.9909539999999986 14.679286999999999} {{PBS_TechMap-Postmap HBO Optimizations} 0 16 -0.008641000000000787 14.670645999999998} {{PBS_TechMap-Postmap Clock Gating} 0 16 0.0 14.670645999999998} {{PBS_TechMap-Postmap Cleanup} 0 16 -0.008874999999999744 14.661770999999998} {PBS_Techmap-Post_MBCI 0 16 0.0 14.661770999999998}}
+set_db -quiet runtime_by_stage {{PBS_Generic-Start 0 7 0.0 5.0} {to_generic 2 9 1 7} {first_condense 2 11 2 10} {PBS_Generic_Opt-Post 4 11 4.366209 9.366209} {{PBS_Generic-Postgen HBO Optimizations} 0 11 0.0 9.366209} {PBS_TechMap-Start 0 12 0.0 10.366209} {{PBS_TechMap-Premap HBO Optimizations} 0 12 0.0 10.366209} {second_condense 1 13 1 12} {reify 3 16 4 16} {global_incr_map 0 16 0 17} {{PBS_Techmap-Global Mapping} 5 17 5.054287000000004 15.420496000000004} {{PBS_TechMap-Datapath Postmap Operations} 0 17 -0.011364000000000374 15.409132000000003} {{PBS_TechMap-Postmap HBO Optimizations} 0 17 -0.013641999999999044 15.395490000000004} {{PBS_TechMap-Postmap Clock Gating} 0 17 0.0 15.395490000000004} {{PBS_TechMap-Postmap Cleanup} 1 18 0.9897799999999979 16.385270000000002} {PBS_Techmap-Post_MBCI 0 18 0.0 16.385270000000002}}
 set_db -quiet hdl_error_on_blackbox true
 set_db -quiet tinfo_tstamp_file .rs_eecs151-aeq.tstamp
 set_db -quiet metric_enable true
@@ -23,7 +23,7 @@ set_db -quiet lp_clock_gating_prefix CLKGATE
 set_db -quiet lp_insert_clock_gating_incremental true
 set_db -quiet lp_clock_gating_register_aware true
 set_db -quiet use_area_from_lef true
-set_db -quiet flow_metrics_snapshot_uuid 608c62fd-1f9f-4dca-a6a9-6f72d2c14197
+set_db -quiet flow_metrics_snapshot_uuid bbdd4f60-67ae-4a4c-9f6d-ffa9422c4dfa
 set_db -quiet read_qrc_tech_file_rc_corner true
 set_db -quiet auto_ungroup none
 set_db -quiet use_tiehilo_for_const duplicate
@@ -236,10 +236,10 @@ set_db -quiet dft_scan_style muxed_scan
 set_db -quiet dft_scanbit_waveform_analysis false
 # END DFT SECTION
 set_db -quiet design:gcd_coprocessor .seq_reason_deleted_internal {}
-set_db -quiet design:gcd_coprocessor .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 34735} {cell_count 3152} {utilization  0.00} {runtime 1 8 1 6} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 35397} {cell_count 3344} {utilization  0.00} {runtime 1 10 2 9} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 35362} {cell_count 3340} {utilization  0.00} {runtime 1 12 1 11} }{reify {wns 3151} {tns 0} {vep 0} {area 15985} {cell_count 1832} {utilization  0.00} {runtime 2 14 4 15} }{global_incr_map {wns 2249} {tns 0} {vep 0} {area 15820} {cell_count 1816} {utilization  0.00} {runtime 1 15 0 16} }}
+set_db -quiet design:gcd_coprocessor .qos_by_stage {{to_generic {wns -11111111} {tns -111111111} {vep -111111111} {area 37131} {cell_count 3302} {utilization  0.00} {runtime 2 9 1 7} }{first_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 38596} {cell_count 3680} {utilization  0.00} {runtime 2 11 2 10} }{second_condense {wns -11111111} {tns -111111111} {vep -111111111} {area 38543} {cell_count 3672} {utilization  0.00} {runtime 1 13 1 12} }{reify {wns 3151} {tns 0} {vep 0} {area 17939} {cell_count 2015} {utilization  0.00} {runtime 3 16 4 16} }{global_incr_map {wns 2193} {tns 0} {vep 0} {area 17670} {cell_count 2019} {utilization  0.00} {runtime 0 17 0 17} }}
 set_db -quiet design:gcd_coprocessor .seq_mbci_coverage 0.0
 set_db -quiet design:gcd_coprocessor .hdl_user_name gcd_coprocessor
-set_db -quiet design:gcd_coprocessor .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_arbiter.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet design:gcd_coprocessor .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_coprocessor.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_arbiter.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/fifo.v} {} {}}}
 set_db -quiet design:gcd_coprocessor .verification_directory fv/gcd_coprocessor
 set_db -quiet design:gcd_coprocessor .lp_clock_gating_min_flops 3
 set_db -quiet design:gcd_coprocessor .lp_clock_gating_max_flops inf
@@ -617,123 +617,88 @@ set_db -quiet {port:gcd_coprocessor/result_bits[0]} .external_pin_cap_by_mode {{
 set_db -quiet {port:gcd_coprocessor/result_bits[0]} .external_capacitance_max_by_mode {{mode:gcd_coprocessor/ss_100C_1v60.setup_view {1000.0 1000.0}}}
 set_db -quiet {port:gcd_coprocessor/result_bits[0]} .original_name {result_bits[0]}
 set_db -quiet {port:gcd_coprocessor/result_bits[0]} .external_pin_cap {1000.0 1000.0}
-set_db -quiet hinst:gcd_coprocessor/arbiter .original_name arbiter
-set_db -quiet hinst:gcd_coprocessor/arbiter .single_bit_orig_name arbiter
-set_db -quiet hpin:gcd_coprocessor/arbiter/operands_rdy .original_name arbiter/operands_rdy
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_val[0]} .original_name {arbiter/request_val[0]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_val[1]} .original_name {arbiter/request_val[1]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_val[2]} .original_name {arbiter/request_val[2]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_val[3]} .original_name {arbiter/request_val[3]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[31]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[30]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[29]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[28]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[27]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[26]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[25]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[24]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[23]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[22]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[21]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[20]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[19]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[18]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[17]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[16]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[15]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[14]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[13]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[12]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[11]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[10]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[9]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[8]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[7]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[6]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[5]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[4]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[3]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[2]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[1]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_A[0]} .original_name arbiter/request_operands_bits_A
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[31]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[30]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[29]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[28]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[27]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[26]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[25]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[24]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[23]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[22]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[21]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[20]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[19]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[18]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[17]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[16]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[15]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[14]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[13]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[12]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[11]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[10]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[9]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[8]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[7]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[6]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[5]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[4]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[3]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[2]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[1]} .original_name arbiter/request_operands_bits_B
-set_db -quiet {hpin:gcd_coprocessor/arbiter/request_operands_bits_B[0]} .original_name arbiter/request_operands_bits_B
-set_db -quiet hpin:gcd_coprocessor/arbiter/result_val .original_name arbiter/result_val
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[31]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[30]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[29]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[28]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[27]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[26]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[25]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[24]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[23]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[22]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[21]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[20]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[19]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[18]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[17]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[16]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[15]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[14]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[13]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[12]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[11]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[10]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[9]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[8]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[7]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[6]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[5]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[4]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[3]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[2]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[1]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/result_bits_data[0]} .original_name arbiter/result_bits_data
-set_db -quiet {hpin:gcd_coprocessor/arbiter/response_rdy[0]} .original_name {arbiter/response_rdy[0]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/response_rdy[1]} .original_name {arbiter/response_rdy[1]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/response_rdy[2]} .original_name {arbiter/response_rdy[2]}
-set_db -quiet {hpin:gcd_coprocessor/arbiter/response_rdy[3]} .original_name {arbiter/response_rdy[3]}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_17 .hdl_user_name gcd_unit
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_17 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_17 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_17 .lp_clock_gating_max_flops inf
-set_db -quiet module:gcd_coprocessor/gcd_control_11 .is_sop_cluster true
-set_db -quiet module:gcd_coprocessor/gcd_control_11 .hdl_user_name gcd_control
-set_db -quiet module:gcd_coprocessor/gcd_control_11 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_control_11 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_control_11 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_arbiter_W32_N4 .hdl_user_name gcd_arbiter
+set_db -quiet module:gcd_coprocessor/gcd_arbiter_W32_N4 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_arbiter.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/fifo.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_arbiter_W32_N4 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_arbiter_W32_N4 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/fifo_WIDTH2_LOGDEPTH2 .hdl_user_name fifo
+set_db -quiet module:gcd_coprocessor/fifo_WIDTH2_LOGDEPTH2 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/fifo.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/fifo_WIDTH2_LOGDEPTH2 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/fifo_WIDTH2_LOGDEPTH2 .lp_clock_gating_max_flops inf
+set_db -quiet inst:gcd_coprocessor/arbiter/queue/full_reg .original_name arbiter/queue/full
+set_db -quiet inst:gcd_coprocessor/arbiter/queue/full_reg .orig_hdl_instantiated false
+set_db -quiet inst:gcd_coprocessor/arbiter/queue/full_reg .single_bit_orig_name arbiter/queue/full
+set_db -quiet inst:gcd_coprocessor/arbiter/queue/full_reg .gint_phase_inversion false
+set_db -quiet pin:gcd_coprocessor/arbiter/queue/full_reg/Q .original_name arbiter/queue/full/q
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]} .original_name {{arbiter/queue/buffer[0][1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]} .single_bit_orig_name {arbiter/queue/buffer[0][1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]/Q} .original_name {arbiter/queue/buffer[0][1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]} .original_name {{arbiter/queue/buffer[1][0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]} .single_bit_orig_name {arbiter/queue/buffer[1][0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]/Q} .original_name {arbiter/queue/buffer[1][0]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]} .original_name {{arbiter/queue/buffer[1][1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]} .single_bit_orig_name {arbiter/queue/buffer[1][1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]/Q} .original_name {arbiter/queue/buffer[1][1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]} .original_name {{arbiter/queue/buffer[0][0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]} .single_bit_orig_name {arbiter/queue/buffer[0][0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]/Q} .original_name {arbiter/queue/buffer[0][0]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]} .original_name {{arbiter/queue/buffer[3][0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]} .single_bit_orig_name {arbiter/queue/buffer[3][0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]/Q} .original_name {arbiter/queue/buffer[3][0]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]} .original_name {{arbiter/queue/buffer[2][0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]} .single_bit_orig_name {arbiter/queue/buffer[2][0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]/Q} .original_name {arbiter/queue/buffer[2][0]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]} .original_name {{arbiter/queue/buffer[2][1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]} .single_bit_orig_name {arbiter/queue/buffer[2][1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]/Q} .original_name {arbiter/queue/buffer[2][1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]} .original_name {{arbiter/queue/buffer[3][1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]} .single_bit_orig_name {arbiter/queue/buffer[3][1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]/Q} .original_name {arbiter/queue/buffer[3][1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[1]} .original_name {{arbiter/queue/rptr[1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[1]} .single_bit_orig_name {arbiter/queue/rptr[1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/rptr_reg[1]/Q} .original_name {arbiter/queue/rptr[1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[1]} .original_name {{arbiter/queue/wptr[1]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[1]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[1]} .single_bit_orig_name {arbiter/queue/wptr[1]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[1]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/wptr_reg[1]/Q} .original_name {arbiter/queue/wptr[1]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[0]} .original_name {{arbiter/queue/rptr[0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[0]} .single_bit_orig_name {arbiter/queue/rptr[0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/rptr_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/rptr_reg[0]/Q} .original_name {arbiter/queue/rptr[0]/q}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[0]} .original_name {{arbiter/queue/wptr[0]}}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[0]} .orig_hdl_instantiated false
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[0]} .single_bit_orig_name {arbiter/queue/wptr[0]}
+set_db -quiet {inst:gcd_coprocessor/arbiter/queue/wptr_reg[0]} .gint_phase_inversion false
+set_db -quiet {pin:gcd_coprocessor/arbiter/queue/wptr_reg[0]/Q} .original_name {arbiter/queue/wptr[0]/q}
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_42 .hdl_user_name gcd_unit
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_42 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_42 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_42 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_control_36 .is_sop_cluster true
+set_db -quiet module:gcd_coprocessor/gcd_control_36 .hdl_user_name gcd_control
+set_db -quiet module:gcd_coprocessor/gcd_control_36 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_control_36 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_control_36 .lp_clock_gating_max_flops inf
 set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[0]} .original_name {{units[0]/ctrl/state[0]}}
 set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[0]} .orig_hdl_instantiated false
 set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[0]} .single_bit_orig_name {units[0]/ctrl/state[0]}
@@ -744,10 +709,10 @@ set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[1]} .orig_hdl_instan
 set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[1]} .single_bit_orig_name {units[0]/ctrl/state[1]}
 set_db -quiet {inst:gcd_coprocessor/units[0]/ctrl/state_reg[1]} .gint_phase_inversion false
 set_db -quiet {pin:gcd_coprocessor/units[0]/ctrl/state_reg[1]/Q} .original_name {units[0]/ctrl/state[1]/q}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_14 .hdl_user_name gcd_datapath
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_14 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_14 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_14 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_39 .hdl_user_name gcd_datapath
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_39 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_39 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_39 .lp_clock_gating_max_flops inf
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD .logical_hier false
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD .lp_clock_gating_min_flops 3
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD .lp_clock_gating_max_flops inf
@@ -1080,15 +1045,15 @@ set_db -quiet {inst:gcd_coprocessor/units[0]/dpath/B_reg_reg[31]} .orig_hdl_inst
 set_db -quiet {inst:gcd_coprocessor/units[0]/dpath/B_reg_reg[31]} .single_bit_orig_name {units[0]/dpath/B_reg[31]}
 set_db -quiet {inst:gcd_coprocessor/units[0]/dpath/B_reg_reg[31]} .gint_phase_inversion false
 set_db -quiet {pin:gcd_coprocessor/units[0]/dpath/B_reg_reg[31]/Q} .original_name {units[0]/dpath/B_reg[31]/q}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_18 .hdl_user_name gcd_unit
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_18 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_18 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_18 .lp_clock_gating_max_flops inf
-set_db -quiet module:gcd_coprocessor/gcd_control_12 .is_sop_cluster true
-set_db -quiet module:gcd_coprocessor/gcd_control_12 .hdl_user_name gcd_control
-set_db -quiet module:gcd_coprocessor/gcd_control_12 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_control_12 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_control_12 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_43 .hdl_user_name gcd_unit
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_43 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_43 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_43 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_control_37 .is_sop_cluster true
+set_db -quiet module:gcd_coprocessor/gcd_control_37 .hdl_user_name gcd_control
+set_db -quiet module:gcd_coprocessor/gcd_control_37 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_control_37 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_control_37 .lp_clock_gating_max_flops inf
 set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[0]} .original_name {{units[1]/ctrl/state[0]}}
 set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[0]} .orig_hdl_instantiated false
 set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[0]} .single_bit_orig_name {units[1]/ctrl/state[0]}
@@ -1099,10 +1064,10 @@ set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[1]} .orig_hdl_instan
 set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[1]} .single_bit_orig_name {units[1]/ctrl/state[1]}
 set_db -quiet {inst:gcd_coprocessor/units[1]/ctrl/state_reg[1]} .gint_phase_inversion false
 set_db -quiet {pin:gcd_coprocessor/units[1]/ctrl/state_reg[1]/Q} .original_name {units[1]/ctrl/state[1]/q}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_15 .hdl_user_name gcd_datapath
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_15 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_15 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_15 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_40 .hdl_user_name gcd_datapath
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_40 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_40 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_40 .lp_clock_gating_max_flops inf
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_2 .logical_hier false
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_2 .lp_clock_gating_min_flops 3
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_2 .lp_clock_gating_max_flops inf
@@ -1435,15 +1400,15 @@ set_db -quiet {inst:gcd_coprocessor/units[1]/dpath/B_reg_reg[31]} .orig_hdl_inst
 set_db -quiet {inst:gcd_coprocessor/units[1]/dpath/B_reg_reg[31]} .single_bit_orig_name {units[1]/dpath/B_reg[31]}
 set_db -quiet {inst:gcd_coprocessor/units[1]/dpath/B_reg_reg[31]} .gint_phase_inversion false
 set_db -quiet {pin:gcd_coprocessor/units[1]/dpath/B_reg_reg[31]/Q} .original_name {units[1]/dpath/B_reg[31]/q}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_19 .hdl_user_name gcd_unit
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_19 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_19 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_unit_W32_19 .lp_clock_gating_max_flops inf
-set_db -quiet module:gcd_coprocessor/gcd_control_13 .is_sop_cluster true
-set_db -quiet module:gcd_coprocessor/gcd_control_13 .hdl_user_name gcd_control
-set_db -quiet module:gcd_coprocessor/gcd_control_13 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_control_13 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_control_13 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_44 .hdl_user_name gcd_unit
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_44 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_unit.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_44 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_unit_W32_44 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_control_38 .is_sop_cluster true
+set_db -quiet module:gcd_coprocessor/gcd_control_38 .hdl_user_name gcd_control
+set_db -quiet module:gcd_coprocessor/gcd_control_38 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_control.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_control_38 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_control_38 .lp_clock_gating_max_flops inf
 set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[0]} .original_name {{units[2]/ctrl/state[0]}}
 set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[0]} .orig_hdl_instantiated false
 set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[0]} .single_bit_orig_name {units[2]/ctrl/state[0]}
@@ -1454,10 +1419,10 @@ set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[1]} .orig_hdl_instan
 set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[1]} .single_bit_orig_name {units[2]/ctrl/state[1]}
 set_db -quiet {inst:gcd_coprocessor/units[2]/ctrl/state_reg[1]} .gint_phase_inversion false
 set_db -quiet {pin:gcd_coprocessor/units[2]/ctrl/state_reg[1]/Q} .original_name {units[2]/ctrl/state[1]/q}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_16 .hdl_user_name gcd_datapath
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_16 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_16 .lp_clock_gating_min_flops 3
-set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_16 .lp_clock_gating_max_flops inf
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_41 .hdl_user_name gcd_datapath
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_41 .hdl_filelist {{default -sv {SYNTHESIS} {/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab5/src/gcd_datapath.v} {} {}}}
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_41 .lp_clock_gating_min_flops 3
+set_db -quiet module:gcd_coprocessor/gcd_datapath_W32_41 .lp_clock_gating_max_flops inf
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_4 .logical_hier false
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_4 .lp_clock_gating_min_flops 3
 set_db -quiet module:gcd_coprocessor/CLKGATE_RC_CG_MOD_4 .lp_clock_gating_max_flops inf
@@ -2155,7 +2120,7 @@ set_db -quiet source_verbose true
 ##
 ## Written by Genus(TM) Synthesis Solution version 19.15-s090_1
 ## flowkit v19.10-s018_1
-## Written on 19:43:27 26-Oct 2023
+## Written on 09:40:10 30-Oct 2023
 #############################################################
 #####   Flow Definitions   ##################################
 
@@ -2198,7 +2163,7 @@ if {[is_attribute flow_mail_on_error -obj_type root]} {set_db flow_mail_on_error
 if {[is_attribute flow_mail_to -obj_type root]} {set_db flow_mail_to {}}
 if {[is_attribute flow_metrics_file -obj_type root]} {set_db flow_metrics_file {}}
 if {[is_attribute flow_metrics_snapshot_parent_uuid -obj_type root]} {set_db flow_metrics_snapshot_parent_uuid {}}
-if {[is_attribute flow_metrics_snapshot_uuid -obj_type root]} {set_db flow_metrics_snapshot_uuid 608c62fd-1f9f-4dca-a6a9-6f72d2c14197}
+if {[is_attribute flow_metrics_snapshot_uuid -obj_type root]} {set_db flow_metrics_snapshot_uuid bbdd4f60-67ae-4a4c-9f6d-ffa9422c4dfa}
 if {[is_attribute flow_overwrite_db -obj_type root]} {set_db flow_overwrite_db false}
 if {[is_attribute flow_report_directory -obj_type root]} {set_db flow_report_directory reports}
 if {[is_attribute flow_run_tag -obj_type root]} {set_db flow_run_tag {}}

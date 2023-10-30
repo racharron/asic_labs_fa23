@@ -3,27 +3,27 @@
 #
 # Static entries from SDF files:
 #
-#  IOPATH              =                 4284
-#  PORTDELAY           =                 4436
-#  SETUPHOLD           =                  544
-#  TIMINGCHECK(ALL)    =                  544
+#  IOPATH              =                 4794
+#  PORTDELAY           =                 4968
+#  SETUPHOLD           =                  586
+#  TIMINGCHECK(ALL)    =                  586
 #
 #
 
 # Annotated entries in elaborated design:
 #
-#  IOPATH Delays       =                 1996
-#  INTERCONNECT(MSID)  =                 4436
-#  Timing Checks       =                 1088
-#  Negative Tchecks    =                  544
+#  IOPATH Delays       =                 2086
+#  INTERCONNECT(MSID)  =                 4968
+#  Timing Checks       =                 1108
+#  Negative Tchecks    =                  554
 #
-#  Annotated instances =                 1112
-#  Total instances     =                 3713
+#  Annotated instances =                 1180
+#  Total instances     =                 4384
 #
 
 # Static entries in elaborated design:
-#  IOPATH Delays       =                 5408
-#  Timing Checks       =                 1728
+#  IOPATH Delays       =                 5621
+#  Timing Checks       =                 1758
 #
 # ************************************************************************
 #

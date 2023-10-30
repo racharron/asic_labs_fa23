@@ -103,6 +103,19 @@ set_db {port:gcd_coprocessor/result_bits[0]} .original_name {result_bits[0]}
 
 
 
+set_db pin:gcd_coprocessor/arbiter/queue/full_reg/Q .original_name {arbiter/queue/full/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[0][1]/Q} .original_name {arbiter/queue/buffer[0][1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[1][0]/Q} .original_name {arbiter/queue/buffer[1][0]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[1][1]/Q} .original_name {arbiter/queue/buffer[1][1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[0][0]/Q} .original_name {arbiter/queue/buffer[0][0]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[3][0]/Q} .original_name {arbiter/queue/buffer[3][0]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[2][0]/Q} .original_name {arbiter/queue/buffer[2][0]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[2][1]/Q} .original_name {arbiter/queue/buffer[2][1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/buffer_reg[3][1]/Q} .original_name {arbiter/queue/buffer[3][1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/rptr_reg[1]/Q} .original_name {arbiter/queue/rptr[1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/wptr_reg[1]/Q} .original_name {arbiter/queue/wptr[1]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/rptr_reg[0]/Q} .original_name {arbiter/queue/rptr[0]/q}
+set_db {pin:gcd_coprocessor/arbiter/queue/wptr_reg[0]/Q} .original_name {arbiter/queue/wptr[0]/q}
 set_db {pin:gcd_coprocessor/units[0]/ctrl/state_reg[0]/Q} .original_name {units[0]/ctrl/state[0]/q}
 set_db {pin:gcd_coprocessor/units[0]/ctrl/state_reg[1]/Q} .original_name {units[0]/ctrl/state[1]/q}
 set_db {pin:gcd_coprocessor/units[0]/dpath/A_reg_reg[0]/Q} .original_name {units[0]/dpath/A_reg[0]/q}
