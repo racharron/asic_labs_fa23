@@ -1,5 +1,7 @@
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v
 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/primitives.v
 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/sky130_fd_sc_hd.v
-/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/Q1a_tb.v
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/fir_tb.v
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-par-sim/fir.sim.v
 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v

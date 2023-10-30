@@ -9,3 +9,7 @@ Yes.  The instance beginning at line 515 has the expected delay and is connected
 
 Q 4
 The lowest clock period for which the testbench reports correct outputs is 17ns.
+
+Q 6a
+The setup view indicates less power draw than the hold view.  This could be due to the V_DD voltage being lower.
+It turns out that expected ratio of V_h^2 to V_s^2 is very close to the ratio of the total energy draws.

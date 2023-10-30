@@ -1,14 +1,17 @@
-0 
-49
+1        
+0 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf_c
+56
 +cli+4
 +define+CLOCK_PERIOD=1.00
 +define+FUNCTIONAL
 +define+UNIT_DELAY=#1
-+delay_mode_zero
 +itf+/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
-+lint=all,noVCDE
++lint=all
 +memcbk
-+notimingcheck
++neg_tchk
++sdf=max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf
++sdf=max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf
++sdfverbose
 +v2k
 +vcsd1
 +vpi
@@ -26,9 +29,10 @@
 -Mobjects= /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvirsim.so /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
 -Mout=/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/simv
 -Msaverestoreobj=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcs_save_restore_new.o
--Msyslibs=-ldl
+-Msyslibs=-ldl -lm
 -Mvcsaceobjs=
 -Mxcflags= -pipe -fPIC -I/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/include
+-P
 -Xcbug=0x1
 -Xnotice=1
 -debug=4
@@ -37,18 +41,22 @@
 -gen_obj
 -lca
 -line
+-negdelay
 -o /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/simv
 -picarchive
 -sverilog
 -timescale=1ns/10ps
 -top
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/access.tab
 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/primitives.v
 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/sky130_fd_sc_hd.v
-/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/Q1a_tb.v
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/fir_tb.v
+/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-par-sim/fir.sim.v
 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/bin/vcs1
-dut_tb
+fir_tb
 114
 which_declare=declare -f
 XDG_SESSION_ID=5041
@@ -165,17 +173,21 @@ ARCH=x86_64
 AGILEESOFD_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 0
-6
+10
+1698626919 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf
 1693359834 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 1693359834 /home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
-1698618995 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/sky130_fd_sc_hd.v
-1698618995 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/primitives.v
-1698618991 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/Q1a_tb.v
+1698626930 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/sky130_fd_sc_hd.v
+1698626930 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/tech-sky130-cache/primitives.v
+1698626899 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v
+1696896946 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/fir_tb.v
+1696896946 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-par-sim/fir.sim.v
+1698626931 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/access.tab
 1559359020 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
 4
 1559360489 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvirsim.so
 1559360051 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so
 1559360008 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so
 1559360050 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
-1698619002 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/simv.daidir
+1698626939 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/simv.daidir
 -1 partitionlib

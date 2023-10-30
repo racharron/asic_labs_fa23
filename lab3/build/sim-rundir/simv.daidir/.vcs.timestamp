@@ -48,24 +48,13 @@
 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/bin/vcs1
 divider_testbench
-130
+108
 which_declare=declare -f
-XDG_VTNR=2
-XDG_SESSION_TYPE=x11
-XDG_SESSION_ID=60
-XDG_SESSION_DESKTOP=mate
-XDG_SEAT=seat0
+XDG_SESSION_ID=4805
 XDG_RUNTIME_DIR=/run/user/90468
-XDG_DATA_DIRS=/home/cc/eecs151/fa23/class/eecs151-aeq/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
-XDG_CURRENT_DESKTOP=MATE
+XDG_DATA_DIRS=/home/cc/eecs151/fa23/class/eecs151-aeq/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XA_HOME=/home/ff/eecs151/tools/xa/G-2012.06-SP2
 XA_64=1
-XAUTHORITY=/run/user/90468/gdm/Xauthority
-WINDOWPATH=2
-VSCODE_GIT_IPC_HANDLE=/run/user/90468/vscode-git-1abd8fbfcc.sock
-VSCODE_GIT_ASKPASS_NODE=/usr/share/code/code
-VSCODE_GIT_ASKPASS_MAIN=/usr/share/code/resources/app/extensions/git/dist/askpass-main.js
-VSCODE_GIT_ASKPASS_EXTRA_ARGS=--ms-enable-electron-run-as-node
 VMR_MODE_FLAG=64
 VIRTUAL_ENV_PROMPT=(venv_151) 
 VIRTUAL_ENV=/home/cc/eecs151/fa23/class/eecs151-aeq/venv_151
@@ -79,37 +68,35 @@ VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
-USERNAME=eecs151-aeq
 UNAME=/bin/uname
 UCB_VLSI_HOME=/home/ff/eecs151
 UCB_VLSI_HOME2=/home/ff/eecs151
 UCB_STDCELLS=synopsys-32nm/multi_vt
 TOOL_HOME=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64
-TERM_PROGRAM_VERSION=1.83.1
-TERM_PROGRAM=vscode
 S_COLORS=auto
 SYNOPSYS_SYSTYPE=linux
 SYNOPSYS_ROOT=/home/ff/cs250/tools/synopsys
 SYNOPSYS_NCX_ROOT=/home/ff/eecs151/tools/ncx/G-2012.06-SP3
 STAR_HOME=/home/ff/eecs151/tools/starrcxt/G-2012.06-SP3
-SSH_AUTH_SOCK=/tmp/ssh-BkmB38Xt7uOP/agent.925668
-SSH_AGENT_PID=925669
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/924261,unix/unix:/tmp/.ICE-unix/924261
+SSH_TTY=/dev/pts/32
+SSH_CONNECTION=136.152.29.49 65318 128.32.42.152 22
+SSH_CLIENT=136.152.29.49 65318 22
+SSH_AUTH_SOCK=/tmp/ssh-qiybtjVP95eU/agent.674630
+SSH_AGENT_PID=674631
 SERIALTTY=/dev/ttyUSB0
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RUNAS=/share/b/runas/x86_64
 RISCV=/home/ff/eecs151/tools-151/riscv-toolchain-fa21
-QT_SCALE_FACTOR=1
-QT_FONT_DPI=96
 PT_PATH=/home/ff/cs250/tools/synopsys/pt/current/bin
 PT_HOME=/home/ff/cs250/tools/synopsys/pt/current
 OVA_UUM=0
 OS=Linux
-ORIGINAL_XDG_CURRENT_DESKTOP=MATE
 OA_UNSUPPORTED_PLAT=linux_rhel50_gcc48x
 OA_HOME=/share/instsww/cadence/IC617/oa_v22.50.095
-NO_AT_BRIDGE=1
 NCX_HOME=/home/ff/eecs151/tools/ncx/G-2012.06-SP3
 MW_PATH=/home/ff/cs250/tools/synopsys/mw/current/bin/AMD.64
 MW_HOME=/home/ff/cs250/tools/synopsys/mw/current
@@ -117,14 +104,13 @@ MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
 MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
 MODULESHOME=/usr/share/Modules
 MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
-MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MGLS_LICENSE_FILE=1717@bwrcflex-1.eecs.berkeley.edu:1717@bwrcflex-2.eecs.berkeley.edu
 MFLAGS=
-MATE_DESKTOP_SESSION_ID=this-is-deprecated
 MASTERDIR=/home/ff/eecs151
 MASTER=eecs151
-MAKE_TERMOUT=/dev/pts/0
-MAKE_TERMERR=/dev/pts/0
+MAKE_TERMOUT=/dev/pts/32
+MAKE_TERMERR=/dev/pts/32
 MAKELEVEL=1
 MAKEFLAGS=
 LOADEDMODULES=
@@ -142,26 +128,17 @@ HSPICE_HOME=/home/ff/eecs151/tools/hspice/G-2012.06-SP1
 HISTCONTROL=ignoredups
 HERCULES_HOME_DIR=/home/ff/eecs151/tools/hercules/B-2008.09-SP5
 HAMMER_DATABASE=/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/config_db_tmp.json
-GTK_OVERLAY_SCROLLING=0
-GIT_ASKPASS=/usr/share/code/resources/app/extensions/git/dist/askpass.sh
-GIO_LAUNCHED_DESKTOP_FILE_PID=924767
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/code.desktop
 GEN_PATH=/share/instsww/cadence/GENUS/bin
 GEN_HOME=/share/instsww/cadence/GENUS
-GDM_LANG=en_US.UTF-8
-GDMSESSION=mate
 GDK_BACKEND=x11
 FORMALITY_HOME=/home/ff/cs250/tools/synopsys/fm/current
 FORMALITY_BIN=/home/ff/cs250/tools/synopsys/fm/current/bin
 EECS151_SOURCED=yes
-DESKTOP_SESSION=mate
 DC_PATH=/share/instsww/synopsys/J-2014.09-SP3/bin
 DC_HOME=/share/instsww/synopsys/J-2014.09-SP3
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/90468/bus
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-lMT5Lg3D2r,guid=5857370c2f82115297beb351653ec763
 CVS_RSH=ssh
 CONFIG_SHELL=/usr/bin/bash
-COLORTERM=truecolor
-CHROME_DESKTOP=code-url-handler.desktop
 CHISEL=/home/ff/cs250/install/chisel
 CDS_ROOT=/share/instsww/cadence/IC615.151
 CDS_Netlisting_Mode=Analog
@@ -174,8 +151,9 @@ CALIBRE_HOME=/share/instsww/mgc/calibre2017/aoi_cal_2017.4_19.14
 BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
 BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
 BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
-BASH_FUNC_module%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1_}
 BASH_FUNC_ml%%=() {  module ml "$@"_}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
 ARCH=x86_64
 AGILEESOFD_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
@@ -184,8 +162,8 @@ ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 1588716460 /home/ff/eecs151/verilog_lib/EECS151.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
-1698367836 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
-1698367836 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
+1698626685 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
+1698626685 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
 1696896948 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/EECS151.v
 1696896948 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider_testbench.v
 1698367834 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/divider.v
@@ -195,5 +173,5 @@ ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 1559360051 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so
 1559360008 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so
 1559360050 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
-1698367838 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
+1698626691 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
 -1 partitionlib

@@ -1,12 +1,12 @@
 PIC_LD=ld
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _132748_archive_1.so
-_132748_archive_1.so : archive.0/_132748_archive_1.a
+ARCHIVE_OBJS += _1300151_archive_1.so
+_1300151_archive_1.so : archive.0/_1300151_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic  -o .//../simv.daidir//_132748_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic  -o .//../simv.daidir//_1300151_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../simv.daidir//_132748_archive_1.so $@
+	@ln -sf .//../simv.daidir//_1300151_archive_1.so $@
 
 
 
@@ -21,7 +21,7 @@ $(O0_OBJS) : %.o: %.c
 %.o: %.c
 	$(CC_CG) $(CFLAGS_CG) -c -o $@ $<
 CU_UDP_OBJS = \
-
+objs/udps/wizTW.o 
 
 CU_LVL_OBJS = \
 SIM_l.o 
