@@ -4,12 +4,9 @@ pDaiDir                            	/home/cc/eecs151/fa23/class/eecs151-aeq/asic
 destPath                           	csrc/
 fSharedMaster                      	0
 fHsimPCSharedLibSpecified          	0
-hsMainFileCount                    	1
-hsMtmSpecArr_i                     	3
-hsMainFileSuffixArr_i              	csdf1.MAIN
-hsAuxFileSuffixArr_i               	csdf1.AUX
-hsOriginalSdfFileArr_i             	/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf
-fHsMultiSdfDbg                     	0
+hsMainFileCount                    	0
+hsMainFileName                     	dummy
+hsAuxFileName                      	dummy
 partitionName                      	6	MASTER
 hsimInitRegValue                   	3
 fNSParam                           	1024
@@ -34,7 +31,7 @@ fHsimTaskFuncXmrsDbg               	0
 fHsimAllTaskFuncXmrs               	0
 fHsimDoXmrProcessing               	1
 fNoMergeDelays                     	0
-uGlblTimeUnit                      	4
+uGlblTimeUnit                      	6
 fHsimAllMtm                        	0
 fSimprofileNew                     	0
 fHsimVhVlOpt                       	0
@@ -53,7 +50,7 @@ fHsimAllMtmPat                     	0
 fHsimCertRaptMode                  	0
 fNewCBSemantics                    	1
 fSchedAtEnd                        	0
-fSpecifyInDesign                   	1
+fSpecifyInDesign                   	0
 fHsimDumpFlatData                  	1
 fHsimCompressDiag                  	1
 fHsimPowerOpt                      	0
@@ -88,7 +85,7 @@ fHsimNtbVl                         	0
 fHsimICTimeStamp                   	0
 fHsimICDiag                        	0
 fHsimNewCSDF                       	1
-vcselabIncrMode                    	1
+vcselabIncrMode                    	2
 fHsimMPPackDelay                   	0
 fHsimMultDriver                    	0
 fHsimPart                          	0
@@ -200,11 +197,11 @@ fHsimPcCbOpt                       	1
 fHsimAmsTunneling                  	0
 fHsimAmsTunnelingDiag              	0
 fHsimAmsNewDrs                     	1
-fHsimScUpwardXmrNoSplit            	0
+fHsimScUpwardXmrNoSplit            	1
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
-fHsimVcsInterfaceAlias             	1
-fHsimSVTypesIntf                   	1
+fHsimVcsInterfaceAlias             	0
+fHsimSVTypesIntf                   	0
 fUnifiedAssertCtrlDiag             	0
 fHsimEnable2StateScal              	0
 fHsimDisable2StateScalIbn          	0
@@ -424,7 +421,7 @@ fHsimStitchNew                     	0
 fHsimCbkOpt                        	1
 fFrcRelCbk                         	1
 fPulserrWarn                       	1
-hsMtmSpec                          	3
+hsMtmSpec                          	0
 fprofile                           	0
 fPreserveDaidir                    	1
 fElabGraphLevelize                 	0
@@ -512,7 +509,7 @@ fHsimOptMPDelayLoad                	0
 fHsimTransMPDelay                  	1
 fLargeSizeSdfTest                  	0
 fAllMtm                            	0
-fHsimDelayGateMbme                 	1
+fHsimDelayGateMbme                 	0
 fHsimDelayGateMbmeOld              	0
 fHsimNdb                           	1
 fHsimNdbDebug                      	0
@@ -585,8 +582,8 @@ dGblPeR                            	1.000000
 fNewdaidirpath                     	0
 fHsimDelayMbmeCheck                	4
 fHsimMdbPartInputLimit             	1
-fHsimSdfData                       	1
-fHsimDesignHasSdfAnnotation        	1
+fHsimSdfData                       	0
+fHsimDesignHasSdfAnnotation        	0
 fHsimDesignUsesParallelVcs         	0
 fHsimCMEnabled                     	0
 fHsimNotDelRefData                 	0
@@ -603,7 +600,7 @@ fPulseOpt                          	0
 fGblPulseOnD                       	0
 fGblPulseOnE                       	0
 fVCSiFlow                          	0
-fSystemVCSEnabled                  	1
+fSystemVCSEnabled                  	0
 fHsimForcedPort                    	0
 fpicOption                         	1
 fModelSave                         	0

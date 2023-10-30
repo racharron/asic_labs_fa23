@@ -22,14 +22,12 @@ module divider_testbench;
     .remainder(remainder)
   );
 
-  reg [WIDTH:0] n, d, q, r;
+  reg [WIDTH:0] n, d;
 
   integer errc;
 
   assign dividend = n[WIDTH-1:0];
   assign divisor = d[WIDTH-1:0];
-  assign quotient = q[WIDTH-1:0];
-  assign remainder = d[WIDTH-1:0];
 
   /*
   always @(posedge clk) begin
@@ -37,9 +35,9 @@ module divider_testbench;
       $time, start, done, dividend, divisor, quotient, remainder);
   end
   */
-  always @(posedge (clk & done)) begin
-    if ((n / d != q) | (n % d != r)) begin
-      $display("ERROR: %d / %d != %d rem %d", n, d, q, r);
+  always @(posedge (clk)) begin
+    if (done & ! start & ((dividend / divisor != quotient) | (dividend % divisor != remainder))) begin
+      $display("ERROR: %d / %d != %d rem %d", dividend, divisor, quotient, remainder);
       errc = errc + 1;
     end
   end
@@ -49,15 +47,16 @@ module divider_testbench;
     errc = 0;
     start = 1'b0;
     @(posedge clk);
+    @(negedge clk)
 
     for (n = 0; n < 2**WIDTH; n = n + 1) begin
       for (d = 1; d < 2**WIDTH; d = d + 1) begin
-        @(negedge clk);
         start = 1'b1;
         @(negedge clk)
         start = 1'b0;
         @(posedge clk);
         while (!done) @(posedge clk);
+        @(negedge clk);
       end
     end
 

@@ -25,12 +25,11 @@ module divider #(
   wire sub_negative;
   reg [$clog2(WIDTH+1)-1:0] iteration;
 
-  assign remainder = left_half;
+  assign remainder = long_remainder[2*WIDTH-1:WIDTH];
   assign done = iteration == WIDTH;
 
   assign shifted_remainder = long_remainder << 1;
-  assign left_half = shifted_remainder[2*WIDTH-1:WIDTH];
-  assign right_half = shifted_remainder[WIDTH-1:0];
+  assign {left_half, right_half} = shifted_remainder;
   assign {sub_negative, subtracted} = {1'b0, left_half} - {1'b0, divisor};
 
   always @(posedge clk ) begin
