@@ -61,11 +61,3 @@ set_db base_cell:sky130_fd_io__top_ground_lvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_power_hvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_power_lvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_xres4v2 .dont_touch true
-set_db {hinst:gcd_coprocessor/units[0]/dpath/CLKGATE_RC_CG_HIER_INST0} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[0]/dpath/CLKGATE_RC_CG_HIER_INST1} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[1]/dpath/CLKGATE_RC_CG_HIER_INST2} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[1]/dpath/CLKGATE_RC_CG_HIER_INST3} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[2]/dpath/CLKGATE_RC_CG_HIER_INST4} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[2]/dpath/CLKGATE_RC_CG_HIER_INST5} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[3]/dpath/CLKGATE_RC_CG_HIER_INST6} .dont_touch_hports true
-set_db {hinst:gcd_coprocessor/units[3]/dpath/CLKGATE_RC_CG_HIER_INST7} .dont_touch_hports true

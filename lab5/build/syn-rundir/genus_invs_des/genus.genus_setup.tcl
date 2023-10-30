@@ -2,7 +2,7 @@
 #
 # Genus(TM) Synthesis Solution setup file
 # Created by Genus(TM) Synthesis Solution 19.15-s090_1
-#   on 10/26/2023 19:43:28
+#   on 10/30/2023 10:06:01
 #
 # This file can only be run in Genus Common UI mode.
 #
@@ -49,13 +49,13 @@ set _slk_ [::legacy::get_attribute slack design:gcd_coprocessor]
 if {[regexp {^-?[0-9.]+$} $_slk_]} {
   set _slk_ [format %.1f $_slk_]
 }
-if {$_slk_ != "2248.7"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: 2248.7,  current slack: $_slk_"
+if {$_slk_ != "inf"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack: inf,  current slack: $_slk_"
 }
 unset _slk_
 # multi-mode slack
-if {"[string_representation [::legacy::get_attribute slack_by_mode design:gcd_coprocessor]]" != "{{mode:gcd_coprocessor/ss_100C_1v60.setup_view 2248.7}}"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:gcd_coprocessor/ss_100C_1v60.setup_view 2248.7}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:gcd_coprocessor]]"
+if {"[string_representation [::legacy::get_attribute slack_by_mode design:gcd_coprocessor]]" != "{{mode:gcd_coprocessor/ss_100C_1v60.setup_view inf}}"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden slack_by_mode: {{mode:gcd_coprocessor/ss_100C_1v60.setup_view inf}}  current slack_by_mode: [string_representation [::legacy::get_attribute slack_by_mode design:gcd_coprocessor]]"
 }
 # tns
 set _tns_ [::legacy::get_attribute tns design:gcd_coprocessor]
@@ -71,8 +71,8 @@ set _cell_area_ [::legacy::get_attribute cell_area design:gcd_coprocessor]
 if {[regexp {^-?[0-9.]+$} $_cell_area_]} {
   set _cell_area_ [format %.0f $_cell_area_]
 }
-if {$_cell_area_ != "16020"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 16020,  current cell area: $_cell_area_"
+if {$_cell_area_ != "128"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden cell area: 128,  current cell area: $_cell_area_"
 }
 unset _cell_area_
 # net area
@@ -80,8 +80,8 @@ set _net_area_ [::legacy::get_attribute net_area design:gcd_coprocessor]
 if {[regexp {^-?[0-9.]+$} $_net_area_]} {
   set _net_area_ [format %.0f $_net_area_]
 }
-if {$_net_area_ != "10836"} {
-   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 10836,  current net area: $_net_area_"
+if {$_net_area_ != "115"} {
+   mesg_send [::legacy::find -message /messages/PHYS/PHYS-92] "golden net area: 115,  current net area: $_net_area_"
 }
 unset _net_area_
 # library domain count

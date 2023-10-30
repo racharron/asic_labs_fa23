@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 19.15-s090_1 on Thu Oct 26 19:43:27 PDT 2023
+#  Created by Genus(TM) Synthesis Solution 19.15-s090_1 on Mon Oct 30 10:06:00 PDT 2023
 
 # ####################################################################
 
@@ -48,23 +48,6 @@ set_load -pin_load 1.0 [get_ports {result_bits[2]}]
 set_load -pin_load 1.0 [get_ports {result_bits[1]}]
 set_load -pin_load 1.0 [get_ports {result_bits[0]}]
 set_clock_groups -name "clock_groups_clk_to_others" -asynchronous -group [get_clocks clk]
-group_path -weight 1.000000 -name cg_enable_group_clk -through [list \
-  [get_pins {units[0]/dpath/CLKGATE_RC_CG_HIER_INST0/enable}]  \
-  [get_pins {units[0]/dpath/CLKGATE_RC_CG_HIER_INST1/enable}]  \
-  [get_pins {units[1]/dpath/CLKGATE_RC_CG_HIER_INST2/enable}]  \
-  [get_pins {units[1]/dpath/CLKGATE_RC_CG_HIER_INST3/enable}]  \
-  [get_pins {units[2]/dpath/CLKGATE_RC_CG_HIER_INST4/enable}]  \
-  [get_pins {units[2]/dpath/CLKGATE_RC_CG_HIER_INST5/enable}]  \
-  [get_pins {units[3]/dpath/CLKGATE_RC_CG_HIER_INST6/enable}]  \
-  [get_pins {units[3]/dpath/CLKGATE_RC_CG_HIER_INST7/enable}]  \
-  [get_pins {units[0]/dpath/CLKGATE_RC_CG_HIER_INST0/enable}]  \
-  [get_pins {units[0]/dpath/CLKGATE_RC_CG_HIER_INST1/enable}]  \
-  [get_pins {units[1]/dpath/CLKGATE_RC_CG_HIER_INST2/enable}]  \
-  [get_pins {units[1]/dpath/CLKGATE_RC_CG_HIER_INST3/enable}]  \
-  [get_pins {units[2]/dpath/CLKGATE_RC_CG_HIER_INST4/enable}]  \
-  [get_pins {units[2]/dpath/CLKGATE_RC_CG_HIER_INST5/enable}]  \
-  [get_pins {units[3]/dpath/CLKGATE_RC_CG_HIER_INST6/enable}]  \
-  [get_pins {units[3]/dpath/CLKGATE_RC_CG_HIER_INST7/enable}] ]
 set_clock_gating_check -setup 0.0 
 set_dont_use true [get_lib_cells sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__probe_p_8]
 set_dont_use true [get_lib_cells sky130_fd_sc_hd__ss_100C_1v60/sky130_fd_sc_hd__probec_p_8]
