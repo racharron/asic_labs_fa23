@@ -35,6 +35,7 @@ DESIGN_CONF     	?= $(vlsi_dir)/design.yml
 SIM_RTL_CONF    	?= $(vlsi_dir)/sim-rtl.yml
 DIV_CONF    		?= $(vlsi_dir)/div.yml
 SIM_GL_SYN_CONF 	?= $(vlsi_dir)/sim-gl-syn.yml
+DIV_SYN_CONF 		?= $(vlsi_dir)/div-syn.yml
 SIM_GL_PAR_CONF 	?= $(vlsi_dir)/sim-gl-par.yml
 
 SRAM_CONF           ?= $(OBJ_DIR)/sram_generator-output.json
@@ -95,6 +96,14 @@ div: $(HAMMER_D_MK)
 .PHONY: sim-gl-syn
 sim-gl-syn: $(HAMMER_D_MK) $(INPUT_SIM_GL_SYN_DB)
 	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_GL_SYN_CONF) -p $(INPUT_SIM_GL_SYN_DB) --obj_dir $(OBJ_DIR) sim
+
+#########################################################################################
+# Divider Post-Synthesis Gate Level Sim
+#########################################################################################
+
+.PHONY: div-syn
+div-syn: $(HAMMER_D_MK) $(INPUT_SIM_GL_SYN_DB)
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(DIV_SYN_CONF) -p $(INPUT_SIM_GL_SYN_DB) --obj_dir $(OBJ_DIR) sim
 
 #########################################################################################
 # Post-PAR Gate Level Sim

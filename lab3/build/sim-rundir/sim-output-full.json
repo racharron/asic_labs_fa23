@@ -393,27 +393,48 @@
     "power.voltus.version": "181",
     "vlsi.core.build_system": "make",
     "sim.inputs.input_files": [
-        "src/divider.v",
-        "src/divider_testbench.v",
-        "src/EECS151.v"
+        "src/gcd_testbench.v",
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.v"
     ],
+    "sim.inputs.level": "syn",
+    "sim.inputs.timing_annotated": true,
     "sim.inputs.timescale": "1ns/10ps",
     "sim.inputs.options": [
         "-notice",
         "-line",
-        "+lint=all,noVCDE",
+        "+lint=all",
         "+v2k",
-        "-debug"
+        "-debug",
+        "+neg_tchk",
+        "-sverilog"
     ],
-    "sim.inputs.top_module": "divider_testbench",
-    "sim.inputs.tb_name": "divider_testbench",
+    "sim.inputs.top_module": "gcd",
+    "sim.inputs.tb_name": "gcd_testbench",
+    "sim.inputs.tb_dut": "gcd",
     "sim.inputs.defines": [
         "CLOCK_PERIOD=20.00000"
     ],
+    "synthesis.outputs.output_files": [
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.v"
+    ],
+    "synthesis.inputs.input_files": [
+        "src/gcd.v",
+        "src/gcd_datapath.v",
+        "src/gcd_control.v",
+        "src/EECS151.v"
+    ],
+    "synthesis.inputs.top_module": "gcd",
+    "synthesis.outputs.sdc": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdc",
+    "synthesis.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/find_regs_cells.json",
+    "synthesis.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/find_regs_paths.json",
+    "synthesis.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf",
+    "sim.inputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/find_regs_paths.json",
+    "sim.inputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/find_regs_cells.json",
+    "sim.inputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf",
     "sim.outputs.waveforms": [],
     "sim.outputs.saifs": [],
-    "sim.outputs.output_top_module": "divider_testbench",
-    "sim.outputs.output_tb_name": "divider_testbench",
-    "sim.outputs.output_tb_dut": "dut",
-    "sim.outputs.output_level": "rtl"
+    "sim.outputs.output_top_module": "gcd",
+    "sim.outputs.output_tb_name": "gcd_testbench",
+    "sim.outputs.output_tb_dut": "gcd",
+    "sim.outputs.output_level": "syn"
 }

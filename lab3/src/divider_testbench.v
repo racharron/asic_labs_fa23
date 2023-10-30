@@ -12,7 +12,7 @@ module divider_testbench;
   wire [WIDTH-1:0] quotient, remainder;
   wire done;
 
-  divider #(.WIDTH(WIDTH)) div_dut (
+  divider #(.WIDTH(WIDTH)) divider (
     .clk(clk),
     .start(start),
     .done(done),
