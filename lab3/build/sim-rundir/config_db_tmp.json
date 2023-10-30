@@ -121,7 +121,7 @@
     "sim.inputs.compiler_cc_opts": [],
     "sim.inputs.compiler_ld_opts": [],
     "sim.inputs.defines": [
-        "CLOCK_PERIOD=2.000"
+        "CLOCK_PERIOD=1.000"
     ],
     "sim.inputs.execute_sim": true,
     "sim.inputs.execution_flags": [],

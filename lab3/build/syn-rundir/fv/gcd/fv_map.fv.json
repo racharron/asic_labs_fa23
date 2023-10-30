@@ -413,20 +413,20 @@
 "object":"/designs/gcd/instances_seq/iteration_reg[0]",
 "type":"instance"},
 {"index": "1", 
- "date": "Mon Oct 30 05:42:08 UTC 2023",
- "seconds": 1698644528.9175138,
+ "date": "Mon Oct 30 06:26:44 UTC 2023",
+ "seconds": 1698647204.6532378,
  "netlist": "fv/gcd/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/fv/gcd/fv_map.v.gz", 
- "netlist_mtime": "1698644527", 
- "netlist_timestamp": "Mon Oct 30 05:42:07 UTC 2023", 
+ "netlist_mtime": "1698647203", 
+ "netlist_timestamp": "Mon Oct 30 06:26:43 UTC 2023", 
  "netlist_size": "1596", 
- "netlist_cksum": "2811947572", 
+ "netlist_cksum": "3393412889", 
  "design_name": "gcd", 
  "synth_workdir": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 1.20513 
+ "write_verif_file_runtime": 1.090056 
  }
 ]

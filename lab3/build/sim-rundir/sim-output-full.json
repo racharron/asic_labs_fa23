@@ -412,7 +412,7 @@
     "sim.inputs.tb_name": "gcd_testbench",
     "sim.inputs.tb_dut": "gcd",
     "sim.inputs.defines": [
-        "CLOCK_PERIOD=2.000"
+        "CLOCK_PERIOD=1.000"
     ],
     "synthesis.outputs.output_files": [
         "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.v"

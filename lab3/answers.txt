@@ -4,4 +4,9 @@ Q 6a
 The critical path is the 17th one in the report (the last one), and it appears to be
 comparing the iteration counter to something (either WIDTH or WIDTH-1).
 The cell area is 782.
-The minimum clock period is 2.1ns.
+The minimum clock period is ???.
+
+Q 6b
+The critical path remains comparing the iteration counter.  
+The cell area is 782.
+The maximum clock period is ???

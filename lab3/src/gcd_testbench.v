@@ -2,7 +2,7 @@
 
 module gcd_testbench;
 
-  localparam integer WIDTH = 4;
+  localparam integer WIDTH = 32;
 
   reg clk = 0;
   always #(`CLOCK_PERIOD/2) clk = ~clk;
@@ -49,8 +49,8 @@ module gcd_testbench;
     @(posedge clk);
     @(negedge clk)
 
-    for (n = 0; n < 2**WIDTH; n = n + 1) begin
-      for (d = 1; d < 2**WIDTH; d = d + 1) begin
+    for (n = 0; n < 2**WIDTH; n = n*n + 1) begin
+      for (d = 1; d < 2**WIDTH; d = d*d + 1) begin
         start = 1'b1;
         @(negedge clk)
         start = 1'b0;

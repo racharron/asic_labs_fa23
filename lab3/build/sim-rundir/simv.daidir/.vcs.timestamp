@@ -2,7 +2,7 @@
 0 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf_c
 54
 +cli+4
-+define+CLOCK_PERIOD=2.000
++define+CLOCK_PERIOD=1.000
 +itf+/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
 +lint=all
 +memcbk
@@ -172,19 +172,19 @@ AGILEESOFD_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 ADS_LICENSE_FILE=27000@license-srv.eecs.berkeley.edu
 0
 9
-1698644531 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf
+1698647207 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_fd_io.v
 1693696804 /home/ff/eecs151/fa23/pdk_mod/lab3/sky130A/libs.ref/sky130_fd_io/verilog/sky130_ef_io.v
-1698645500 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
-1698645500 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
-1698644531 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.v
-1698644353 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/gcd_testbench.v
-1698645500 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/access.tab
+1698647212 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/sky130_fd_sc_hd.v
+1698647212 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/tech-sky130-cache/primitives.v
+1698647206 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.v
+1698646135 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/src/gcd_testbench.v
+1698647212 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/access.tab
 1559359020 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/vcsdp_lite.tab
 4
 1559360489 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvirsim.so
 1559360051 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/liberrorinf.so
 1559360008 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libsnpsmalloc.so
 1559360050 /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/libvfs.so
-1698645508 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
+1698647220 /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/sim-rundir/simv.daidir
 -1 partitionlib
