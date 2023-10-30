@@ -1,13 +1,14 @@
 # Begin_DVE_Session_Save_Info
 # DVE full session
-# Saved on Sun Oct 29 15:44:23 2023
+# Saved on Sun Oct 29 19:37:53 2023
 # Designs open: 1
-#   V1: /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/vcdplus.vpd
+#   V1: /vcdplus.vpd
 # Toplevel windows open: 1
 # 	TopLevel.1
-#   Source.1: dut_tb
+#   Schematic.1: fir_tb.dut
+#   Source.1: fir_tb.dut
 #   Group count = 1
-#   Group Group1 signal count = 5
+#   Group Group1 signal count = 14
 # End_DVE_Session_Save_Info
 
 # DVE version: P-2019.06_Full64
@@ -107,23 +108,23 @@ gui_hide_toolbar -toolbar {Testbench}
 # End ToolBar settings
 
 # Docked window settings
-set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 437]
+set HSPane.1 [gui_create_window -type HSPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 433]
 catch { set Hier.1 [gui_share_window -id ${HSPane.1} -type Hier] }
-gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 437
+gui_set_window_pref_key -window ${HSPane.1} -key dock_width -value_type integer -value 433
 gui_set_window_pref_key -window ${HSPane.1} -key dock_height -value_type integer -value -1
 gui_set_window_pref_key -window ${HSPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 436} {height 757} {dock_state left} {dock_on_new_line true} {child_hier_colhier 336} {child_hier_coltype 108} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
-set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 387]
+gui_update_layout -id ${HSPane.1} {{left 0} {top 0} {width 432} {height 761} {dock_state left} {dock_on_new_line true} {child_hier_colhier 336} {child_hier_coltype 108} {child_hier_colpd 0} {child_hier_col1 0} {child_hier_col2 1} {child_hier_col3 -1}}
+set DLPane.1 [gui_create_window -type DLPane -parent ${TopLevel.1} -dock_state left -dock_on_new_line true -dock_extent 383]
 catch { set Data.1 [gui_share_window -id ${DLPane.1} -type Data] }
-gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 387
-gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 747
+gui_set_window_pref_key -window ${DLPane.1} -key dock_width -value_type integer -value 383
+gui_set_window_pref_key -window ${DLPane.1} -key dock_height -value_type integer -value 759
 gui_set_window_pref_key -window ${DLPane.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 386} {height 757} {dock_state left} {dock_on_new_line true} {child_data_colvariable 214} {child_data_colvalue 55} {child_data_coltype 110} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
-set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 169]
-gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 1917
-gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 169
+gui_update_layout -id ${DLPane.1} {{left 0} {top 0} {width 382} {height 761} {dock_state left} {dock_on_new_line true} {child_data_colvariable 214} {child_data_colvalue 55} {child_data_coltype 110} {child_data_col1 0} {child_data_col2 1} {child_data_col3 2}}
+set Console.1 [gui_create_window -type Console -parent ${TopLevel.1} -dock_state bottom -dock_on_new_line true -dock_extent 165]
+gui_set_window_pref_key -window ${Console.1} -key dock_width -value_type integer -value 1906
+gui_set_window_pref_key -window ${Console.1} -key dock_height -value_type integer -value 165
 gui_set_window_pref_key -window ${Console.1} -key dock_offset -value_type integer -value 0
-gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 1907} {height 168} {dock_state bottom} {dock_on_new_line true}}
+gui_update_layout -id ${Console.1} {{left 0} {top 0} {width 1907} {height 164} {dock_state bottom} {dock_on_new_line true}}
 #### Start - Readjusting docked view's offset / size
 set dockAreaList { top left right bottom }
 foreach dockArea $dockAreaList {
@@ -148,6 +149,14 @@ gui_sync_global -id ${TopLevel.1} -option true
 set Source.1 [gui_create_window -type {Source}  -parent ${TopLevel.1}]
 gui_show_window -window ${Source.1} -show_state maximized
 gui_update_layout -id ${Source.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false}}
+gui_use_schematics
+set Schematic.1 [gui_create_window -type {Schematic}  -parent ${TopLevel.1} -defer_create_taskbar_icon]
+set setting [::Misc::Setting::create -array DveSchematicSettings]
+Misc::init_window $setting ${Schematic.1}
+::Misc::exec_method -window ${Schematic.1} -method captionCmd
+gui_add_icon_to_taskbar -window ${Schematic.1}
+gui_show_window -window ${Schematic.1} -show_state maximized
+gui_update_layout -id ${Schematic.1} {{show_state maximized} {dock_state undocked} {dock_on_new_line false}}
 
 # End MDI window settings
 
@@ -185,14 +194,14 @@ gui_set_time_units 1ns
 # Global: Signal Compare
 
 # Global: Signal Groups
-gui_load_child_values {dut_tb.d}
+gui_load_child_values {fir_tb.dut}
 
 
-set _session_group_8 Group1
-gui_sg_create "$_session_group_8"
-set Group1 "$_session_group_8"
+set _session_group_1 Group1
+gui_sg_create "$_session_group_1"
+set Group1 "$_session_group_1"
 
-gui_sg_addsignal -group "$_session_group_8" { dut_tb.d.clk dut_tb.d.A dut_tb.d.B dut_tb.d.X dut_tb.d.Z }
+gui_sg_addsignal -group "$_session_group_1" { fir_tb.dut.clk fir_tb.dut.rst fir_tb.dut.In fir_tb.dut.Out fir_tb.dut.delay_chain0 fir_tb.dut.delay_chain1 fir_tb.dut.delay_chain2 fir_tb.dut.delay_chain3 fir_tb.dut.delay_chain4 fir_tb.dut.n_0 fir_tb.dut.n_2 fir_tb.dut.n_4 fir_tb.dut.n_9 fir_tb.dut.n_12 }
 
 # Global: Highlighting
 
@@ -227,17 +236,17 @@ gui_list_set_filter -id ${Hier.1} -list { {Package 1} {All 0} {Process 1} {VirtP
 gui_list_set_filter -id ${Hier.1} -text {*}
 gui_hier_list_init -id ${Hier.1}
 gui_change_design -id ${Hier.1} -design V1
-catch {gui_list_expand -id ${Hier.1} dut_tb}
-catch {gui_list_select -id ${Hier.1} {dut_tb.d}}
+catch {gui_list_expand -id ${Hier.1} fir_tb}
+catch {gui_list_select -id ${Hier.1} {fir_tb.dut}}
 gui_view_scroll -id ${Hier.1} -vertical -set 0
 gui_view_scroll -id ${Hier.1} -horizontal -set 0
 
 # Data 'Data.1'
 gui_list_set_filter -id ${Data.1} -list { {Buffer 1} {Input 1} {Others 1} {Linkage 1} {Output 1} {LowPower 1} {Parameter 1} {All 1} {Aggregate 1} {LibBaseMember 1} {Event 1} {Assertion 1} {Constant 1} {Interface 1} {BaseMembers 1} {Signal 1} {$unit 1} {Inout 1} {Variable 1} }
 gui_list_set_filter -id ${Data.1} -text {*}
-gui_list_show_data -id ${Data.1} {dut_tb.d}
+gui_list_show_data -id ${Data.1} {fir_tb.dut}
 gui_show_window -window ${Data.1}
-catch { gui_list_select -id ${Data.1} {dut_tb.d.Z }}
+catch { gui_list_select -id ${Data.1} {fir_tb.dut.n_12 }}
 gui_view_scroll -id ${Data.1} -vertical -set 0
 gui_view_scroll -id ${Data.1} -horizontal -set 0
 gui_view_scroll -id ${Hier.1} -vertical -set 0
@@ -246,9 +255,19 @@ gui_view_scroll -id ${Hier.1} -horizontal -set 0
 # Source 'Source.1'
 gui_src_value_annotate -id ${Source.1} -switch false
 gui_set_env TOGGLE::VALUEANNOTATE 0
-gui_open_source -id ${Source.1}  -replace -active dut_tb
-gui_view_scroll -id ${Source.1} -vertical -set 0
+gui_open_source -id ${Source.1}  -replace -active fir_tb.dut /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.v
+gui_view_scroll -id ${Source.1} -vertical -set 255
 gui_src_set_reusable -id ${Source.1}
+
+# View 'Schematic.1'
+gui_use_schematics
+
+# Create schematic window 'Schematic.1'
+gui_sch_show -window ${Schematic.1} -name fir_tb.dut
+gui_show_pin_value_annotate [gui_window_hier_name -window ${Schematic.1}]
+gui_zoom -window ${Schematic.1} -rect { {-1050 -62300} {134171 27469} }
+
+
 # Restore toplevel window zorder
 # The toplevel window could be closed if it has no view/pane
 if {[gui_exist_window -window ${TopLevel.1}]} {

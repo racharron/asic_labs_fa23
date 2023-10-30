@@ -29,24 +29,26 @@ module divider_testbench;
 
   // TODO: Add more tests
   initial begin
+    $vcdpluson;
     #0;
     start = 0;
     dividend = 0;
     divisor = 1;
 
-    repeat (10) @(posedge clk);
+    repeat (9) @(posedge clk);
+    @(negedge clk);
     start = 1;
     dividend = 7;
-    divisor = 2;
+    divisor = 3;
 
-    @(posedge clk); start = 0; // 'start' is HIGH for one cycle
+    @(negedge clk); start = 0; // 'start' is HIGH for one cycle
     @(posedge clk);
 
     // wait until 'done' is asserted
     while (done == 0) begin
       @(posedge clk);
     end
-
+    $vcdplusoff;
     $finish();
   end
 
