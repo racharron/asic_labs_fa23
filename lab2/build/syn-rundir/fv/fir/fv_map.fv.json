@@ -451,20 +451,20 @@
 "object":"/designs/fir/instances_hier/delay_step4/instances_seq/q_reg[1]",
 "type":"instance"},
 {"index": "1", 
- "date": "Mon Oct 30 00:17:53 UTC 2023",
- "seconds": 1698625073.5399559,
+ "date": "Mon Oct 30 18:00:54 UTC 2023",
+ "seconds": 1698688854.157579,
  "netlist": "fv/fir/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fv/fir/fv_map.v.gz", 
- "netlist_mtime": "1698625072", 
- "netlist_timestamp": "Mon Oct 30 00:17:52 UTC 2023", 
- "netlist_size": "1457", 
- "netlist_cksum": "3306284351", 
+ "netlist_mtime": "1698688853", 
+ "netlist_timestamp": "Mon Oct 30 18:00:53 UTC 2023", 
+ "netlist_size": "1453", 
+ "netlist_cksum": "2114441896", 
  "design_name": "fir", 
  "synth_workdir": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 1.241679 
+ "write_verif_file_runtime": 0.410717 
  }
 ]

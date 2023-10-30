@@ -1,5 +1,0 @@
-#!/bin/bash
-        cd /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir
-        source enter
-        $INNOVUS_BIN -common_ui -win -files /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/generated-scripts/open_chip.tcl
-                

@@ -392,22 +392,15 @@
     "vlsi.core.power_tool": "hammer.power.voltus",
     "power.voltus.version": "181",
     "vlsi.core.build_system": "make",
-    "sim.inputs.defines": [
-        "CLOCK_PERIOD=1.00"
-    ],
     "sim.inputs.input_files": [
-        "src/post-par-sim/fir.sim.v",
-        "src/fir_tb.v",
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v"
+        "src/post-syn/fir.mapped.v",
+        "src/fir_tb.v"
     ],
-    "sim.inputs.level": "par",
+    "sim.inputs.level": "syn",
     "sim.inputs.timing_annotated": true,
-    "sim.inputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf",
-    "sim.inputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_paths.json",
-    "sim.inputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_cells.json",
-    "sim.inputs.saif.mode": "time",
-    "sim.inputs.saif.start_time": "0ns",
-    "sim.inputs.saif.end_time": "26ns",
+    "sim.inputs.sdf_file": "src/post-syn/fir.mapped_hold.sdf",
+    "sim.inputs.all_regs": "src/post-syn/find_regs_paths.json",
+    "sim.inputs.seq_cells": "src/post-syn/find_regs_cells.json",
     "sim.inputs.timescale": "1ns/10ps",
     "sim.inputs.options": [
         "-notice",
@@ -419,38 +412,14 @@
     ],
     "sim.inputs.top_module": "fir",
     "sim.inputs.tb_name": "fir_tb",
-    "power.inputs.saifs": [
-        "src/post-par-sim/ucli.saif"
-    ],
-    "power.inputs.spefs": [
-        "src/post-par-sim/fir.hold.par.spef",
-        "src/post-par-sim/fir.setup.par.spef"
-    ],
-    "power.inputs.database": "src/post-par-sim/fir_FINAL",
-    "power.inputs.tb_name": "fir_tb",
-    "par.outputs.output_ilms": [],
-    "vlsi.inputs.ilms": [],
-    "par.outputs.output_gds": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.gds",
-    "par.outputs.output_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.lvs.v",
-    "par.outputs.output_sim_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v",
-    "par.outputs.hcells_list": [],
-    "par.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_cells.json",
-    "par.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_paths.json",
-    "par.inputs.input_files": [
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.v"
-    ],
-    "par.inputs.top_module": "fir",
-    "par.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf",
-    "par.outputs.spefs": [
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.ss_100C_1v60.par.spef",
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.ff_n40C_1v95.par.spef"
+    "sim.inputs.defines": [
+        "CLOCK_PERIOD=20.00",
+        "UNIT_DELAY=#1"
     ],
     "sim.outputs.waveforms": [],
-    "sim.outputs.saifs": [
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/ucli.saif"
-    ],
+    "sim.outputs.saifs": [],
     "sim.outputs.output_top_module": "fir",
     "sim.outputs.output_tb_name": "fir_tb",
     "sim.outputs.output_tb_dut": "dut",
-    "sim.outputs.output_level": "par"
+    "sim.outputs.output_level": "syn"
 }

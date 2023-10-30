@@ -8,7 +8,7 @@ hsMainFileCount                    	1
 hsMtmSpecArr_i                     	3
 hsMainFileSuffixArr_i              	csdf1.MAIN
 hsAuxFileSuffixArr_i               	csdf1.AUX
-hsOriginalSdfFileArr_i             	/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf
+hsOriginalSdfFileArr_i             	/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-syn/fir.mapped_hold.sdf
 fHsMultiSdfDbg                     	0
 partitionName                      	6	MASTER
 hsimInitRegValue                   	3
@@ -344,7 +344,7 @@ fFsdbGateOnepassTraverse           	0
 fHsimAllowVecGateInVpd             	1
 fHsimAllowAllVecGateInVpd          	0
 fHsimAllowUdpInVpd                 	1
-fHsimAllowAlwaysCombInVpd          	0
+fHsimAllowAlwaysCombInVpd          	1
 fHsimAllowAlwaysCombCmpDvcSimv     	0
 fHsimAllowAlwaysCombDbg            	0
 fHsimMakeAllP2SPrimary             	0

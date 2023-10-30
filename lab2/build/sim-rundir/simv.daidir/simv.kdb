@@ -10,7 +10,7 @@ COSIM=FALSE
 TOP=fir_tb 
 OPTION=-ssz -ssv -ssy 
 ELAB_OPTION=-ssz -ssv -ssy 
-SDF=max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf 
+SDF=max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-syn/fir.mapped_hold.sdf max:fir:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/src/post-syn/fir.mapped_hold.sdf 
 
 [Value]
 WREALX=ffff534e50535f58

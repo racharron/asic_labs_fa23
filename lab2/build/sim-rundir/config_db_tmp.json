@@ -73,13 +73,11 @@
     "par.inputs.gds_merge": true,
     "par.inputs.gds_precision": 1000,
     "par.inputs.gds_precision_mode": "auto",
-    "par.inputs.input_files": [
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/syn-rundir/fir.mapped.v"
-    ],
+    "par.inputs.input_files": [],
     "par.inputs.physical_only_cells_list": [],
     "par.inputs.physical_only_cells_mode": "auto",
     "par.inputs.post_synth_sdc": null,
-    "par.inputs.top_module": "fir",
+    "par.inputs.top_module": null,
     "par.openroad.klayout_techfile_source": "/home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.tech/klayout/tech/sky130A.lyt",
     "par.openroad.macro_placement.halo": [
         40,
@@ -92,18 +90,6 @@
         "/home/ff/eecs151/fa23/pdk_mod/sky130/pdk/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.spef_extractor"
     ],
     "par.openroad.setrc_file": "/home/ff/eecs151/fa23/hammer/hammer/technology/sky130/extra/setRC.tcl",
-    "par.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_paths.json",
-    "par.outputs.hcells_list": [],
-    "par.outputs.output_gds": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.gds",
-    "par.outputs.output_ilms": [],
-    "par.outputs.output_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.lvs.v",
-    "par.outputs.output_sim_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v",
-    "par.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf",
-    "par.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_cells.json",
-    "par.outputs.spefs": [
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.ss_100C_1v60.par.spef",
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.ff_n40C_1v95.par.spef"
-    ],
     "par.power_straps_abutment": false,
     "par.power_straps_abutment_macros": null,
     "par.power_straps_mode": "generate",
@@ -113,36 +99,30 @@
     "pcb.inputs.top_module": null,
     "pcb.submit.command": "local",
     "pcb.submit.settings": [],
-    "power.inputs.database": "src/post-par-sim/fir_FINAL",
+    "power.inputs.database": null,
     "power.inputs.end_times": [],
     "power.inputs.extra_corners_only": false,
     "power.inputs.input_files": [],
     "power.inputs.level": "rtl",
     "power.inputs.report_configs": [],
-    "power.inputs.saifs": [
-        "src/post-par-sim/ucli.saif"
-    ],
+    "power.inputs.saifs": [],
     "power.inputs.sdc": "",
-    "power.inputs.spefs": [
-        "src/post-par-sim/fir.hold.par.spef",
-        "src/post-par-sim/fir.setup.par.spef"
-    ],
+    "power.inputs.spefs": [],
     "power.inputs.start_times": [],
     "power.inputs.tb_dut": "dut",
-    "power.inputs.tb_name": "fir_tb",
+    "power.inputs.tb_name": "TestDriver",
     "power.inputs.top_module": "ChipTop",
     "power.inputs.waveforms": [],
     "power.submit.command": "local",
     "power.submit.settings": [],
     "power.voltus.version": "181",
-    "sim.inputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_paths.json",
+    "sim.inputs.all_regs": "src/post-syn/find_regs_paths.json",
     "sim.inputs.benchmarks": [],
     "sim.inputs.compiler_cc_opts": [],
     "sim.inputs.compiler_ld_opts": [],
     "sim.inputs.defines": [
-        "FUNCTIONAL",
-        "UNIT_DELAY=#1",
-        "CLOCK_PERIOD=1.00"
+        "CLOCK_PERIOD=20.00",
+        "UNIT_DELAY=#1"
     ],
     "sim.inputs.execute_sim": true,
     "sim.inputs.execution_flags": [],
@@ -150,11 +130,10 @@
     "sim.inputs.execution_flags_prepend": [],
     "sim.inputs.gl_register_force_value": 0,
     "sim.inputs.input_files": [
-        "src/post-par-sim/fir.sim.v",
-        "src/fir_tb.v",
-        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.sim.v"
+        "src/post-syn/fir.mapped.v",
+        "src/fir_tb.v"
     ],
-    "sim.inputs.level": "par",
+    "sim.inputs.level": "syn",
     "sim.inputs.options": [
         "-notice",
         "-line",
@@ -164,13 +143,13 @@
         "-sverilog"
     ],
     "sim.inputs.parallel_runs": 1,
-    "sim.inputs.saif.end_time": "26ns",
+    "sim.inputs.saif.end_time": "1ns",
     "sim.inputs.saif.end_trigger_raw": "",
-    "sim.inputs.saif.mode": "time",
+    "sim.inputs.saif.mode": "none",
     "sim.inputs.saif.start_time": "0ns",
     "sim.inputs.saif.start_trigger_raw": "",
-    "sim.inputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/fir.par.sdf",
-    "sim.inputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/par-rundir/find_regs_cells.json",
+    "sim.inputs.sdf_file": "src/post-syn/fir.mapped_hold.sdf",
+    "sim.inputs.seq_cells": "src/post-syn/find_regs_cells.json",
     "sim.inputs.tb_dut": "dut",
     "sim.inputs.tb_name": "fir_tb",
     "sim.inputs.timescale": "1ns/10ps",

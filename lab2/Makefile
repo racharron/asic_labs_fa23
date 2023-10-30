@@ -79,7 +79,7 @@ sim-rtl-q1a: $(HAMMER_D_MK)
 
 .PHONY: sim-gl-syn
 sim-gl-syn: $(HAMMER_D_MK) $(INPUT_SIM_GL_SYN_DB)
-	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_GL_SYN_CONF) -p $(INPUT_SIM_GL_SYN_DB) --obj_dir $(OBJ_DIR) sim
+	$(HAMMER_EXEC) -e $(ENV_YML) -p $(TECH_CONF) -p $(SIM_GL_SYN_CONF) --obj_dir $(OBJ_DIR) sim
 
 #########################################################################################
 # Post-PAR Gate Level Sim

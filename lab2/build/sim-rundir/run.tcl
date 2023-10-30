@@ -10,11 +10,5 @@
 # ---------------------------------------------------------------------------------
 
 source /home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab2/build/sim-rundir/force_regs.ucli
-run 0.0ns
-power -gate_level on
-power dut
-config endofsim noexit
-run 26.0ns
-power -report ucli.saif 1e-9 dut
 run
 exit
