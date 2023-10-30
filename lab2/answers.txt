@@ -1,0 +1,11 @@
+Q 3a
+The output port is named "Out", and it is 16 bits wide.
+
+Q 3b
+delay_chain0 has a delay of 669ps, while the entire unit has a delay of 3.02ns.  
+
+Q 3c
+Yes.  The instance beginning at line 515 has the expected delay and is connected to the expected instances.
+
+Q 4
+The lowest clock period for which the testbench reports correct outputs is 17ns.
