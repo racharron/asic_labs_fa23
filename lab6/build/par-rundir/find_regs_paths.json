@@ -1,0 +1,342 @@
+[
+  {
+    "path": "CLKGATE_RC_CG_HIER_INST0/RC_CGIC_INST",
+    "pin": "GCLK"
+  },
+  {
+    "path": "CLKGATE_RC_CG_HIER_INST1/RC_CGIC_INST",
+    "pin": "GCLK"
+  },
+  {
+    "path": "CLKGATE_RC_CG_HIER_INST2/RC_CGIC_INST",
+    "pin": "GCLK"
+  },
+  {
+    "path": "CLKGATE_RC_CG_HIER_INST3/RC_CGIC_INST",
+    "pin": "GCLK"
+  },
+  {
+    "path": "CLKGATE_RC_CG_HIER_INST4/RC_CGIC_INST",
+    "pin": "GCLK"
+  },
+  {
+    "path": "\\b_cache_reg[0]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[1]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[2]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[3]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[4]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[5]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[6]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[7]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[8]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[9]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[10]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[11]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[12]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[13]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[14]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[15]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[16]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[17]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[18]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[19]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[20]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[21]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[22]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[23]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[24]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[25]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[26]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[27]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[28]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[29]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[30]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_cache_reg[31]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[0]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[1]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[2]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[3]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[4]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\a_len_reg[5]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[0]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[1]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[2]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[3]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[4]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[5]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[6]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[7]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[8]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[9]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[10]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[11]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[12]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[13]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[14]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[15]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[16]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[17]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[18]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[19]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[20]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[21]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[22]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[23]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[24]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[25]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[26]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[27]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[28]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[29]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[30]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\accumulator_reg[31]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[0]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[1]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[2]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[3]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[4]",
+    "pin": "Q"
+  },
+  {
+    "path": "\\b_len_reg[5]",
+    "pin": "Q"
+  },
+  {
+    "path": "b_stored_reg",
+    "pin": "Q"
+  },
+  {
+    "path": "c_valid_reg",
+    "pin": "Q"
+  },
+  {
+    "path": "initializing_reg",
+    "pin": "Q"
+  },
+  {
+    "path": "processing_reg",
+    "pin": "Q"
+  }
+]

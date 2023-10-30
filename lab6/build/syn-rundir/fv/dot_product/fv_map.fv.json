@@ -951,20 +951,20 @@
 "object":"/designs/dot_product/instances_seq/processing_reg",
 "type":"instance"},
 {"index": "1", 
- "date": "Tue Oct 24 01:46:49 UTC 2023",
- "seconds": 1698112009.61743,
+ "date": "Mon Oct 30 17:13:55 UTC 2023",
+ "seconds": 1698686035.3318388,
  "netlist": "fv/dot_product/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/syn-rundir/fv/dot_product/fv_map.v.gz", 
- "netlist_mtime": "1698112009", 
- "netlist_timestamp": "Tue Oct 24 01:46:49 UTC 2023", 
- "netlist_size": "25443", 
- "netlist_cksum": "805490330", 
+ "netlist_mtime": "1698686034", 
+ "netlist_timestamp": "Mon Oct 30 17:13:54 UTC 2023", 
+ "netlist_size": "25440", 
+ "netlist_cksum": "1471165139", 
  "design_name": "dot_product", 
  "synth_workdir": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/syn-rundir", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 0.448314 
+ "write_verif_file_runtime": 0.450187 
  }
 ]

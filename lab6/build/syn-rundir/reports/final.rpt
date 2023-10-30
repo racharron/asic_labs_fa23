@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value
   Tot Cong:                  no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:00:25
-Real Runtime (h:m:s):        00:00:18
-CPU  Elapsed (h:m:s):        00:00:25
-Real Elapsed (h:m:s):        00:00:18
-Memory (MB):                   989.30
+CPU  Runtime (h:m:s):        00:00:26
+Real Runtime (h:m:s):        00:00:20
+CPU  Elapsed (h:m:s):        00:00:26
+Real Elapsed (h:m:s):        00:00:20
+Memory (MB):                   988.39
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
-Total Runtime (h:m:s): 00:00:18
-Total Memory (MB):     989.30
+Total Runtime (h:m:s): 00:00:20
+Total Memory (MB):     988.39
 Executable Version:    19.15-s090_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area

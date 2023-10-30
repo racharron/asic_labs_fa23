@@ -1,0 +1,22 @@
+{
+    "vlsi.builtins.is_complete": false,
+    "par.outputs.output_ilms": [],
+    "par.outputs.output_ilms_meta": "append",
+    "vlsi.inputs.ilms": [],
+    "vlsi.inputs.ilms_meta": "append",
+    "par.outputs.output_gds": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.gds",
+    "par.outputs.output_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.lvs.v",
+    "par.outputs.output_sim_netlist": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.sim.v",
+    "par.outputs.hcells_list": [],
+    "par.outputs.seq_cells": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/find_regs_cells.json",
+    "par.outputs.all_regs": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/find_regs_paths.json",
+    "par.inputs.input_files": [
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/syn-rundir/dot_product.mapped.v"
+    ],
+    "par.inputs.top_module": "dot_product",
+    "par.outputs.sdf_file": "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.par.sdf",
+    "par.outputs.spefs": [
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.ss_100C_1v60.par.spef",
+        "/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab6/build/par-rundir/dot_product.ff_n40C_1v95.par.spef"
+    ]
+}

@@ -1,0 +1,9 @@
+FORMATVERSION 1
+ADDINST sky130_fd_sc_hd__diode_2 DIODE_1 1 addPortAsNeeded
+INSTTERM DIODE c_ready -
+ADDINST sky130_fd_sc_hd__diode_2 DIODE_2 1 addPortAsNeeded
+INSTTERM DIODE b_data[6] -
+ADDINST sky130_fd_sc_hd__diode_2 DIODE_3 1 addPortAsNeeded
+INSTTERM DIODE b_data[6] -
+ADDINST sky130_fd_sc_hd__diode_2 DIODE_4 1 addPortAsNeeded
+INSTTERM DIODE FE_OFN98_dout_13 -
