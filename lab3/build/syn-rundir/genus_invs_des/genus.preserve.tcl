@@ -61,5 +61,6 @@ set_db base_cell:sky130_fd_io__top_ground_lvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_power_hvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_power_lvc_wpad .dont_touch true
 set_db base_cell:sky130_fd_io__top_xres4v2 .dont_touch true
-set_db hinst:gcd/GCDdpath0/A_register/CLKGATE_RC_CG_HIER_INST0 .dont_touch_hports true
-set_db hinst:gcd/GCDdpath0/B_register/CLKGATE_RC_CG_HIER_INST1 .dont_touch_hports true
+set_db hinst:gcd/CLKGATE_RC_CG_HIER_INST0 .dont_touch_hports true
+set_db hinst:gcd/CLKGATE_RC_CG_DECLONE_HIER_INST .dont_touch_hports true
+set_db hinst:gcd/CLKGATE_RC_CG_HIER_INST3 .dont_touch_hports true

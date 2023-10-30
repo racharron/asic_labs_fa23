@@ -7,9 +7,10 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=divider_testbench 
+TOP=gcd_testbench 
 OPTION=-ssz -ssv -ssy 
 ELAB_OPTION=-ssz -ssv -ssy 
+SDF=max:gcd:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf max:gcd:/home/cc/eecs151/fa23/class/eecs151-aeq/asic_labs_fa23/lab3/build/syn-rundir/gcd.mapped.sdf 
 
 [Value]
 WREALX=ffff534e50535f58

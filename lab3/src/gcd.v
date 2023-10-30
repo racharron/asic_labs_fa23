@@ -1,74 +1,53 @@
-//=========================================================================
-// RTL Model of GCD Unit
-//-------------------------------------------------------------------------
-//
+`include "/home/ff/eecs151/verilog_lib/EECS151.v"
 
-// W is a parameter specifying the bit width of the module
-module gcd#( parameter W = 16 ) 
-( 
-  input          clk,
-  input          reset,
+module gcd #(
+    WIDTH = 4
+) (
+  input clk,
 
-  input  [W-1:0] operands_bits_A,
-  input  [W-1:0] operands_bits_B,  
-  input          operands_val,
-  output         operands_rdy,
+  input start,
+  output done,
 
-  output [W-1:0] result_bits_data,
-  output         result_val,
-  input          result_rdy
+  input [WIDTH-1:0] dividend,
+  input [WIDTH-1:0] divisor,
+  output reg [WIDTH-1:0] quotient,
+  output [WIDTH-1:0] remainder
 );
 
-// At this top level, hook together the 
-// datapath part and control part only
+  // Feel free to change the code as long as your final code implements a divider
+  // Check the algorithm described in the slides (URL in the spec)
+  // Pay attention to the block diagram(s)
 
-// In verilog, multi-bit wires will only be
-// a single bit wide if they are not declared
-wire B_mux_sel, A_en, B_en, B_zero, A_lt_B;
-wire [1:0] A_mux_sel;
+  reg [2*WIDTH-1:0] long_remainder;
+  wire [2*WIDTH-1:0] shifted_remainder;
+  wire [WIDTH-1:0] left_half, right_half;
+  wire [WIDTH-1:0] subtracted;
+  wire sub_negative;
+  reg [$clog2(WIDTH+1)-1:0] iteration;
 
-// Notice W parameter is sent to the datapath
-// module as well
-gcd_datapath#(W) GCDdpath0(
+  assign remainder = long_remainder[2*WIDTH-1:WIDTH];
+  assign done = iteration == WIDTH;
 
-	// external
-	.operands_bits_A(operands_bits_A),
-	.operands_bits_B(operands_bits_B),
-	.result_bits_data(result_bits_data),
+  assign shifted_remainder = long_remainder << 1;
+  assign {left_half, right_half} = shifted_remainder;
+  assign {sub_negative, subtracted} = {1'b0, left_half} - {1'b0, divisor};
 
-	// system
-	.clk(clk), 
-	.reset(reset),
-
-	// internal (between ctrl and dpath)
-	.A_mux_sel(A_mux_sel[1:0]), 
-	.A_en(A_en), 
-	.B_en(B_en),
-	.B_mux_sel(B_mux_sel),
-	.B_zero(B_zero),
-	.A_lt_B(A_lt_B)
-);
-
-gcd_control GCDctrl0(
-
-	// external
-	.operands_rdy(operands_rdy),
-	.operands_val(operands_val), 
-	.result_rdy(result_rdy),
-	.result_val(result_val), 
-
-	// system
-	.clk(clk), 
-	.reset(reset), 
-
-	// internal (between ctrl and dpath)
-	.B_zero(B_zero), 
-	.A_lt_B(A_lt_B),
-	.A_mux_sel(A_mux_sel[1:0]), 
-	.A_en(A_en), 
-	.B_en(B_en),
-	.B_mux_sel(B_mux_sel)
-
-);
+  always @(posedge clk ) begin
+    if (start) begin
+      long_remainder <= {{WIDTH{1'b0}}, dividend};
+      iteration <= 0;
+      quotient <= 0;
+    end else begin
+      if (!done) begin
+        iteration <= iteration + 1;
+        quotient <= {quotient[WIDTH-2:0], !sub_negative};
+        if (sub_negative) begin
+          long_remainder <= shifted_remainder;
+        end else begin
+          long_remainder <= {subtracted, right_half};
+        end
+      end
+    end
+  end
 
 endmodule

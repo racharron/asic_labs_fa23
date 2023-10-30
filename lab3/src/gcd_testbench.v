@@ -2,114 +2,93 @@
 
 module gcd_testbench;
 
-  //--------------------------------------------------------------------
-  // Define test vectors
-  //--------------------------------------------------------------------
-  wire [31:0] src_bits [7:0];
-  wire [15:0] sink_bits [7:0];
-  assign src_bits[0] = { 16'd27,  16'd15  }; assign sink_bits[0] = { 16'd3  };
-  assign src_bits[1] = { 16'd21,  16'd49  }; assign sink_bits[1] = { 16'd7  };
-  assign src_bits[2] = { 16'd25,  16'd30  }; assign sink_bits[2] = { 16'd5  };
-  assign src_bits[3] = { 16'd19,  16'd27  }; assign sink_bits[3] = { 16'd1  };
-  assign src_bits[4] = { 16'd40,  16'd40  }; assign sink_bits[4] = { 16'd40 };
-  assign src_bits[5] = { 16'd250, 16'd190 }; assign sink_bits[5] = { 16'd10 };
-  assign src_bits[6] = { 16'd5,   16'd250 }; assign sink_bits[6] = { 16'd5  };
-  assign src_bits[7] = { 16'd0,   16'd0   }; assign sink_bits[7] = { 16'd0  };
+  localparam integer WIDTH = 4;
 
-
-  //--------------------------------------------------------------------
-  // Setup a clock
-  //--------------------------------------------------------------------
   reg clk = 0;
   always #(`CLOCK_PERIOD/2) clk = ~clk;
 
-  //--------------------------------------------------------------------
-  // Instantiate DUT and wire/reg the inputs and outputs
-  //--------------------------------------------------------------------
-  reg [7:0] test_index;
-  wire [15:0] src_bits_A;
-  wire [15:0] src_bits_B;
-  wire [15:0] compare_bits;
+  reg start;
+  wire [WIDTH-1:0] dividend, divisor;
+  wire [WIDTH-1:0] quotient, remainder;
+  wire done;
 
-  assign src_bits_A = src_bits[test_index][31:16];
-  assign src_bits_B = src_bits[test_index][15:0];
-  assign compare_bits = sink_bits[test_index];
-
-  reg reset;
-  reg        src_val;
-  wire        src_done;
-  wire [15:0] result_bits_data;
-  wire        result_val;
-  reg        result_rdy;
-  
-  gcd #(16) gcd
-  ( 
-    .clk              (clk),
-    .reset            (reset),
-
-    .operands_bits_A  (src_bits_A),
-    .operands_bits_B  (src_bits_B),  
-    .operands_val     (src_val),
-    .operands_rdy     (src_rdy),
-
-    .result_bits_data (result_bits_data), 
-    .result_val       (result_val),
-    .result_rdy       (result_rdy)
-
+  gcd #(.WIDTH(WIDTH)) gcd (
+    .clk(clk),
+    .start(start),
+    .done(done),
+    .dividend(dividend),
+    .divisor(divisor),
+    .quotient(quotient),
+    .remainder(remainder)
   );
 
-  //--------------------------------------------------------------------
-  // Define a sequential interface that steps through each test in
-  // the src/sink array every time a valid ready/val handshake occurs
-  //--------------------------------------------------------------------
+  reg [WIDTH:0] n, d;
+
+  integer errc;
+
+  assign dividend = n[WIDTH-1:0];
+  assign divisor = d[WIDTH-1:0];
+
+  /*
+  always @(posedge clk) begin
+    $display("At time %d: start %d, done %d, dividend %d, divisor %d, quotient %d, remainder %d",
+      $time, start, done, dividend, divisor, quotient, remainder);
+  end
+  */
+  always @(posedge (clk)) begin
+    if (done & ! start & ((dividend / divisor != quotient) | (dividend % divisor != remainder))) begin
+      $display("ERROR: %d / %d != %d rem %d", dividend, divisor, quotient, remainder);
+      errc = errc + 1;
+    end
+  end
 
   initial begin
     $vcdpluson;
-    // Initial values
-    src_val = 0;
-    result_rdy = 1;
+    errc = 0;
+    start = 1'b0;
+    @(posedge clk);
+    @(negedge clk)
 
-    // Strope reset
-    repeat (5) @(negedge clk) reset = 1;
-    @(negedge clk) reset = 0;
-
-    // Loop through test vectors..
-    for (test_index = 0; test_index < 7; test_index = test_index + 1) begin
-      // Start when DUT is ready
-      @(negedge clk & src_rdy);
-      src_val = 1; 
-      @(negedge clk);
-      src_val = 0; 
-      // Wait until result is made valid
-      @(posedge result_val);
-      // Don't check right away (not sure when this signal will go high),
-      // but check at the next positive edge
-      @(posedge clk);
-      if (compare_bits == result_bits_data) begin
-        $display(" [ passed ] Test ( %d ), [ %d == %d ] (decimal)",test_index,compare_bits,result_bits_data);
-      end else begin
-        $display(" [ failed ] Test ( %d ), [ %d == %d ] (decimal)",test_index,compare_bits,result_bits_data);
+    for (n = 0; n < 2**WIDTH; n = n + 1) begin
+      for (d = 1; d < 2**WIDTH; d = d + 1) begin
+        start = 1'b1;
+        @(negedge clk)
+        start = 1'b0;
+        @(posedge clk);
+        while (!done) @(posedge clk);
+        @(negedge clk);
       end
     end
 
+    $display("ERROR COUNT: %d", errc);
     $vcdplusoff;
-    $finish;
+    $finish();
   end
 
+  /*
+  initial begin
+    $vcdpluson;
+    #0;
+    start = 0;
+    dividend = 0;
+    divisor = 1;
 
-  //--------------------------------------------------------------------
-  // Timeout
-  //--------------------------------------------------------------------
-  // If something goes wrong, kill the simulation...
-  reg [  63:0] cycle_count = 0;
-  always @(posedge clk) begin
-    cycle_count = cycle_count + 1;
-    if (cycle_count >= 1000) begin
-      $display("TIMEOUT");
-	$vcdplusoff;
-      $finish;
+    repeat (9) @(posedge clk);
+    @(negedge clk);
+    start = 1;
+    dividend = 15;
+    divisor = 1;
+
+    @(negedge clk); start = 0; // 'start' is HIGH for one cycle
+    @(posedge clk);
+
+    // wait until 'done' is asserted
+    while (done == 0) begin
+      @(posedge clk);
     end
+    $vcdplusoff;
+    $finish();
   end
-
+  */
 
 endmodule

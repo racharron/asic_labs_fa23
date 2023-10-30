@@ -1,61 +1,26 @@
 
 //input ports
 add mapped point clk clk
-add mapped point reset reset
-add mapped point operands_bits_A[15] operands_bits_A[15]
-add mapped point operands_bits_A[14] operands_bits_A[14]
-add mapped point operands_bits_A[13] operands_bits_A[13]
-add mapped point operands_bits_A[12] operands_bits_A[12]
-add mapped point operands_bits_A[11] operands_bits_A[11]
-add mapped point operands_bits_A[10] operands_bits_A[10]
-add mapped point operands_bits_A[9] operands_bits_A[9]
-add mapped point operands_bits_A[8] operands_bits_A[8]
-add mapped point operands_bits_A[7] operands_bits_A[7]
-add mapped point operands_bits_A[6] operands_bits_A[6]
-add mapped point operands_bits_A[5] operands_bits_A[5]
-add mapped point operands_bits_A[4] operands_bits_A[4]
-add mapped point operands_bits_A[3] operands_bits_A[3]
-add mapped point operands_bits_A[2] operands_bits_A[2]
-add mapped point operands_bits_A[1] operands_bits_A[1]
-add mapped point operands_bits_A[0] operands_bits_A[0]
-add mapped point operands_bits_B[15] operands_bits_B[15]
-add mapped point operands_bits_B[14] operands_bits_B[14]
-add mapped point operands_bits_B[13] operands_bits_B[13]
-add mapped point operands_bits_B[12] operands_bits_B[12]
-add mapped point operands_bits_B[11] operands_bits_B[11]
-add mapped point operands_bits_B[10] operands_bits_B[10]
-add mapped point operands_bits_B[9] operands_bits_B[9]
-add mapped point operands_bits_B[8] operands_bits_B[8]
-add mapped point operands_bits_B[7] operands_bits_B[7]
-add mapped point operands_bits_B[6] operands_bits_B[6]
-add mapped point operands_bits_B[5] operands_bits_B[5]
-add mapped point operands_bits_B[4] operands_bits_B[4]
-add mapped point operands_bits_B[3] operands_bits_B[3]
-add mapped point operands_bits_B[2] operands_bits_B[2]
-add mapped point operands_bits_B[1] operands_bits_B[1]
-add mapped point operands_bits_B[0] operands_bits_B[0]
-add mapped point operands_val operands_val
-add mapped point result_rdy result_rdy
+add mapped point start start
+add mapped point dividend[3] dividend[3]
+add mapped point dividend[2] dividend[2]
+add mapped point dividend[1] dividend[1]
+add mapped point dividend[0] dividend[0]
+add mapped point divisor[3] divisor[3]
+add mapped point divisor[2] divisor[2]
+add mapped point divisor[1] divisor[1]
+add mapped point divisor[0] divisor[0]
 
 //output ports
-add mapped point operands_rdy operands_rdy
-add mapped point result_bits_data[15] result_bits_data[15]
-add mapped point result_bits_data[14] result_bits_data[14]
-add mapped point result_bits_data[13] result_bits_data[13]
-add mapped point result_bits_data[12] result_bits_data[12]
-add mapped point result_bits_data[11] result_bits_data[11]
-add mapped point result_bits_data[10] result_bits_data[10]
-add mapped point result_bits_data[9] result_bits_data[9]
-add mapped point result_bits_data[8] result_bits_data[8]
-add mapped point result_bits_data[7] result_bits_data[7]
-add mapped point result_bits_data[6] result_bits_data[6]
-add mapped point result_bits_data[5] result_bits_data[5]
-add mapped point result_bits_data[4] result_bits_data[4]
-add mapped point result_bits_data[3] result_bits_data[3]
-add mapped point result_bits_data[2] result_bits_data[2]
-add mapped point result_bits_data[1] result_bits_data[1]
-add mapped point result_bits_data[0] result_bits_data[0]
-add mapped point result_val result_val
+add mapped point done done
+add mapped point quotient[3] quotient[3]
+add mapped point quotient[2] quotient[2]
+add mapped point quotient[1] quotient[1]
+add mapped point quotient[0] quotient[0]
+add mapped point remainder[3] remainder[3]
+add mapped point remainder[2] remainder[2]
+add mapped point remainder[1] remainder[1]
+add mapped point remainder[0] remainder[0]
 
 //inout ports
 
@@ -63,40 +28,21 @@ add mapped point result_val result_val
 
 
 //Sequential Pins
-add mapped point GCDctrl0/state_machine/q[1]/q GCDctrl0/state_machine/q_reg[1]/Q 
-add mapped point GCDctrl0/state_machine/q[0]/q GCDctrl0/state_machine/q_reg[0]/Q 
-add mapped point GCDdpath0/A_register/q[2]/q GCDdpath0/A_register/q_reg[2]/Q 
-add mapped point GCDdpath0/A_register/q[1]/q GCDdpath0/A_register/q_reg[1]/Q 
-add mapped point GCDdpath0/A_register/q[14]/q GCDdpath0/A_register/q_reg[14]/Q 
-add mapped point GCDdpath0/A_register/q[15]/q GCDdpath0/A_register/q_reg[15]/Q 
-add mapped point GCDdpath0/A_register/q[0]/q GCDdpath0/A_register/q_reg[0]/Q 
-add mapped point GCDdpath0/A_register/q[3]/q GCDdpath0/A_register/q_reg[3]/Q 
-add mapped point GCDdpath0/A_register/q[4]/q GCDdpath0/A_register/q_reg[4]/Q 
-add mapped point GCDdpath0/A_register/q[5]/q GCDdpath0/A_register/q_reg[5]/Q 
-add mapped point GCDdpath0/A_register/q[10]/q GCDdpath0/A_register/q_reg[10]/Q 
-add mapped point GCDdpath0/A_register/q[7]/q GCDdpath0/A_register/q_reg[7]/Q 
-add mapped point GCDdpath0/A_register/q[8]/q GCDdpath0/A_register/q_reg[8]/Q 
-add mapped point GCDdpath0/A_register/q[9]/q GCDdpath0/A_register/q_reg[9]/Q 
-add mapped point GCDdpath0/A_register/q[6]/q GCDdpath0/A_register/q_reg[6]/Q 
-add mapped point GCDdpath0/A_register/q[11]/q GCDdpath0/A_register/q_reg[11]/Q 
-add mapped point GCDdpath0/A_register/q[12]/q GCDdpath0/A_register/q_reg[12]/Q 
-add mapped point GCDdpath0/A_register/q[13]/q GCDdpath0/A_register/q_reg[13]/Q 
-add mapped point GCDdpath0/B_register/q[2]/q GCDdpath0/B_register/q_reg[2]/Q 
-add mapped point GCDdpath0/B_register/q[1]/q GCDdpath0/B_register/q_reg[1]/Q 
-add mapped point GCDdpath0/B_register/q[14]/q GCDdpath0/B_register/q_reg[14]/Q 
-add mapped point GCDdpath0/B_register/q[15]/q GCDdpath0/B_register/q_reg[15]/Q 
-add mapped point GCDdpath0/B_register/q[0]/q GCDdpath0/B_register/q_reg[0]/Q 
-add mapped point GCDdpath0/B_register/q[3]/q GCDdpath0/B_register/q_reg[3]/Q 
-add mapped point GCDdpath0/B_register/q[4]/q GCDdpath0/B_register/q_reg[4]/Q 
-add mapped point GCDdpath0/B_register/q[5]/q GCDdpath0/B_register/q_reg[5]/Q 
-add mapped point GCDdpath0/B_register/q[10]/q GCDdpath0/B_register/q_reg[10]/Q 
-add mapped point GCDdpath0/B_register/q[7]/q GCDdpath0/B_register/q_reg[7]/Q 
-add mapped point GCDdpath0/B_register/q[8]/q GCDdpath0/B_register/q_reg[8]/Q 
-add mapped point GCDdpath0/B_register/q[9]/q GCDdpath0/B_register/q_reg[9]/Q 
-add mapped point GCDdpath0/B_register/q[6]/q GCDdpath0/B_register/q_reg[6]/Q 
-add mapped point GCDdpath0/B_register/q[11]/q GCDdpath0/B_register/q_reg[11]/Q 
-add mapped point GCDdpath0/B_register/q[12]/q GCDdpath0/B_register/q_reg[12]/Q 
-add mapped point GCDdpath0/B_register/q[13]/q GCDdpath0/B_register/q_reg[13]/Q 
+add mapped point quotient[3]/q quotient_reg[3]/Q 
+add mapped point quotient[2]/q quotient_reg[2]/Q 
+add mapped point long_remainder[7]/q long_remainder_reg[7]/Q 
+add mapped point quotient[1]/q quotient_reg[1]/Q 
+add mapped point quotient[0]/q quotient_reg[0]/Q 
+add mapped point long_remainder[3]/q long_remainder_reg[3]/Q 
+add mapped point long_remainder[2]/q long_remainder_reg[2]/Q 
+add mapped point long_remainder[1]/q long_remainder_reg[1]/Q 
+add mapped point long_remainder[0]/q long_remainder_reg[0]/Q 
+add mapped point iteration[2]/q iteration_reg[2]/Q 
+add mapped point long_remainder[6]/q long_remainder_reg[6]/Q 
+add mapped point long_remainder[5]/q long_remainder_reg[5]/Q 
+add mapped point long_remainder[4]/q long_remainder_reg[4]/Q 
+add mapped point iteration[1]/q iteration_reg[1]/Q 
+add mapped point iteration[0]/q iteration_reg[0]/Q 
 
 
 

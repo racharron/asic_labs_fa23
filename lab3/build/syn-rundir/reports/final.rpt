@@ -5,12 +5,12 @@ QoS Summary for gcd
 ================================================================================
 Metric                          final          
 ================================================================================
-Slack (ps):                     5,201
-  R2R (ps):                     5,201
+Slack (ps):                    16,154
+  R2R (ps):                    16,154
   I2R (ps):                  no_value
   R2O (ps):                  no_value
   I2O (ps):                  no_value
-  CG  (ps):                    12,887
+  CG  (ps):                    17,728
 TNS (ps):                           0
   R2R (ps):                         0
   I2R (ps):                  no_value
@@ -18,10 +18,10 @@ TNS (ps):                           0
   I2O (ps):                  no_value
   CG  (ps):                         0
 Failing Paths:                      0
-Cell Area:                      2,432
-Total Cell Area:                2,432
-Leaf Instances:                   247
-Total Instances:                  247
+Cell Area:                        782
+Total Cell Area:                  782
+Leaf Instances:                    71
+Total Instances:                   71
 Utilization (%):                 0.00
 Tot. Net Length (um):        no_value
 Avg. Net Length (um):        no_value
@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value
   Tot Cong:                  no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:00:18
-Real Runtime (h:m:s):        00:00:18
-CPU  Elapsed (h:m:s):        00:00:18
-Real Elapsed (h:m:s):        00:00:18
-Memory (MB):                   967.48
+CPU  Runtime (h:m:s):        00:00:13
+Real Runtime (h:m:s):        00:00:14
+CPU  Elapsed (h:m:s):        00:00:13
+Real Elapsed (h:m:s):        00:00:14
+Memory (MB):                   954.55
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
-Total Runtime (h:m:s): 00:00:18
-Total Memory (MB):     967.48
+Total Runtime (h:m:s): 00:00:14
+Total Memory (MB):     954.55
 Executable Version:    19.15-s090_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area
